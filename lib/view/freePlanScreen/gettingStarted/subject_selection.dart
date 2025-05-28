@@ -85,7 +85,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                   ],
                 ),
                 CustomButton(
-                  onPressed: () {
+                  onTap: () {
                     if (enableResend) {
                       startTimer();
                     }

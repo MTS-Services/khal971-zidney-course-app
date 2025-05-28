@@ -28,13 +28,13 @@ class LoginScreen extends StatelessWidget {
               ),
               CustomTextFormField(hintText: '*******', labelText: 'Password'),
               CustomButton(
-                onPressed: () {},
+                onTap: () {},
                 buttonText: 'Login',
                 prefix: Icon(Icons.rocket_launch_rounded, color: Colors.white),
               ),
               SizedBox(height: 100),
               CustomButton(
-                onPressed: () {},
+                onTap: () {},
                 buttonText: 'Create an Account',
                 backgroundColor: AppColors.chocolate,
                 shadowColor: AppColors.chocolateShadow,

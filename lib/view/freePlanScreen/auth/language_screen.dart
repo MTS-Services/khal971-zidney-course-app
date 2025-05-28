@@ -55,7 +55,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 ),
               ),
               CustomButton(
-                onPressed: () {
+                onTap: () {
                   if (selectedIndex != null) {
                     String selectedLanguage = languages[selectedIndex!];
                     print('selected $selectedLanguage');

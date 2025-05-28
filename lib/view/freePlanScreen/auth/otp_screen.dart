@@ -78,7 +78,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     CustomButton(
                       backgroundColor: Colors.grey,
                       shadowColor: AppColors.greyShadow,
-                      onPressed: () {
+                      onTap: () {
                         if (enableResend) {
                           startTimer();
                         }
@@ -90,7 +90,7 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                     SizedBox(width: 30),
                     CustomButton(
-                      onPressed: () {},
+                      onTap: () {},
                       buttonText: 'Verify',
                       suffix: Icon(
                         Icons.double_arrow_outlined,

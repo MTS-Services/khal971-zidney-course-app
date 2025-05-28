@@ -47,7 +47,7 @@ class NewAccount extends StatelessWidget {
                 ),
                 CustomTextFormField(hintText: '*******', labelText: 'Password'),
                 CustomButton(
-                  onPressed: () {
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => OtpScreen()),
@@ -61,7 +61,7 @@ class NewAccount extends StatelessWidget {
                 ),
                 SizedBox(height: 50),
                 CustomButton(
-                  onPressed: () {},
+                  onTap: () {},
                   buttonText: 'Have an account',
                   backgroundColor: AppColors.chocolate,
                   shadowColor: AppColors.chocolateShadow,
