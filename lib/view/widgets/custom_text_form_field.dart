@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/app_style.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -24,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Container(
-        height: 45,
+        height: AppStyles.heightL,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),

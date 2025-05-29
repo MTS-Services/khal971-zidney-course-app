@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/app_style.dart';
 
 class CustomDropdown extends StatefulWidget {
   final List<String> itemList;
@@ -26,14 +27,17 @@ class _CustomDropdownState extends State<CustomDropdown> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
-        height: 45,
+        height: AppStyles.heightS,
         width: double.infinity,
         decoration: BoxDecoration(
           color: widget.backgroundColor,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: AppStyles.radiusS,
           border: Border.all(color: widget.shadowColor!, width: 2),
           boxShadow: [
-            BoxShadow(color: AppColors.primaryColor, offset: const Offset(0, 10)),
+            BoxShadow(
+              color: AppColors.primaryColor,
+              offset: const Offset(0, 10),
+            ),
           ],
         ),
         child: DropdownButton2(
@@ -46,8 +50,11 @@ class _CustomDropdownState extends State<CustomDropdown> {
               value: item,
               child: Text(
                 item,
-                style: TextStyle(fontSize: 14, color: Colors.black),
-              ),
+                        style: TextStyle(
+                          fontSize: AppStyles.fontM,
+                          color: AppColors.chocolate,
+                        ),
+                      ),
             ),
           )
               .toList(),
@@ -80,15 +87,15 @@ class _CustomDropdownState extends State<CustomDropdown> {
             ),
           ),
           buttonStyleData: ButtonStyleData(
-            height: 42,
+            height: AppStyles.heightS,
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: AppStyles.radiusM,
             ),
           ),
           menuItemStyleData: const MenuItemStyleData(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            padding: AppStyles.paddingM,
           ),
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/custom_Conditional_buton.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_logo.dart';
+import '../widgets/custom_Conditional_buton.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_logo.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -43,7 +43,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   itemCount: languages.length,
                   itemBuilder: (context, index) {
                     return CustomConditionalButton(
-                      buttonText: languages[index], // why here show error
+                      buttonText: languages[index],
                       prefix: Icon(Icons.language),
                       onTap: () {
                         setState(() {

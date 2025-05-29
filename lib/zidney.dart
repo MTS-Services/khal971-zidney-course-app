@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:zidney/view/freePlanScreen/auth/language_screen.dart';
+import 'package:zidney/utils/themdata.dart';
+import 'package:zidney/view/auth/language_screen.dart';
 
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
@@ -10,7 +10,7 @@ class Zidney extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LanguageScreen(),
-      theme: ThemeData(),
+      theme: themData(),
     );
   }
 }
