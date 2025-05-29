@@ -4,6 +4,8 @@ import 'package:zidney/utils/app_colors.dart';
 import '../../utils/app_style.dart';
 
 class CustomButton extends StatelessWidget {
+  final double? height;
+  final double? width;
   final VoidCallback? onTap;
   final String buttonText;
   final Widget? child;
@@ -25,8 +27,9 @@ class CustomButton extends StatelessWidget {
     this.suffix,
     this.textColor = Colors.white,
     this.onTap,
+    this.height,
+    this.width,
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,14 +37,14 @@ class CustomButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: AppStyles.heightS,
+          height: height,
+          width: width,
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: AppStyles.radiusS,
-            border: Border.all(color: AppColors.primaryColor, width: 2,),
+            borderRadius: borderRadius,
             boxShadow: [
               BoxShadow(
-                color: AppColors.primaryShadow,
+                color:shadowColor,
                 offset: const Offset(0, 10),
               ),
             ],

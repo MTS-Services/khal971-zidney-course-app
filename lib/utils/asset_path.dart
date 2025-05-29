@@ -8,4 +8,7 @@ class AssetPath{
   static const String arithMaticLogo = '$_basePath/arithmatic_logo.svg';
   static const String vectorSmallBackground = '$_basePath/vectorSmallBackground.svg';
 
+  static const String appBackgroundSvg = '$_basePath/appBackground.png';
+  static const String topBackgroundSvg = '$_basePath/topBackground.png';
+  static const String logInIcon = '$_basePath/buttonLogo.png';
 }
