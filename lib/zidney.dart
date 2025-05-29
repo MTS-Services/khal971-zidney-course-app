@@ -1,5 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'package:zidney/utils/language/spunish.dart';
+import 'package:zidney/view/freePlanScreen/auth/language_screen.dart';
 
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
@@ -7,6 +8,9 @@ class Zidney extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LanguageScreen().
+      debugShowCheckedModeBanner: false,
+      home: LanguageScreen(),
+      theme: ThemeData(),
+    );
   }
 }
