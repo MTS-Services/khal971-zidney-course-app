@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 
+import '../../utils/app_style.dart';
+
 class CustomButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String buttonText;
@@ -17,7 +19,7 @@ class CustomButton extends StatelessWidget {
     this.child,
     this.backgroundColor = AppColors.primaryColor,
     this.shadowColor = AppColors.primaryShadow,
-    this.borderRadius = const BorderRadius.all(Radius.circular(8)),
+    this.borderRadius = AppStyles.radiusS,
     required this.buttonText,
     this.prefix,
     this.suffix,
@@ -28,40 +30,43 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: AppStyles.paddingXL,
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-            height: 45,
-            decoration: BoxDecoration(
-              color: backgroundColor,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: AppColors.primaryColor, width: 2),
-              boxShadow: [
-                BoxShadow(color: AppColors.primaryShadow, offset: const Offset(0, 10)),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (prefix != null) ...[prefix!, const SizedBox(width: 6)],
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    buttonText,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: textColor,
-                    ),
+          height: AppStyles.heightS,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: AppStyles.radiusS,
+            border: Border.all(color: AppColors.primaryColor, width: 2,),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.primaryShadow,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (prefix != null) ...[prefix!,],
+              Padding(
+                padding: AppStyles.paddingM,
+                child: Text(
+                  buttonText,
+                  style: TextStyle(
+                    fontWeight: AppStyles.weightBold,
+                    fontSize: AppStyles.fontM,
+                    color: textColor,
                   ),
                 ),
-                if (suffix != null) ...[const SizedBox(width: 6), suffix!],
-              ],
-            )
+              ),
+              if (suffix != null) ...[ suffix!],
+            ],
+          ),
         ),
       ),
     );
-  } 
+  }
 }

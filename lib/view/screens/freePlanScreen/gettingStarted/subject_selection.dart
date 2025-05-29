@@ -2,9 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../widgets/custom_Conditional_buton.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_logo.dart';
+import '../../../widgets/custom_Conditional_buton.dart';
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_logo.dart';
+
 
 class SubjectSelection extends StatefulWidget {
   const SubjectSelection({super.key});

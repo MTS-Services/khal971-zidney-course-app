@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_logo.dart';
-import '../../widgets/custom_text_form_field.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_logo.dart';
+import '../widgets/custom_text_form_field.dart';
 import 'otp_screen.dart';
 
-class NewAccount extends StatelessWidget {
-  const NewAccount({super.key});
+class CreateAccountScreen extends StatelessWidget {
+  const CreateAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

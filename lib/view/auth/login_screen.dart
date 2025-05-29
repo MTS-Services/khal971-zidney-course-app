@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_logo.dart';
-import '../../widgets/custom_text_form_field.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_logo.dart';
+import '../widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
