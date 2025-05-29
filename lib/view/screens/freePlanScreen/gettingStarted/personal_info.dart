@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_container.dart';
-import '../../widgets/custom_dropdown.dart';
-import '../../widgets/custom_text_form_field.dart';
+
+import '../../../widgets/custom_button.dart';
+import '../../../widgets/custom_container.dart';
+import '../../../widgets/custom_dropdown.dart';
+import '../../../widgets/custom_text_form_field.dart';
 
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});
