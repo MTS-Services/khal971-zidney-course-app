@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/view/widgets/custom_progress_bar.dart';
+import 'package:zidney/viewmodels/controller/progress_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key});
+  final myController = Get.put(ProgressController());
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +146,14 @@ class HomeScreen extends StatelessWidget {
                                     fontSize: AppStyles.fontM,
                                   ),
                                 ),
+                                const SizedBox(height: 15,),
+                             /*   CustomProgressBar(
+                                  height: 14,
+                                  width: double.infinity,
+                                  backgroundColor: Colors.white,
+                                  progressColor: Colors.blue,
+                                  controller: ProgressController(),
+                                )*/
                                 
 
 
