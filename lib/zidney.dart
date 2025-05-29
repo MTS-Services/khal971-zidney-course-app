@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:zidney/view/freePlanScreen/auth/language_screen.dart';
 import 'package:zidney/view/freePlanScreen/mainpages/home_screen.dart';
 
 class Zidney extends StatelessWidget {

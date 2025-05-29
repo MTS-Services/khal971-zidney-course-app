@@ -13,4 +13,6 @@ class AppColors {
   static const Color chocolateShadow = Color(0xFF200D04);
   static const Color buttonGreen = Color(0xFFC3DE7A);
   static const Color buttonGreenShadow = Color(0xFFA5CD39);
+  static const Color lightPink =  Color(0xFFf1ebf4);
+  static const Color blackColor =  Color(0xFF000000);
 }
