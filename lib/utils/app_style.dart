@@ -71,6 +71,8 @@ class AppStyles {
   static const double widthL = 80.0;
   static const double widthXL = 100.0;
 
+
+
   // 📱 MediaQuery-based responsive font
   static double responsiveFontSize(BuildContext context, double baseFontSize) {
     final screenWidth = MediaQuery.of(context).size.width;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:zidney/utils/themdata.dart';
 import 'package:zidney/view/auth/language_screen.dart';
 
@@ -7,7 +8,7 @@ class Zidney extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: LanguageScreen(),
       theme: themData(),
