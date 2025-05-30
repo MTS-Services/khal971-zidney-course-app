@@ -30,51 +30,47 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: Center(
-          child: Padding(
-            padding: AppStyles.paddingSymmetricL,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomLogo(
-                  subTitleText: 'The one you are comfortable with ',
-                  titleText: 'Select Your language first',
-                ),
-                SizedBox(
-                  height: AppStyles.screenHeightPercentage(context, 0.52),
-                  width: double.infinity,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: languages.length,
-                    itemBuilder: (context, index) {
-                      return CustomConditionalButton(
-                        buttonText: languages[index],
-                        prefix: Icon(Icons.language),
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        },
-                      );
-                    },
-                  ),
-                ),
-                CustomButton(
-                  width: AppStyles.screenHeightPercentage(context, 0.15),
-                  onTap: () {
-                    if (selectedIndex != null) {
-                      String selectedLanguage = languages[selectedIndex!];
-                      print('selected $selectedLanguage');
-                      Get.to(()=>LoginScreen());
-                    }
-                  },//nothing
-                  buttonText: 'Select',
-                  prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
-                ),
-              ],
+        isScrollable: false,
+        child: Column(
+          children: [
+            SizedBox(height: AppStyles.heightS,),
+            CustomLogo(
+              subTitleText: 'The one you are comfortable with ',
+              titleText: 'Select Your language first',
             ),
-          ),
+            SizedBox(
+              height: AppStyles.screenHeightPercentage(context, 0.52),
+              width: double.infinity,
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: languages.length,
+                itemBuilder: (context, index) {
+                  return CustomConditionalButton(
+                    buttonText: languages[index],
+                    prefix: Icon(Icons.language),
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                  );
+                },
+              ),
+            ),
+            CustomButton(
+              width: AppStyles.screenHeightPercentage(context, 0.15),
+              onTap: () {
+                if (selectedIndex != null) {
+                  String selectedLanguage = languages[selectedIndex!];
+                  print('selected $selectedLanguage');
+                  Get.to(()=>LoginScreen());
+                }
+              },//nothing
+              buttonText: 'Select',
+              prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
+            ),
+          ],
         ),
       )
     );

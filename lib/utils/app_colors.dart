@@ -15,4 +15,5 @@ class AppColors {
   static const Color buttonGreenShadow = Color(0xFFA5CD39);
   static const Color lightPink =  Color(0xFFf1ebf4);
   static const Color blackColor =  Color(0xFF000000);
+  static const Color navigationColor =  Color(0xFFFFF7E8);
 }

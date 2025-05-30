@@ -7,13 +7,12 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/viewmodels/controller/progress_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
   final myController = Get.put(ProgressController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -37,28 +36,38 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 50,top: 27),
+                      padding: const EdgeInsets.only(left: 50, top: 27),
                       child: Row(
                         children: [
-
                           SvgPicture.asset(AssetPath.vector),
 
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Column(children: [
-                            Text('Zidney Premium',style: TextStyle(fontSize: AppStyles.fontXL,fontWeight: AppStyles.weightMedium,color: AppColors.secondaryColor),),
-                            Row(
-                              children: [
-                                Text("Unlimited Attempts",style: TextStyle(fontSize: AppStyles.fontM,fontWeight: AppStyles.weightMedium,color: AppColors.blackColor),),
-                                const SizedBox(
-                                  width: 4,
+                          const SizedBox(width: 20),
+                          Column(
+                            children: [
+                              Text(
+                                'Zidney Premium',
+                                style: TextStyle(
+                                  fontSize: AppStyles.fontXL,
+                                  fontWeight: AppStyles.weightMedium,
+                                  color: AppColors.secondaryColor,
                                 ),
-                                SvgPicture.asset(AssetPath.vectorInfinity),
-                              ],
-                            )
-
-                          ]),
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Unlimited Attempts",
+                                    style: TextStyle(
+                                      fontSize: AppStyles.fontM,
+                                      fontWeight: AppStyles.weightMedium,
+                                      color: AppColors.blackColor,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  SvgPicture.asset(AssetPath.vectorInfinity),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -145,21 +154,15 @@ class HomeScreen extends StatelessWidget {
                                     fontSize: AppStyles.fontM,
                                   ),
                                 ),
-                                const SizedBox(height: 15,),
-                             /*   CustomProgressBar(
+                                const SizedBox(height: 15),
+
+                                /*   CustomProgressBar(
                                   height: 14,
                                   width: double.infinity,
                                   backgroundColor: Colors.white,
                                   progressColor: Colors.blue,
                                   controller: ProgressController(),
                                 )*/
-                                
-
-
-
-
-
-
                               ],
                             ),
                           ),

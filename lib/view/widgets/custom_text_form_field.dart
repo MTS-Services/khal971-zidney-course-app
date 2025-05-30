@@ -9,7 +9,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final String? Function(String?)? validator;
-  final EdgeInsetsGeometry? contentPadding; // ✅ New parameter
+  final EdgeInsetsGeometry? contentPadding;
 
   const CustomTextFormField({
     super.key,
@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.validator,
-    this.contentPadding, // ✅ Add to constructor
+    this.contentPadding,
   });
 
   @override

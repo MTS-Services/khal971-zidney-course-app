@@ -6,6 +6,7 @@ import '../widgets/custom_button.dart';
 import '../widgets/custom_logo.dart';
 import '../widgets/custom_text_form_field.dart';
 
+
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
 
@@ -13,56 +14,59 @@ class CreateAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 150),
-            CustomLogo(
-              titleText: 'Welcome to Zidney',
-              subTitleText: 'Lets make learning easy and interesting!',
-            ),
-            CustomTextFormField(
-              hintText: 'example@gmail.com',
-              labelText: 'Email',
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 100,
-                  child: CustomTextFormField(
-                    hintText: '+880',
-                    labelText: 'code',
-                  ),
-                ),
-                SizedBox(width: 20),
-                Expanded(
-                  child: CustomTextFormField(
-                    hintText: '123456789',
-                    labelText: 'phone',
-                  ),
-                ),
-              ],
-            ),
-            CustomTextFormField(hintText: '*******', labelText: 'Password'),
-            CustomButton(
-              width: AppStyles.screenHeightPercentage(context, 0.15),
-              onTap: () {
-
-              },
-              buttonText: 'Next',
-              suffix: Icon(
-                Icons.double_arrow_outlined,
-                color: Colors.white,
+        isScrollable: true,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 100),
+              CustomLogo(
+                titleText: 'Welcome to Zidney',
+                subTitleText: 'Lets make learning easy and interesting!',
               ),
-            ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.13)),
-            CustomButton(
-              onTap: () {},
-              buttonText: 'Have an account',
-              backgroundColor: AppColors.chocolate,
-              shadowColor: AppColors.chocolateShadow,
-            ),
-          ],
+              CustomTextFormField(
+                hintText: 'example@gmail.com',
+                labelText: 'Email',
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 100,
+                    child: CustomTextFormField(
+                      hintText: '+880',
+                      labelText: 'code',
+                    ),
+                  ),
+                  SizedBox(width: 20),
+                  Expanded(
+                    child: CustomTextFormField(
+                      hintText: '123456789',
+                      labelText: 'phone',
+                    ),
+                  ),
+                ],
+              ),
+              CustomTextFormField(hintText: '*******', labelText: 'Password'),
+              CustomButton(
+                width: AppStyles.screenHeightPercentage(context, 0.15),
+                onTap: () {
+          
+                },
+                buttonText: 'Next',
+                suffix: Icon(
+                  Icons.double_arrow_outlined,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.20)),
+              CustomButton(
+                onTap: () {},
+                buttonText: 'Have an account',
+                backgroundColor: AppColors.chocolate,
+                shadowColor: AppColors.chocolateShadow,
+              ),
+            ],
+          ),
         ),
       )
     );

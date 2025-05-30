@@ -4,7 +4,6 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/auth/create_account_screen.dart';
-import 'package:zidney/view/freePlanScreen/mainpages/home_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 
 import '../widgets/custom_button.dart';
@@ -17,39 +16,42 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: AppStyles.heightXXL,),
-            CustomLogo(
-              titleText: 'Welcome to Zedney',
-              subTitleText: 'We missed you',
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hintText: 'example@gmail.com',
-              labelText: 'Email',
-            ),
-            CustomTextFormField(hintText: '*******', labelText: 'Password'),
-            CustomButton(
-              width: AppStyles.screenHeightPercentage(context, 0.15),
-              onTap: () {
-                Get.to(HomeScreen());
-              },
-              buttonText: 'Login',
-              prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
-            ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.30)),
-            CustomButton(
-              onTap: () {
-                Get.to(()=>CreateAccountScreen());
-              },
-              buttonText: 'Create an Account',
-              backgroundColor: AppColors.chocolate,
-              shadowColor: AppColors.chocolateShadow,
-            ),
-          ],
+        isScrollable: true,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: AppStyles.heightXXL,),
+              CustomLogo(
+                titleText: 'Welcome to Zedney',
+                subTitleText: 'We missed you',
+              ),
+              SizedBox(height: 20),
+              CustomTextFormField(
+                hintText: 'example@gmail.com',
+                labelText: 'Email',
+              ),
+              CustomTextFormField(hintText: '*******', labelText: 'Password'),
+              CustomButton(
+                width: AppStyles.screenHeightPercentage(context, 0.15),
+                onTap: () {
+          
+                },
+                buttonText: 'Login',
+                prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
+              ),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.30)),
+              CustomButton(
+                onTap: () {
+                  Get.to(()=>CreateAccountScreen());
+                },
+                buttonText: 'Create an Account',
+                backgroundColor: AppColors.chocolate,
+                shadowColor: AppColors.chocolateShadow,
+              ),
+            ],
+          ),
         ),
       ),
     );
