@@ -6,8 +6,6 @@ import 'package:zidney/view/freePlanScreen/mainpages/main_bottom_nav_screen.dart
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

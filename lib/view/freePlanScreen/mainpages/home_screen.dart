@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/view/freePlanScreen/Question & Quiz/topic_screen.dart';
+import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 import 'package:zidney/viewmodels/controller/progress_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,7 +20,6 @@ class HomeScreen extends StatelessWidget {
           child: Padding(
             padding: AppStyles.paddingSymmetricXL,
             child: Column(
-              spacing: 10,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Stack(
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                       height: AppStyles.screenHeightPercentage(context, 0.12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: Color(0xFFF1EBF4),
+                        color: const Color(0xFFF1EBF4),
                       ),
                       child: SvgPicture.asset(
                         AssetPath.vectorSmallBackground,
@@ -40,9 +41,9 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           SvgPicture.asset(AssetPath.vector),
-
                           const SizedBox(width: 20),
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Zidney Premium',
@@ -73,7 +74,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 8),
                 Text(
                   'Last practiced chapter',
@@ -86,85 +86,76 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Stack(
                       children: [
-                        Card(
-                          child: Container(
-                            height: AppStyles.screenHeightPercentage(
-                              context,
-                              0.361,
-                            ),
-                            width: AppStyles.screenWidthPercentage(
-                              context,
-                              0.5133,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor,
-                              borderRadius: BorderRadius.circular(7),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: AppColors.primaryShadow,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                            ),
-                            child: SvgPicture.asset(
-                              AssetPath.vectorBackground,
-                              fit: BoxFit.cover,
+                        InkWell(
+                          onTap: () {
+                            final navController = Get.find<BottomNavController>();
+                            navController.openWithChild(TopicScreen());
+                          },
+                          child: Card(
+                            child: Container(
+                              height: AppStyles.screenHeightPercentage(context, 0.361),
+                              width: AppStyles.screenWidthPercentage(context, 0.5133),
+                              decoration: BoxDecoration(
+                                color: AppColors.primaryColor,
+                                borderRadius: BorderRadius.circular(7),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.primaryShadow,
+                                    offset: const Offset(0, 10),
+                                  ),
+                                ],
+                              ),
+                              child: SvgPicture.asset(
+                                AssetPath.vectorBackground,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          child: Padding(
-                            padding: AppStyles.paddingSymmetricXL,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(AssetPath.arithMaticLogo),
-                                const SizedBox(height: 8),
-                                Text(
-                                  'Advanced Math',
-                                  style: TextStyle(
-                                    fontSize: AppStyles.fontXL,
-                                    fontWeight: AppStyles.weightRegular,
-                                    color: AppColors.chocolate,
-                                  ),
+                        Padding(
+                          padding: AppStyles.paddingSymmetricXL,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset(AssetPath.arithMaticLogo),
+                              const SizedBox(height: 8),
+                              Text(
+                                'Advanced Math',
+                                style: TextStyle(
+                                  fontSize: AppStyles.fontXL,
+                                  fontWeight: AppStyles.weightRegular,
+                                  color: AppColors.chocolate,
                                 ),
-                                Text(
-                                  'Chapter 1',
-                                  style: TextStyle(
-                                    fontSize: AppStyles.fontXL,
-                                    fontWeight: AppStyles.weightRegular,
-                                    color: AppColors.chocolate,
-                                  ),
+                              ),
+                              Text(
+                                'Chapter 1',
+                                style: TextStyle(
+                                  fontSize: AppStyles.fontXL,
+                                  fontWeight: AppStyles.weightRegular,
+                                  color: AppColors.chocolate,
                                 ),
-                                const SizedBox(height: 10),
-                                Text(
-                                  'Total question 30',
-                                  style: TextStyle(
-                                    color: AppColors.chocolate,
-                                    fontWeight: AppStyles.weightRegular,
-                                    fontSize: AppStyles.fontM,
-                                  ),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                'Total question 30',
+                                style: TextStyle(
+                                  color: AppColors.chocolate,
+                                  fontWeight: AppStyles.weightRegular,
+                                  fontSize: AppStyles.fontM,
                                 ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  'You are on:7th',
-                                  style: TextStyle(
-                                    color: AppColors.chocolate,
-                                    fontWeight: AppStyles.weightRegular,
-                                    fontSize: AppStyles.fontM,
-                                  ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                'You are on: 7th',
+                                style: TextStyle(
+                                  color: AppColors.chocolate,
+                                  fontWeight: AppStyles.weightRegular,
+                                  fontSize: AppStyles.fontM,
                                 ),
-                                const SizedBox(height: 15),
-
-                                /*   CustomProgressBar(
-                                  height: 14,
-                                  width: double.infinity,
-                                  backgroundColor: Colors.white,
-                                  progressColor: Colors.blue,
-                                  controller: ProgressController(),
-                                )*/
-                              ],
-                            ),
+                              ),
+                              const SizedBox(height: 15),
+                              // Optional progress bar here
+                            ],
                           ),
                         ),
                       ],
