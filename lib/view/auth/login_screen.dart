@@ -4,6 +4,7 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/auth/create_account_screen.dart';
+import 'package:zidney/view/freePlanScreen/mainpages/home_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 
 import '../widgets/custom_button.dart';
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
             CustomButton(
               width: AppStyles.screenHeightPercentage(context, 0.15),
               onTap: () {
-
+                Get.to(HomeScreen());
               },
               buttonText: 'Login',
               prefix:Image.asset(AssetPath.logInIcon, height:25,) ,

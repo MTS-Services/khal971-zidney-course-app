@@ -5,7 +5,6 @@ import '../../utils/app_style.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_logo.dart';
 import '../widgets/custom_text_form_field.dart';
-import 'otp_screen.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
