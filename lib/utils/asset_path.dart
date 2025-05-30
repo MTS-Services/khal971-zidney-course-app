@@ -11,4 +11,8 @@ class AssetPath{
   static const String appBackgroundSvg = '$_basePath/appBackground.png';
   static const String topBackgroundSvg = '$_basePath/topBackground.png';
   static const String logInIcon = '$_basePath/buttonLogo.png';
+  static const String homeIcon = '$_basePath/home_icon.png';
+  static const String bookmarkIcon = '$_basePath/bookmark_icon.png';
+  static const String dashBoardIcon = '$_basePath/dashboard_icon.png';
+  static const String menuIcon = '$_basePath/menu_icon.png';
 }

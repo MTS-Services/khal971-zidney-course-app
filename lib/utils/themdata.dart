@@ -8,11 +8,14 @@ ThemeData themData() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: AppColors.chocolate,
-        textStyle: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 16
-        )
-      )
+        textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+      ),
+    ),
+    appBarTheme: AppBarTheme(
+      elevation: 0,
+      centerTitle: false,
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.white,
     ),
     scaffoldBackgroundColor: Colors.white,
     primaryColor: AppColors.primaryColor,

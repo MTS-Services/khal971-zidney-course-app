@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zidney/utils/asset_path.dart';
 
 import '../../viewmodels/controller/bottom_nav_controller.dart';
 import '../app_colors.dart';
@@ -36,41 +37,45 @@ class NavigationContainer extends StatelessWidget {
             items: [
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/images/home_icon.png',
+                  AssetPath.homeIcon,
                   scale: 3,
-                  color: navController.selectedIndex.value == 0
-                      ? AppColors.primaryColor
-                      : AppColors.chocolate,
+                  color:
+                      navController.selectedIndex.value == 0
+                          ? AppColors.primaryColor
+                          : AppColors.chocolate,
                 ),
                 label: '',
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/images/bookmark_icon.png',
+                  AssetPath.bookmarkIcon,
                   scale: 3,
-                  color: navController.selectedIndex.value == 1
-                      ? AppColors.primaryColor
-                      : AppColors.chocolate,
+                  color:
+                      navController.selectedIndex.value == 1
+                          ? AppColors.primaryColor
+                          : AppColors.chocolate,
                 ),
                 label: '',
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/images/dashboard_icon.png',
+                  AssetPath.dashBoardIcon,
                   scale: 3,
-                  color: navController.selectedIndex.value == 2
-                      ? AppColors.primaryColor
-                      : AppColors.chocolate,
+                  color:
+                      navController.selectedIndex.value == 2
+                          ? AppColors.primaryColor
+                          : AppColors.chocolate,
                 ),
                 label: '',
               ),
               BottomNavigationBarItem(
                 icon: Image.asset(
-                  'assets/images/menu_icon.png',
+                  AssetPath.menuIcon,
                   scale: 16,
-                  color: navController.selectedIndex.value == 3
-                      ? AppColors.primaryColor
-                      : AppColors.chocolate,
+                  color:
+                      navController.selectedIndex.value == 3
+                          ? AppColors.primaryColor
+                          : AppColors.chocolate,
                 ),
                 label: '',
               ),
