@@ -16,39 +16,42 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: AppStyles.heightXXL,),
-            CustomLogo(
-              titleText: 'Welcome to Zedney',
-              subTitleText: 'We missed you',
-            ),
-            SizedBox(height: 20),
-            CustomTextFormField(
-              hintText: 'example@gmail.com',
-              labelText: 'Email',
-            ),
-            CustomTextFormField(hintText: '*******', labelText: 'Password'),
-            CustomButton(
-              width: AppStyles.screenHeightPercentage(context, 0.15),
-              onTap: () {
-
-              },
-              buttonText: 'Login',
-              prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
-            ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.30)),
-            CustomButton(
-              onTap: () {
-                Get.to(()=>CreateAccountScreen());
-              },
-              buttonText: 'Create an Account',
-              backgroundColor: AppColors.chocolate,
-              shadowColor: AppColors.chocolateShadow,
-            ),
-          ],
+        isScrollable: true,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: AppStyles.heightXXL,),
+              CustomLogo(
+                titleText: 'Welcome to Zedney',
+                subTitleText: 'We missed you',
+              ),
+              SizedBox(height: 20),
+              CustomTextFormField(
+                hintText: 'example@gmail.com',
+                labelText: 'Email',
+              ),
+              CustomTextFormField(hintText: '*******', labelText: 'Password'),
+              CustomButton(
+                width: AppStyles.screenHeightPercentage(context, 0.15),
+                onTap: () {
+          
+                },
+                buttonText: 'Login',
+                prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
+              ),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.30)),
+              CustomButton(
+                onTap: () {
+                  Get.to(()=>CreateAccountScreen());
+                },
+                buttonText: 'Create an Account',
+                backgroundColor: AppColors.chocolate,
+                shadowColor: AppColors.chocolateShadow,
+              ),
+            ],
+          ),
         ),
       ),
     );
