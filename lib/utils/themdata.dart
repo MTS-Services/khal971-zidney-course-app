@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 
-ThemeData themedata() {
+ThemeData themData() {
   return ThemeData(
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(

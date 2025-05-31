@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/app_style.dart';
 
 class CustomContainer extends StatelessWidget {
   final double? height;
@@ -13,7 +14,8 @@ class CustomContainer extends StatelessWidget {
     this.height,
     this.borderRadius,
     this.width,
-    this.shadowColor = AppColors.primaryColor, this.backgroundColor = Colors.white,
+    this.shadowColor = AppColors.primaryColor,
+    this.backgroundColor = Colors.white,
   });
 
   @override
@@ -23,7 +25,7 @@ class CustomContainer extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: AppStyles.radiusS,
         border: Border.all(color: AppColors.primaryColor, width: 2),
         boxShadow: [
           BoxShadow(color: AppColors.primaryColor, offset: const Offset(0, 10)),

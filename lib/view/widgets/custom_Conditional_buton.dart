@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import '../../utils/app_style.dart';
 
 class CustomConditionalButton extends StatefulWidget {
   final VoidCallback onTap;
@@ -21,7 +22,7 @@ class CustomConditionalButton extends StatefulWidget {
     this.child,
     this.backgroundColor = AppColors.primaryColor,
     this.shadowColor = AppColors.primaryShadow,
-    this.borderRadius = const BorderRadius.all(Radius.circular(8)),
+    this.borderRadius = AppStyles.radiusM,
     required this.buttonText,
     this.prefix,
     this.suffix,
@@ -49,7 +50,7 @@ class _CustomConditionalButtonState extends State<CustomConditionalButton> {
           widget.onTap;
         },
         child: Container(
-          height: 45,
+          height: AppStyles.heightS,
           width: double.infinity,
           decoration:
           isSelect
@@ -69,7 +70,7 @@ class _CustomConditionalButtonState extends State<CustomConditionalButton> {
             border: Border.all(color: Colors.grey),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: AppStyles.paddingM,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -81,8 +82,8 @@ class _CustomConditionalButtonState extends State<CustomConditionalButton> {
                 Text(
                   widget.buttonText,
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                    fontWeight: AppStyles.weightBold,
+                    fontSize: AppStyles.fontM,
                     color: isSelect ? Colors.white : widget.textColor,
                   ),
                 ),
