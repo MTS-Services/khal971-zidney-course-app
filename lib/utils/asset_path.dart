@@ -24,4 +24,8 @@ class AssetPath{
   static const String personIcon = '$_basePath/person_icon.svg';
   static const String securityIcon = '$_basePath/security_icon.svg';
   static const String languageIcon = '$_basePath/language_icon.svg';
+  static const String labelIcon = '$_basePath/label_icon.png';
+  static const String bookmarkAddIcon = '$_basePath/bookmark_add.png';
+  static const String filterIcon = '$_basePath/filter_icon.png';
+  static const String finishIcon = '$_basePath/finish_icon.png';
 }
