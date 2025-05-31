@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../utils/app_style.dart';
 import '../widgets/custom_button.dart';
@@ -19,7 +21,7 @@ class CreateAccountScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 100),
+              SizedBox(height: 80),
               CustomLogo(
                 titleText: 'Welcome to Zidney',
                 subTitleText: 'Lets make learning easy and interesting!',
@@ -50,7 +52,7 @@ class CreateAccountScreen extends StatelessWidget {
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-          
+                   Get.to(()=>PersonalInfo());
                 },
                 buttonText: 'Next',
                 suffix: Icon(
@@ -58,7 +60,7 @@ class CreateAccountScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.20)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.26)),
               CustomButton(
                 onTap: () {},
                 buttonText: 'Have an account',

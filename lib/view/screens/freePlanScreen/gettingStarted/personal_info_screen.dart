@@ -137,8 +137,8 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 Icons.double_arrow_outlined,
                 color: AppColors.lightPink,
               ),
-              onTap: () {
-                Get.to(() => SubjectSelection());
+              onTap: (){
+                Get.to(()=>SubjectSelection());
               },
             ),
           ],

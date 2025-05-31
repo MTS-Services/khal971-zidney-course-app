@@ -20,6 +20,7 @@ class Security extends StatelessWidget {
         showAction: false,
       ),
       body: AppBackground(
+        showBottomImage: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

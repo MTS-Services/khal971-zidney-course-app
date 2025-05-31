@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/view/auth/login_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
@@ -8,14 +7,11 @@ import '../../utils/asset_path.dart';
 import '../widgets/custom_Conditional_buton.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_logo.dart';
-
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
-
   @override
   State<LanguageScreen> createState() => _LanguageScreenState();
 }
-
 class _LanguageScreenState extends State<LanguageScreen> {
   final List<String> languages = [
     'English',
@@ -47,6 +43,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 itemCount: languages.length,
                 itemBuilder: (context, index) {
                   return CustomConditionalButton(
+                    isSelected: selectedIndex ==index,
                     buttonText: languages[index],
                     prefix: Icon(Icons.language),
                     onTap: () {
