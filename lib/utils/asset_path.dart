@@ -15,4 +15,8 @@ class AssetPath{
   static const String bookmarkIcon = '$_basePath/bookmark_icon.png';
   static const String dashBoardIcon = '$_basePath/dashboard_icon.png';
   static const String menuIcon = '$_basePath/menu_icon.png';
+  static const String labelIcon = '$_basePath/label_icon.png';
+  static const String bookmarkAddIcon = '$_basePath/bookmark_add.png';
+  static const String filterIcon = '$_basePath/filter_icon.png';
+  static const String finishIcon = '$_basePath/finish_icon.png';
 }
