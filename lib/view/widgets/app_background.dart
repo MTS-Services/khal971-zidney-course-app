@@ -6,26 +6,28 @@ class AppBackground extends StatelessWidget {
   final Widget? child;
   final bool isScrollable;
   final bool showBottomImage;
+  final bool showBgImage;
 
   const AppBackground({
     super.key,
     this.child,
     this.isScrollable = false,
     this.showBottomImage = true,
+    this.showBgImage = true,
   });
 
   @override
   Widget build(BuildContext context) {
+    final Widget backgroundImage = Positioned.fill(
+      child: Image.asset(
+        showBgImage ? AssetPath.appBackgroundSvg : AssetPath.appBackgroundtow,
+        fit: BoxFit.cover,
+      ),
+    );
+
     return Stack(
       children: [
-        // Full background image
-        Positioned.fill(
-          child: Image.asset(
-            AssetPath.appBackgroundSvg,
-            fit: BoxFit.cover,
-          ),
-        ),
-
+        backgroundImage,
         if (showBottomImage)
           Positioned(
             bottom: 0,
@@ -36,7 +38,6 @@ class AppBackground extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
           ),
-
 
         SafeArea(
           child: LayoutBuilder(
@@ -50,7 +51,6 @@ class AppBackground extends StatelessWidget {
                   child: child ?? const SizedBox.shrink(),
                 ),
               );
-
               return isScrollable
                   ? SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),

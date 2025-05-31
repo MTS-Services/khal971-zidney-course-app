@@ -21,7 +21,7 @@ class CreateAccountScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 100),
+              SizedBox(height: 80),
               CustomLogo(
                 titleText: 'Welcome to Zidney',
                 subTitleText: 'Lets make learning easy and interesting!',
@@ -60,7 +60,7 @@ class CreateAccountScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.20)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.26)),
               CustomButton(
                 onTap: () {},
                 buttonText: 'Have an account',
