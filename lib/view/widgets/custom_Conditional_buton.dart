@@ -8,11 +8,11 @@ class CustomConditionalButton extends StatelessWidget {
   final Widget? child;
   final Widget? prefix;
   final Widget? suffix;
-  final bool isSelected;
   final Color backgroundColor;
   final Color shadowColor;
   final BorderRadius borderRadius;
   final Color textColor;
+  final bool isSelected;
 
   const CustomConditionalButton({
     super.key,
@@ -25,7 +25,7 @@ class CustomConditionalButton extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.textColor = Colors.black,
-    this.isSelected = false,  // Default false
+    this.isSelected = false,
   });
 
   @override

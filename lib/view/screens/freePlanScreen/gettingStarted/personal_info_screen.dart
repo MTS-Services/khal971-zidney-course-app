@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_style.dart';
-import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection.dart';
+import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../widgets/custom_button.dart';
