@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../utils/app_style.dart';
 import '../widgets/custom_button.dart';
@@ -50,7 +52,7 @@ class CreateAccountScreen extends StatelessWidget {
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-          
+                   Get.to(()=>PersonalInfo());
                 },
                 buttonText: 'Next',
                 suffix: Icon(

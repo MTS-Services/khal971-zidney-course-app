@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:zidney/utils/asset_path.dart';
 
 import '../../../widgets/custom_Conditional_buton.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_logo.dart';
-
 
 class SubjectSelection extends StatefulWidget {
   const SubjectSelection({super.key});
@@ -15,41 +15,47 @@ class SubjectSelection extends StatefulWidget {
 }
 
 class _SubjectSelectionState extends State<SubjectSelection> {
-  @override
-  Widget build(BuildContext context) {
-    int secondRemaining = 30;
-    bool enableResend = false;
+  int secondRemaining = 30;
+  bool enableResend = false;
 
-    Timer? timer;
-    int? selectedIndex = 0;
+  Timer? timer;
+  int? selectedIndex;
 
-    void startTimer() {
+  final List<String> subjects = [
+    'Advance Math',
+    'Life Sciences',
+    'Physical Sciences',
+    'Chemical Sciences',
+    'Literature Studies',
+    'Organic Chemistry',
+    'Inorganic Chemistry',
+  ];
+
+  void startTimer() {
+    setState(() {
       enableResend = false;
       secondRemaining = 30;
-      timer = Timer.periodic(Duration(seconds: 1), (_) {
-        if (secondRemaining > 0) {
-          setState(() => secondRemaining--);
-        } else {
-          setState(() => enableResend = true);
-          timer?.cancel();
-        }
-      });
-    }
+    });
 
-    void dispose() {
-      timer?.cancel();
-      super.dispose();
-    }
+    timer?.cancel();
+    timer = Timer.periodic(Duration(seconds: 1), (_) {
+      if (secondRemaining > 0) {
+        setState(() => secondRemaining--);
+      } else {
+        setState(() => enableResend = true);
+        timer?.cancel();
+      }
+    });
+  }
 
-    final List subjects = [
-      'Advance Math',
-      'Life Sciences',
-      'Physical Sciences',
-      'Chemical Sciences',
-      'Literature Studies',
-      'Organic Chemistry',
-      'Inorganic Chemistry',
-    ];
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -62,39 +68,37 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                   titleText: 'Welcome to Zidney',
                   subTitleText: 'Pick 5 courses to get started!',
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 500,
-                      width: double.infinity,
-                      child: ListView.builder(
-                        itemCount: subjects.length,
-                        itemBuilder: (context, index) {
-                          return CustomConditionalButton(
-                            buttonText: subjects[index], // why here show error
-                            prefix: Icon(Icons.language),
-                            onTap: () {
-                              setState(() {
-                                selectedIndex = index;
-                              });
-                            },
-                          );
+                SizedBox(
+                  height: 500,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: subjects.length,
+                    itemBuilder: (context, index) {
+                      return CustomConditionalButton(
+                        buttonText: subjects[index],
+                        prefix: Icon(Icons.language),
+                        isSelected: selectedIndex == index,
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
                         },
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
                 ),
+                SizedBox(height: 20),
                 CustomButton(
+                  prefix: Image.asset(AssetPath.logInIcon),
                   onTap: () {
                     if (enableResend) {
                       startTimer();
                     }
                   },
-                  buttonText:
-                      enableResend
-                          ? 'Resend OTP'
-                          : 'Resent OTP in ${secondRemaining}s',
+                  buttonText: enableResend
+                      ? '4 more to start'
+                      : 'Resent OTP in ${secondRemaining}s',
                 ),
               ],
             ),

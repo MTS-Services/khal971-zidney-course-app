@@ -3,36 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 
-class CustomDropdown extends StatefulWidget {
+class CustomDropdown extends StatelessWidget {
   final List<String> itemList;
+  final String? selectedItem;
+  final Function(String?) onChanged;
   final Color? backgroundColor;
   final Color? shadowColor;
 
   const CustomDropdown({
     super.key,
     required this.itemList,
+    required this.selectedItem,
+    required this.onChanged,
     this.backgroundColor = Colors.white,
     this.shadowColor = AppColors.primaryColor,
   });
 
   @override
-  State<CustomDropdown> createState() => _CustomDropdownState();
-}
-
-class _CustomDropdownState extends State<CustomDropdown> {
-  String? selectedItem;
-
-  @override
   Widget build(BuildContext context) {
+    final dropdownHeight = AppStyles.screenHeightPercentage(context, 0.05);
+    final dropdownWidth = AppStyles.screenWidthPercentage(context, 0.86);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
-        height: AppStyles.heightS,
-        width: double.infinity,
+        height: dropdownHeight,
+        width: dropdownWidth,
         decoration: BoxDecoration(
-          color: widget.backgroundColor,
+          color: backgroundColor,
           borderRadius: AppStyles.radiusS,
-          border: Border.all(color: widget.shadowColor!, width: 2),
+          border: Border.all(color: shadowColor!, width: 2),
           boxShadow: [
             BoxShadow(
               color: AppColors.primaryColor,
@@ -40,36 +40,34 @@ class _CustomDropdownState extends State<CustomDropdown> {
             ),
           ],
         ),
-        child: DropdownButton2(
-          underline: SizedBox.shrink(),
-          items:
-          widget.itemList
-              .map(
-                (String item) => DropdownMenuItem(
-              enabled: true,
+        child: DropdownButton2<String>(
+          isExpanded: true,
+          value: itemList.contains(selectedItem) ? selectedItem : null,
+          underline: const SizedBox.shrink(),
+          items: itemList.map((String item) {
+            return DropdownMenuItem<String>(
               value: item,
-              child: Text(
-                item,
-                        style: TextStyle(
-                          fontSize: AppStyles.fontM,
-                          color: AppColors.chocolate,
-                        ),
-                      ),
-            ),
-          )
-              .toList(),
-          onChanged: (value) {
-            setState(() {});
-            selectedItem = value;
-          },
-          iconStyleData: IconStyleData(
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text(
+                  item,
+                  style: TextStyle(
+                    fontSize: AppStyles.fontM,
+                    color: AppColors.chocolate,
+                  ),
+                ),
+              ),
+            );
+          }).toList(),
+          onChanged: onChanged,
+          iconStyleData: const IconStyleData(
             icon: Icon(Icons.keyboard_arrow_down_outlined),
             iconSize: 25,
             iconEnabledColor: Colors.black,
           ),
           dropdownStyleData: DropdownStyleData(
-            offset: Offset(0, -12),
-            maxHeight: 300,
+            offset: const Offset(0, -12),
+            maxHeight: 200,
             elevation: 10,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -77,25 +75,25 @@ class _CustomDropdownState extends State<CustomDropdown> {
                 BoxShadow(
                   color: AppColors.primaryColor,
                   blurRadius: 5,
-                  offset: Offset(2, 2),
+                  offset: const Offset(2, 2),
                 ),
               ],
             ),
             scrollbarTheme: ScrollbarThemeData(
               thumbColor: WidgetStateProperty.all(AppColors.primaryColor),
-              radius: Radius.circular(8),
+              radius: const Radius.circular(8),
             ),
           ),
           buttonStyleData: ButtonStyleData(
-            height: AppStyles.heightS,
-            width: double.infinity,
+            height: dropdownHeight,
+            width: dropdownWidth,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: AppStyles.radiusM,
             ),
           ),
           menuItemStyleData: const MenuItemStyleData(
-            padding: AppStyles.paddingM,
+            padding: EdgeInsets.zero
           ),
         ),
       ),
