@@ -16,4 +16,12 @@ class AssetPath{
   static const String dashBoardIcon = '$_basePath/dashboard_icon.png';
   static const String menuIcon = '$_basePath/menu_icon.png';
   static const String arrowIcon = '$_basePath/arrow_icon.png';
+  static const String chemistryIcon = '$_basePath/chemistry_icon.png';
+  static const String physicsIcon = '$_basePath/physics_icon.png';
+  static const String biologyIcon = '$_basePath/biology_icon.png';
+  static const String mathIcon = '$_basePath/math_icon.png.png';
+  static const String menuImage = '$_basePath/menu_image.png';
+  static const String personIcon = '$_basePath/person_icon.svg';
+  static const String securityIcon = '$_basePath/security_icon.svg';
+  static const String languageIcon = '$_basePath/language_icon.svg';
 }
