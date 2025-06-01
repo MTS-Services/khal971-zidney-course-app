@@ -59,7 +59,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               height: AppStyles.screenHeightPercentage(context, 0.25),
               width: AppStyles.screenWidthPercentage(context, 0.55),
             ),
-            SizedBox(height: 15),
+            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.015)),
             CustomTextFormField(
               controller: userNameController,
               labelText: 'User Name',

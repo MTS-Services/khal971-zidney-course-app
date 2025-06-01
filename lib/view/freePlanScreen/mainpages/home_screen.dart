@@ -4,17 +4,35 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/view/freePlanScreen/Question & Quiz/topic_screen.dart';
+import 'package:zidney/view/widgets/all_subject_screen.dart';
+import 'package:zidney/view/widgets/topic_overview_card.dart';
 import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 import 'package:zidney/viewmodels/controller/progress_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
   final myController = Get.put(ProgressController());
+
+
+  List<String> icons = [
+    'assets/images/math_icon.png',
+    'assets/images/chemistry_icon.png',
+    'assets/images/biology_icon.png',
+    'assets/images/physics_icon.png',
+
+  ];
+
+  List<String> subjects = ['Math', 'Chemistry', 'Biology', 'Physics'];
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -82,86 +100,41 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: AppStyles.weightBold,
                   ),
                 ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
+                ),
                 Row(
                   children: [
-                    Stack(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            final navController = Get.find<BottomNavController>();
-                            navController.openWithChild(TopicScreen());
-                          },
-                          child: Card(
-                            child: Container(
-                              height: AppStyles.screenHeightPercentage(context, 0.361),
-                              width: AppStyles.screenWidthPercentage(context, 0.5133),
-                              decoration: BoxDecoration(
-                                color: AppColors.primaryColor,
-                                borderRadius: BorderRadius.circular(7),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.primaryShadow,
-                                    offset: const Offset(0, 10),
-                                  ),
-                                ],
-                              ),
-                              child: SvgPicture.asset(
-                                AssetPath.vectorBackground,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: AppStyles.paddingSymmetricXL,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset(AssetPath.arithMaticLogo),
-                              const SizedBox(height: 8),
-                              Text(
-                                'Advanced Math',
-                                style: TextStyle(
-                                  fontSize: AppStyles.fontXL,
-                                  fontWeight: AppStyles.weightRegular,
-                                  color: AppColors.chocolate,
-                                ),
-                              ),
-                              Text(
-                                'Chapter 1',
-                                style: TextStyle(
-                                  fontSize: AppStyles.fontXL,
-                                  fontWeight: AppStyles.weightRegular,
-                                  color: AppColors.chocolate,
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                'Total question 30',
-                                style: TextStyle(
-                                  color: AppColors.chocolate,
-                                  fontWeight: AppStyles.weightRegular,
-                                  fontSize: AppStyles.fontM,
-                                ),
-                              ),
-                              const SizedBox(height: 2),
-                              Text(
-                                'You are on: 7th',
-                                style: TextStyle(
-                                  color: AppColors.chocolate,
-                                  fontWeight: AppStyles.weightRegular,
-                                  fontSize: AppStyles.fontM,
-                                ),
-                              ),
-                              const SizedBox(height: 15),
-                              // Optional progress bar here
-                            ],
-                          ),
-                        ),
-                      ],
+                    TopicOverviewCard(
+                      logoPath: AssetPath.arithMaticLogo,
+                      backgroundPath: AssetPath.vectorBackground,
+                      title: 'Advanced Math',
+                      chapter: 'Chapter 1',
+                      totalQuestions: 30,
+                      currentQuestion: 7,
+                      onTap: () {
+                        final navController = Get.find<BottomNavController>();
+                        navController.openWithChild(TopicScreen());
+                      },
+                      onStartPressed: () {},
                     ),
+                    const SizedBox(width: 3),
                   ],
                 ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
+                ),
+                Text(
+                  'All Subjects',
+                  style: TextStyle(
+                    fontSize: AppStyles.fontL,
+                    fontWeight: AppStyles.weightBold,
+                  ),
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.011),
+                ),
+                AllSubjectScreen(icons: icons, subjects: subjects),
               ],
             ),
           ),
@@ -170,3 +143,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+

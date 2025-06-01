@@ -181,7 +181,7 @@ class _PersonalInfoState extends State<PersonalInfo2> {
                   buttonText: 'Save',
                   suffix: Icon(
                     Icons.double_arrow_outlined,
-                    color: Colors.white,
+                    color: Colors.white, 
                   ),
                 ),
               ],
