@@ -8,6 +8,7 @@ class CustomContainer extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final Color? shadowColor;
   final Color? backgroundColor;
+  final Widget? child;
 
   const CustomContainer({
     super.key,
@@ -16,6 +17,7 @@ class CustomContainer extends StatelessWidget {
     this.width,
     this.shadowColor = AppColors.primaryColor,
     this.backgroundColor = Colors.white,
+    this.child,
   });
 
   @override
@@ -25,12 +27,13 @@ class CustomContainer extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: AppStyles.radiusS,
-        border: Border.all(color: AppColors.primaryColor, width: 2),
+        borderRadius: borderRadius ?? AppStyles.radiusS,
+        border: Border.all(color: shadowColor ?? AppColors.primaryColor, width: 2),
         boxShadow: [
-          BoxShadow(color: AppColors.primaryColor, offset: const Offset(0, 10)),
+          BoxShadow(color: shadowColor ?? AppColors.primaryColor, offset: const Offset(0, 10)),
         ],
       ),
+      child: child,
     );
   }
 }
