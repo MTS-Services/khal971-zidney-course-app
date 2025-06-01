@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/question.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 
 import '../../../../utils/app_style.dart';
@@ -24,34 +27,60 @@ class PremiumScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
-              Center(child: SvgPicture.asset(
-                AssetPath.vector, width: 64, height: 64,)),
+              Center(
+                child: SvgPicture.asset(
+                  AssetPath.vector,
+                  width: 64,
+                  height: 64,
+                ),
+              ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
               Text("Zidney Premium ", style: AppTextStyle.bold20),
               Text("Starts at \$9.99 only", style: AppTextStyle.regular16),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.05)),
 
               featureRow(
-                  context, "Unlimited attempts", AssetPath.vectorInfinity),
+                context,
+                "Unlimited attempts",
+                AssetPath.vectorInfinity,
+              ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
 
               featureRow(
-                  context, "Access to all questions", AssetPath.accessIcon),
+                context,
+                "Access to all questions",
+                AssetPath.accessIcon,
+              ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
 
               featureRow(
-                  context, "Access to solutions", AssetPath.sulationIcon),
+                context,
+                "Access to solutions",
+                AssetPath.sulationIcon,
+              ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
 
               featureRow(context, "Priority support", AssetPath.priorityIcon),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.15)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
               CustomButton(
+                onTap: (){
+                  Get.to(()=>Question());
+                },
                 width: AppStyles.screenWidthPercentage(context, 0.4),
                 buttonText: "Get stared",
                 backgroundColor: AppColors.secondaryColor,
                 shadowColor: AppColors.secondaryShadow,
                 prefix: Image.asset(AssetPath.logInIcon),
-              )
+              ),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.2)),
+              TextButton.icon(onPressed: (){},
+                  label:Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Skip For Now", style: AppTextStyle.bold14,),
+                  Icon(Icons.double_arrow_outlined),
+                ],
+              ))
             ],
           ),
         ),
@@ -59,12 +88,13 @@ class PremiumScreen extends StatelessWidget {
     );
   }
 
-  Widget featureRow(BuildContext context,
-      String text,
-      String imageAssetPath, {
-        double iconWidth = 24,
-        TextStyle? textStyle,
-      }) {
+  Widget featureRow(
+    BuildContext context,
+    String text,
+    String imageAssetPath, {
+    double iconWidth = 24,
+    TextStyle? textStyle,
+  }) {
     final isSvg = imageAssetPath.toLowerCase().endsWith('.svg');
 
     return Padding(
@@ -76,7 +106,10 @@ class PremiumScreen extends StatelessWidget {
           isSvg
               ? SvgPicture.asset(imageAssetPath, width: iconWidth)
               : Image.asset(
-            imageAssetPath, width: iconWidth, height: iconWidth,),
+                imageAssetPath,
+                width: iconWidth,
+                height: iconWidth,
+              ),
           SizedBox(width: AppStyles.screenWidthPercentage(context, 0.03)),
           Text(text, style: textStyle ?? AppTextStyle.bold14),
         ],

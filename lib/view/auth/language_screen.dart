@@ -26,9 +26,11 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
+        showBottomImage: false,
         isScrollable: false,
         child: Column(
           children: [
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1),),
             SizedBox(height: AppStyles.heightS,),
             CustomLogo(
               subTitleText: 'The one you are comfortable with ',
