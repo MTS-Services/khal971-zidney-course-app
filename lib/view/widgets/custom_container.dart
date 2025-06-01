@@ -8,6 +8,7 @@ class CustomContainer extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final Color? shadowColor;
   final Color? backgroundColor;
+  final Widget? child;
 
   const CustomContainer({
     super.key,
@@ -16,11 +17,13 @@ class CustomContainer extends StatelessWidget {
     this.width,
     this.shadowColor = AppColors.primaryColor,
     this.backgroundColor = Colors.white,
+    this.child,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: child,
       height: height,
       width: width,
       decoration: BoxDecoration(
