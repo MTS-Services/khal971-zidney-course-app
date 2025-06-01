@@ -13,22 +13,28 @@ class Security extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appbar //
       appBar: CustomAppBar(
         title: "Sophie",
         showTitle: true,
         classTitle: "Class",
         showAction: false,
       ),
+
+      // body //
       body: AppBackground(
         showBottomImage: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // email feild //
               CustomTextFormField(
                 hintText: 'example@gmail.com',
                 labelText: 'Email',
               ),
+
+              // code & phone feild //
               Row(
                 children: [
                   SizedBox(
@@ -47,7 +53,11 @@ class Security extends StatelessWidget {
                   ),
                 ],
               ),
-              // SizedBox(height: 5),
+
+              // gap //
+              SizedBox(height: 5),
+
+              // button //
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +96,7 @@ class Security extends StatelessWidget {
                 hintText: '*******',
                 labelText: 'Confirm Password',
               ),
-
+              // button //
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,

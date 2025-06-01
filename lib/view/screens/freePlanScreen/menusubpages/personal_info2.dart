@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_style.dart';
+import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
@@ -10,14 +11,14 @@ import '../../../widgets/custom_container.dart';
 import '../../../widgets/custom_dropdown.dart';
 import '../../../widgets/custom_text_form_field.dart';
 
-class PersonalInfo extends StatefulWidget {
-  const PersonalInfo({super.key});
+class PersonalInfo2 extends StatefulWidget {
+  const PersonalInfo2({super.key});
 
   @override
-  State<PersonalInfo> createState() => _PersonalInfoState();
+  State<PersonalInfo2> createState() => _PersonalInfoState();
 }
 
-class _PersonalInfoState extends State<PersonalInfo> {
+class _PersonalInfoState extends State<PersonalInfo2> {
   final TextEditingController userNameController = TextEditingController();
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController birthDateController = TextEditingController();
@@ -41,6 +42,15 @@ class _PersonalInfoState extends State<PersonalInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appbar //
+      appBar: CustomAppBar(
+        showTitle: true,
+        title: "Sophie",
+        classTitle: "Class",
+        showAction: false,
+      ),
+
+      //body //
       body: AppBackground(
         showBottomImage: false,
         isScrollable: true,

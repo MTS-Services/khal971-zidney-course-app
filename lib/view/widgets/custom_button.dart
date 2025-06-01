@@ -15,6 +15,7 @@ class CustomButton extends StatelessWidget {
   final Color shadowColor;
   final BorderRadius borderRadius;
   final Color textColor;
+  final BoxBorder? border;
 
   const CustomButton({
     super.key,
@@ -29,6 +30,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.height,
     this.width,
+    this.border,
   });
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class CustomButton extends StatelessWidget {
           height: height,
           width: width,
           decoration: BoxDecoration(
+            border: border,
             color: backgroundColor,
             borderRadius: borderRadius,
             boxShadow: [
