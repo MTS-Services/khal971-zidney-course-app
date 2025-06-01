@@ -4,7 +4,6 @@ import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
-import 'package:zidney/view/widgets/custom_logo.dart';
 import 'package:zidney/view/widgets/custom_text_form_field.dart';
 
 class Security extends StatelessWidget {

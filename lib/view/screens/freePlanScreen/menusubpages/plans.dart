@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zidney/utils/app_colors.dart';
-import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
