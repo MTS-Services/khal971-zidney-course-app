@@ -35,6 +35,7 @@ class AssetPath{
   static const String question = '$_basePath/Question.png';
   static const String penPng = '$_basePath/Pen.png';
   static const String subjectImage = '$_basePath/subjectImage.png';
+  static const String uerImage = '$_basePath/userImage.png';
   static const String VectorRightAnswer = '$_basePath/vector_right_answer.svg';
   static const String cross = '$_basePath/cross.svg';
   static const String cross1 = '$_basePath/cross1.svg';

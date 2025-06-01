@@ -4,7 +4,6 @@ import 'package:zidney/utils/themdata.dart';
 import 'package:zidney/view/auth/language_screen.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/many_part_qustion.dart';
 
-
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
 
