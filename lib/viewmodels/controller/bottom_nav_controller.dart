@@ -9,8 +9,8 @@ class BottomNavController extends GetxController {
   final screens = [
     HomeScreen(),
     BookmarkScreen(),
-    MenuScreen(),
     DashboardScreen(),
+    MenuScreen(),
   ];
 
   var selectedIndex = 0.obs;

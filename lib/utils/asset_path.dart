@@ -20,6 +20,14 @@ class AssetPath{
   static const String priorityIcon = '$_basePath/priority.png';
   static const String sulationIcon = '$_basePath/sulation.png';
   static const String arrowIcon = '$_basePath/arrow_icon.png';
+  static const String chemistryIcon = '$_basePath/chemistry_icon.png';
+  static const String physicsIcon = '$_basePath/physics_icon.png';
+  static const String biologyIcon = '$_basePath/biology_icon.png';
+  static const String mathIcon = '$_basePath/math_icon.png.png';
+  static const String menuImage = '$_basePath/menu_image.png';
+  static const String personIcon = '$_basePath/person_icon.svg';
+  static const String securityIcon = '$_basePath/security_icon.svg';
+  static const String languageIcon = '$_basePath/language_icon.svg';
   static const String labelIcon = '$_basePath/label_icon.png';
   static const String bookmarkAddIcon = '$_basePath/bookmark_add.png';
   static const String filterIcon = '$_basePath/filter_icon.png';

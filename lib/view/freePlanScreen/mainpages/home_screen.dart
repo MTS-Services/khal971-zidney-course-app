@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/view/freePlanScreen/Question & Quiz/topic_screen.dart';
+import 'package:zidney/view/widgets/all_subject_screen.dart';
 import 'package:zidney/view/widgets/topic_overview_card.dart';
 import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 import 'package:zidney/viewmodels/controller/progress_controller.dart';
@@ -14,9 +16,23 @@ class HomeScreen extends StatelessWidget {
 
   final myController = Get.put(ProgressController());
 
+
+  List<String> icons = [
+    'assets/images/math_icon.png',
+    'assets/images/chemistry_icon.png',
+    'assets/images/biology_icon.png',
+    'assets/images/physics_icon.png',
+
+  ];
+
+  List<String> subjects = ['Math', 'Chemistry', 'Biology', 'Physics'];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -84,7 +100,9 @@ class HomeScreen extends StatelessWidget {
                     fontWeight: AppStyles.weightBold,
                   ),
                 ),
-                SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
+                ),
                 Row(
                   children: [
                     TopicOverviewCard(
@@ -98,13 +116,25 @@ class HomeScreen extends StatelessWidget {
                         final navController = Get.find<BottomNavController>();
                         navController.openWithChild(TopicScreen());
                       },
-                      onStartPressed: () {
-                      },
+                      onStartPressed: () {},
                     ),
+                    const SizedBox(width: 3),
                   ],
-                )
-
-
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
+                ),
+                Text(
+                  'All Subjects',
+                  style: TextStyle(
+                    fontSize: AppStyles.fontL,
+                    fontWeight: AppStyles.weightBold,
+                  ),
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.011),
+                ),
+                AllSubjectScreen(icons: icons, subjects: subjects),
               ],
             ),
           ),
@@ -113,3 +143,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
