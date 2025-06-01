@@ -6,10 +6,10 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 
-class WrongAnswer extends StatelessWidget {
+class WrongAnsLimit extends StatelessWidget {
   final TextEditingController answerController;
   final Function(String) onSubmit;
-  const WrongAnswer({
+  const WrongAnsLimit({
     super.key,
     required this.answerController,
     required this.onSubmit,
@@ -36,7 +36,7 @@ class WrongAnswer extends StatelessWidget {
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
           SvgPicture.asset(AssetPath.cross1),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02),),
-          Text('Oops... that was wrong',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),),
+          Text('You have reached your   attempts limit',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.03),),
 
           TextField(
@@ -79,12 +79,9 @@ class WrongAnswer extends StatelessWidget {
             children: [
               Expanded(
                 child: CustomButton(
-                  border: Border.all(color: AppColors.red),
-                  backgroundColor: AppColors.navigationColor,
-                  shadowColor: AppColors.red,
-                  suffix: SvgPicture.asset(AssetPath.cross, width: 24, height: 24),
-                  buttonText: "Close",
-                  textColor: AppColors.blackColor,
+                  prefix: Image.asset(AssetPath.penPng, width: 24, height: 24),
+                  buttonText: "Show Again",
+                  textColor: AppColors.whiteColor,
                   onTap: () {
                     onSubmit(answerController.text);
                   },
@@ -93,8 +90,10 @@ class WrongAnswer extends StatelessWidget {
               SizedBox(width: 20),
               Expanded(
                 child: CustomButton(
-                  prefix: Image.asset(AssetPath.penPng, width: 24, height: 24),
-                  buttonText: "Try Again",
+                  backgroundColor: AppColors.secondaryColor,
+                  shadowColor: AppColors.secondaryShadow,
+                  prefix: Image.asset(AssetPath.logInIcon, width: 24, height: 24),
+                  buttonText: "Try Premium",
                   textColor: AppColors.whiteColor,
                   onTap: () {
                     onSubmit(answerController.text);
