@@ -33,7 +33,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppStyles.paddingS,
+      padding: AppStyles.paddingVerticalL,
       child: GestureDetector(
         onTap: onTap,
         child: Container(
