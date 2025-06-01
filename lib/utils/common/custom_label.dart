@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/utils/styles/app_text_styles.dart';
 
 class CustomLabel extends StatelessWidget {
   const CustomLabel({
@@ -24,10 +25,7 @@ class CustomLabel extends StatelessWidget {
           spacing: 20,
           children: [
             Image.asset(image, scale: 4),
-            Text(
-              text,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
+            Text(text, style: AppTextStyle.bold16),
           ],
         ),
         if (showfilter) Image.asset(AssetPath.filterIcon, scale: 4),

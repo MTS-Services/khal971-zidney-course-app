@@ -14,7 +14,6 @@ class CustomContainer extends StatelessWidget {
   final Color? shadowColor;
 
   final Color? backgroundColor;
-
   final Widget? child;
 
   const CustomContainer({
@@ -29,7 +28,6 @@ class CustomContainer extends StatelessWidget {
     this.shadowColor = AppColors.primaryColor,
 
     this.backgroundColor = Colors.white,
-
     this.child,
   });
 
@@ -42,22 +40,12 @@ class CustomContainer extends StatelessWidget {
 
       decoration: BoxDecoration(
         color: backgroundColor,
-
         borderRadius: borderRadius ?? AppStyles.radiusS,
-
-        border: Border.all(
-          color: shadowColor ?? AppColors.primaryColor,
-          width: 2,
-        ),
-
+        border: Border.all(color: shadowColor ?? AppColors.primaryColor, width: 2),
         boxShadow: [
-          BoxShadow(
-            color: shadowColor ?? AppColors.primaryColor,
-            offset: const Offset(0, 10),
-          ),
+          BoxShadow(color: shadowColor ?? AppColors.primaryColor, offset: const Offset(0, 10)),
         ],
       ),
-
       child: child,
     );
   }

@@ -78,16 +78,21 @@ class TopicOverviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Provide default sizes if null
-    final double defaultHeight = height ?? AppStyles.screenHeightPercentage(context, 0.355);
-    final double defaultWidth = width ?? AppStyles.screenWidthPercentage(context, 0.5133);
-    final EdgeInsetsGeometry defaultPadding = padding ?? AppStyles.paddingSymmetricXL;
+    final double defaultHeight =
+        height ?? AppStyles.screenHeightPercentage(context, 0.355);
+    final double defaultWidth =
+        width ?? AppStyles.screenWidthPercentage(context, 0.5133);
+    final EdgeInsetsGeometry defaultPadding =
+        padding ?? AppStyles.paddingSymmetricXL;
     final double defaultTitleFontSize = titleFontSize ?? AppStyles.fontXL;
     final double defaultChapterFontSize = chapterFontSize ?? AppStyles.fontXL;
     final double defaultQuestionFontSize = questionFontSize ?? AppStyles.fontM;
-    final double defaultButtonWidth = buttonWidth ?? AppStyles.screenWidthPercentage(context, 0.4);
+    final double defaultButtonWidth =
+        buttonWidth ?? AppStyles.screenWidthPercentage(context, 0.4);
     final double defaultButtonHeight = buttonHeight ?? 40;
     final double defaultButtonFontSize = buttonFontSize ?? AppStyles.fontM;
-    final BorderRadiusGeometry defaultButtonBorderRadius = buttonBorderRadius ?? BorderRadius.circular(40);
+    final BorderRadiusGeometry defaultButtonBorderRadius =
+        buttonBorderRadius ?? BorderRadius.circular(40);
 
     return SizedBox(
       height: defaultHeight,
@@ -126,7 +131,8 @@ class TopicOverviewCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   title,
-                  style: titleTextStyle ??
+                  style:
+                      titleTextStyle ??
                       TextStyle(
                         fontSize: defaultTitleFontSize,
                         fontWeight: AppStyles.weightRegular,
@@ -135,7 +141,8 @@ class TopicOverviewCard extends StatelessWidget {
                 ),
                 Text(
                   chapter,
-                  style: chapterTextStyle ??
+                  style:
+                      chapterTextStyle ??
                       TextStyle(
                         fontSize: defaultChapterFontSize,
                         fontWeight: AppStyles.weightRegular,
@@ -145,7 +152,8 @@ class TopicOverviewCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Total question $totalQuestions',
-                  style: questionTextStyle ??
+                  style:
+                      questionTextStyle ??
                       TextStyle(
                         color: AppColors.chocolate,
                         fontWeight: AppStyles.weightRegular,
@@ -155,7 +163,8 @@ class TopicOverviewCard extends StatelessWidget {
                 const SizedBox(height: 2),
                 Text(
                   'You are on: $currentQuestion${_ordinal(currentQuestion)}',
-                  style: questionTextStyle ??
+                  style:
+                      questionTextStyle ??
                       TextStyle(
                         color: AppColors.chocolate,
                         fontWeight: AppStyles.weightRegular,
@@ -163,8 +172,13 @@ class TopicOverviewCard extends StatelessWidget {
                       ),
                 ),
                 const SizedBox(height: 20),
-                 CustomProgressbar(),
-                SizedBox(height: AppStyles.screenHeightPercentage(context, 0.04)),
+                CustomProgressBar(
+                  backgroundColor: Colors.grey.shade300,
+                  progressColor: Colors.amber,
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.04),
+                ),
                 CustomButton(
                   buttonText: 'Start Practice',
                   backgroundColor: AppColors.whiteColor,
@@ -173,8 +187,8 @@ class TopicOverviewCard extends StatelessWidget {
                   height: buttonHeight ?? defaultButtonHeight,
                   textColor: AppColors.chocolate,
                   shadowColor: AppColors.whiteColor.withAlpha(130),
-                  suffix: Image.asset(AssetPath.arrowIcon), onTap: () {  },
-
+                  suffix: Image.asset(AssetPath.arrowIcon),
+                  onTap: () {},
                 ),
               ],
             ),

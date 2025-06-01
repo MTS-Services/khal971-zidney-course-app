@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/themdata.dart';
-import 'package:zidney/view/freePlanScreen/mainpages/main_bottom_nav_screen.dart';
+import 'package:zidney/view/auth/language_screen.dart';
+
 
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
@@ -10,7 +11,7 @@ class Zidney extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainBottomNavScreen(),
+      home: LanguageScreen(),
       theme: themData(),
     );
   }

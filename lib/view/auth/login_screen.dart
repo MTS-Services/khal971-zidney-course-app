@@ -6,6 +6,7 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/auth/create_account_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 
+import '../freePlanScreen/mainpages/main_bottom_nav_screen.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_logo.dart';
 import '../widgets/custom_text_form_field.dart';
@@ -16,6 +17,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
+        showBgImage: true,
         isScrollable: true,
         child: SingleChildScrollView(
           child: Column(
@@ -33,15 +35,16 @@ class LoginScreen extends StatelessWidget {
                 labelText: 'Email',
               ),
               CustomTextFormField(hintText: '*******', labelText: 'Password'),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-          
+                  Get.to(()=>MainBottomNavScreen());
                 },
                 buttonText: 'Login',
                 prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.30)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.23)),
               CustomButton(
                 onTap: () {
                   Get.to(()=>CreateAccountScreen());
