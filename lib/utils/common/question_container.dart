@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/utils/common/practice_button.dart';
 
 import '../../view/widgets/custom_progress_bar.dart';
 import '../app_colors.dart';
@@ -11,13 +13,15 @@ class QuestionContainer extends StatelessWidget {
     required this.subTitle,
     this.imageIcon = '',
     this.showIcon = false,
-    required this.trailIcon,
+    this.trailIcon = AssetPath.labelIcon,
+    this.showTrailIcon = true,
   });
   final String title;
   final String subTitle;
   final String imageIcon;
   final bool showIcon;
   final String trailIcon;
+  final bool showTrailIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +59,17 @@ class QuestionContainer extends StatelessWidget {
                   ),
                 ],
               ),
-              Image.asset(trailIcon, scale: 4),
+              showTrailIcon
+                  ? Image.asset(trailIcon, scale: 4)
+                  : PracticeButton(
+                    showText: true,
+                    buttonText: 'Practice',
+                    showMoreShadow: true,
+                    buttonColor: AppColors.primaryColor,
+                    shadowColor: AppColors.primaryShadow,
+                    textColor: AppColors.whiteColor,
+                    iconColor: AppColors.whiteColor,
+                  ),
             ],
           ),
         ),
