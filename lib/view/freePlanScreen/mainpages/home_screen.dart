@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
+                ),//added some comment
                 SizedBox(
                   height: AppStyles.screenHeightPercentage(context, 0.015),
                 ),
