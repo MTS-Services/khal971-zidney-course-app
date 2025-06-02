@@ -97,7 +97,7 @@ class ManyPartQuestion extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) => WrongAnsLimit(
+      builder: (context) => RightAnswer(
         answerController: answerController,
         onSubmit: (answer) {
           print('Answer Submitted: $answer');

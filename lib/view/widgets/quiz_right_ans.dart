@@ -7,10 +7,10 @@ import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 import 'package:zidney/view/widgets/details_ans_check_progress_bar.dart';
 
-class RightAnswer extends StatelessWidget {
+class QuizRightAns extends StatelessWidget {
   final TextEditingController answerController;
   final Function(String) onSubmit;
-  const RightAnswer({
+  const QuizRightAns({
     super.key,
     required this.answerController,
     required this.onSubmit,
@@ -44,43 +44,12 @@ class RightAnswer extends StatelessWidget {
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.03),),
 
 
-          TextField(
-            maxLines: 5,
-            controller: answerController,
-            decoration: InputDecoration(
-              hintText: 'Your answer',
-              contentPadding:
-              const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen, width: 2),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen, width: 2),
-              ),
-              disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: const BorderSide(color: AppColors.buttonGreen),
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text('How close was your answer?',style: AppTextStyle.regular16,textAlign: TextAlign.left,),
-          const SizedBox(height: 16),
-          DetailsAnsCheckProgressBar(totalSteps: 4, currentSteps: 3),
+          CustomButton(buttonText: 'Essential molecules.',
+          backgroundColor: Colors.white,
+          shadowColor: AppColors.buttonGreenShadow,
+          textColor: AppColors.blackColor,
+          border: Border.all(color: AppColors.primaryColor),
+          width: double.infinity,),
           const SizedBox(height: 16),
           CustomButton(
             backgroundColor: AppColors.buttonGreen,
