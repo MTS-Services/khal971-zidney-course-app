@@ -5,7 +5,7 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/view/freePlanScreen/Question & Quiz/topic_screen.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/topic_screen.dart';
 import 'package:zidney/view/widgets/all_subject_screen.dart';
 import 'package:zidney/view/widgets/topic_overview_card.dart';
 import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
