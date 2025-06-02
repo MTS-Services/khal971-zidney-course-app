@@ -40,20 +40,6 @@ class AnswerBottomSheet extends StatelessWidget {
                 hintText: 'Your answer',
                 contentPadding:
                 const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(
-                    color: Colors.amber.shade700,
-                    width: 2,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(
-                    color: Colors.amber.shade900,
-                    width: 2,
-                  ),
-                ),
               ),
             ),
           ),

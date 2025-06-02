@@ -4,17 +4,17 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/question_container.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
+import '../../../../utils/app_style.dart';
+import '../../../../utils/common/custom_label.dart';
 
-import '../../../utils/app_style.dart';
-
-class BookmarkScreen extends StatefulWidget {
-  const BookmarkScreen({super.key});
+class AllQuiz extends StatefulWidget {
+  const AllQuiz({super.key});
 
   @override
-  State<BookmarkScreen> createState() => _BookmarkScreenState();
+  State<AllQuiz> createState() => _AllQuizState();
 }
 
-class _BookmarkScreenState extends State<BookmarkScreen> {
+class _AllQuizState extends State<AllQuiz> {
   bool isSelected = true;
 
   @override
@@ -28,20 +28,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
           children: [
             Row(
               children: [
-                Image.asset(AssetPath.bookmarkAddIcon, scale: 4),
-                SizedBox(
-                  width: AppStyles.screenWidthPercentage(context, 0.078),
-                ),
-                Text(
-                  'Bookmarks',
-                  style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontWeight: AppStyles.weightBold,
-                    fontSize: AppStyles.fontL,
-                  ),
-                ),
-                Spacer(),
-                Image.asset(AssetPath.filterImage, scale: 4),
+                CustomLabel(image: AssetPath.labelIcon, text: 'Life Sciences'),
               ],
             ),
             SizedBox(
@@ -57,17 +44,17 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                       });
                     },
                     backgroundColor:
-                        isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
+                    isSelected
+                        ? AppColors.primaryColor
+                        : AppColors.primaryLightColor,
                     shadowColor:isSelected
                         ? AppColors.primaryShadow
                         : AppColors.primaryLightColor ,
                     buttonText: 'Questions',
                     textColor:
-                        isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.question, scale: 9),
                   ),
                 ),
@@ -80,17 +67,17 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     },
                     buttonText: 'Quiz',
                     backgroundColor:
-                        !isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
+                    !isSelected
+                        ? AppColors.primaryColor
+                        : AppColors.primaryLightColor,
                     shadowColor:
                     !isSelected
                         ? AppColors.primaryShadow
                         : AppColors.primaryLightColor,
                     textColor:
-                        !isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    !isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.quizImage, scale: 3),
                   ),
                 ),
@@ -104,7 +91,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   itemBuilder: (context,index){
                     return QuestionContainer(title: 'What are the building block of life?',
                         subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
+                    );
                   }),
             )
           ],
