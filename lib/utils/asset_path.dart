@@ -35,4 +35,7 @@ class AssetPath{
   static const String question = '$_basePath/Question.png';
   static const String penPng = '$_basePath/Pen.png';
   static const String subjectImage = '$_basePath/subjectImage.png';
+  static const String filterImage = '$_basePath/filter.png';
+  static const String quizImage = '$_basePath/quiz_icon.png';
+  static const String circleCorrectImage = '$_basePath/circle_correction.png';
 }

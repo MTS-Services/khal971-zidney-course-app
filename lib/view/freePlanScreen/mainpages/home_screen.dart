@@ -22,7 +22,6 @@ class HomeScreen extends StatelessWidget {
     'assets/images/chemistry_icon.png',
     'assets/images/biology_icon.png',
     'assets/images/physics_icon.png',
-
   ];
 
   List<String> subjects = ['Math', 'Chemistry', 'Biology', 'Physics'];
