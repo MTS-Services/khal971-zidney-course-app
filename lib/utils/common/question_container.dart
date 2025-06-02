@@ -13,6 +13,7 @@ class QuestionContainer extends StatelessWidget {
     this.showIcon = false,
     required this.trailIcon,
   });
+
   final String title;
   final String subTitle;
   final String imageIcon;
@@ -35,6 +36,7 @@ class QuestionContainer extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(bottom: 10),
           padding: EdgeInsets.all(15),
+
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade400, width: 1),
             borderRadius: BorderRadius.circular(10),

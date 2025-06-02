@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
 
   final myController = Get.put(ProgressController());
 
-
   List<String> icons = [
     'assets/images/math_icon.png',
     'assets/images/chemistry_icon.png',
@@ -26,12 +25,17 @@ class HomeScreen extends StatelessWidget {
 
   List<String> subjects = ['Math', 'Chemistry', 'Biology', 'Physics'];
 
-
+  List<String> courseName = [
+    'Life Sciences',
+    'Physical Sciences',
+    'Chemical Sciences',
+    'Literature Studies',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(showTitle: true,),
+      appBar: CustomAppBar(showTitle: true),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -124,6 +128,20 @@ class HomeScreen extends StatelessWidget {
                   height: AppStyles.screenHeightPercentage(context, 0.015),
                 ),
                 Text(
+                  'All',
+                  style: TextStyle(
+                    fontSize: AppStyles.fontL,
+                    fontWeight: AppStyles.weightBold,
+                  ),
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.011),
+                ),
+
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
+                ),
+                Text(
                   'All Subjects',
                   style: TextStyle(
                     fontSize: AppStyles.fontL,
@@ -142,5 +160,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

@@ -61,7 +61,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
                     shadowColor:isSelected
-                        ? AppColors.primaryColor
+                        ? AppColors.primaryShadow
                         : AppColors.primaryLightColor ,
                     buttonText: 'Questions',
                     textColor:
@@ -85,7 +85,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             : AppColors.primaryLightColor,
                     shadowColor:
                     !isSelected
-                        ? AppColors.primaryColor
+                        ? AppColors.primaryShadow
                         : AppColors.primaryLightColor,
                     textColor:
                         !isSelected
