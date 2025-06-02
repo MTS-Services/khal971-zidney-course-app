@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zidney/utils/app_style.dart';
+
+import '../../utils/asset_path.dart';
 
 class CustomLogo extends StatelessWidget {
   final String? titleText;
@@ -12,18 +15,19 @@ class CustomLogo extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 70,
-          width: 70,
-          child: Image.asset('assets/images/logo.png'),
+          height: AppStyles.heightL,
+          width: AppStyles.widthL,
+          child: Image.asset(AssetPath.appLogo),
         ),
         SizedBox(height: 10),
         Text(
           titleText!,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: AppStyles.fontM, fontWeight: AppStyles.weightBold,),
         ),
         Text(
           subTitleText!,
-          style: TextStyle(fontSize: 14,),
+          style: TextStyle(fontSize: AppStyles.fontM,),
         ),
       ],
     );

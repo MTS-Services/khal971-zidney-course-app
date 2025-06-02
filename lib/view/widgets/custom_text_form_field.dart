@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/app_style.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String? hintText;
@@ -8,28 +9,33 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final String? Function(String?)? validator;
+  final EdgeInsetsGeometry? contentPadding;
 
   const CustomTextFormField({
     super.key,
     this.hintText,
+    this.labelText,
     this.controller,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.validator,
-    this.labelText,
+    this.contentPadding,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: AppStyles.paddingSymmetricM,
       child: Container(
-        height: 45,
+        height: AppStyles.heightL,
         width: double.infinity,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: AppStyles.radiusS,
           boxShadow: [
-            BoxShadow(color: AppColors.primaryColor, offset: const Offset(0, 10)),
+            BoxShadow(
+              color: AppColors.primaryColor,
+              offset: const Offset(0, 4),
+            ),
           ],
         ),
         child: TextFormField(
@@ -40,9 +46,23 @@ class CustomTextFormField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             labelText: labelText,
+            contentPadding: contentPadding ?? AppStyles.paddingS,
             labelStyle: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontWeight: AppStyles.weightBold,
               color: Colors.black,
+              fontSize: AppStyles.fontM,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: AppStyles.radiusS,
+              borderSide: BorderSide(color: AppColors.primaryColor),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: AppStyles.radiusS,
+              borderSide: BorderSide(color: AppColors.primaryColor),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: AppStyles.radiusS,
+              borderSide: BorderSide(color: AppColors.primaryColor, width: 2),
             ),
           ),
         ),
