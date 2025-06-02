@@ -19,6 +19,7 @@ class SubjectContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Color(0xffFCC962),

@@ -31,24 +31,24 @@ class HomeScreen extends StatelessWidget {
         title: 'Sophie',
         classTitle: 'Class 10',
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: AppStyles.paddingSymmetricXL,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CustomPremiumCotainer(),
-              const SizedBox(height: 20),
-              CustomLabel(text: 'Last Practiced Chapter', showImage: false),
-              SizedBox(height: 15),
-              SizedBox(
-                height: 350,
-                child: Row(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: AppStyles.paddingSymmetricXL,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomPremiumCotainer(),
+                const SizedBox(height: 20),
+                CustomLabel(text: 'Last Practiced Chapter', showImage: false),
+                SizedBox(height: 15),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Flexible(
-                      flex: 2,
+                      flex: 8,
                       child: TopicOverviewCard(
                         chapter: '1',
                         classNum: '10',
@@ -59,15 +59,16 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Flexible(
-                      flex: 1,
+                      flex: 4,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           SubjectContainer(
                             subject: 'Life Science',
                             chapter: '1',
                             classNum: '10',
                           ),
-                          SizedBox(height: 10),
                           SubjectContainer(
                             subject: 'Life Science',
                             chapter: '1',
@@ -78,22 +79,22 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: AppStyles.screenHeightPercentage(context, 0.015),
-              ),
-              Text(
-                'All Subjects',
-                style: TextStyle(
-                  fontSize: AppStyles.fontL,
-                  fontWeight: AppStyles.weightBold,
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.015),
                 ),
-              ),
-              SizedBox(
-                height: AppStyles.screenHeightPercentage(context, 0.011),
-              ),
-              // AllSubjectScreen(icons: icons, subjects: subjects),
-            ],
+                Text(
+                  'All Subjects',
+                  style: TextStyle(
+                    fontSize: AppStyles.fontL,
+                    fontWeight: AppStyles.weightBold,
+                  ),
+                ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.011),
+                ),
+                // AllSubjectScreen(icons: icons, subjects: subjects),
+              ],
+            ),
           ),
         ),
       ),

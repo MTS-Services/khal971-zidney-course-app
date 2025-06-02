@@ -27,7 +27,6 @@ class TopicOverviewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 10),
-      padding: EdgeInsets.all(17),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Color(0xffFCC962),
@@ -39,58 +38,62 @@ class TopicOverviewCard extends StatelessWidget {
             Positioned.fill(
               child: Image.asset(AssetPath.containerBack, fit: BoxFit.cover),
             ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SvgPicture.asset(
-                    AssetPath.arithMaticLogo,
-                    height: 48,
-                    width: 48,
+          Padding(
+            padding: const EdgeInsets.all(17),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SvgPicture.asset(
+                      AssetPath.arithMaticLogo,
+                      height: 48,
+                      width: 48,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
+                Text(
+                  subject,
+                  style: AppTextStyle.regular20.apply(
+                    color: AppColors.chocolate,
+                    fontSizeFactor: 1.3,
                   ),
-                ],
-              ),
-              SizedBox(height: 10),
-              Text(
-                subject,
-                style: AppTextStyle.regular20.apply(
-                  color: AppColors.chocolate,
-                  fontSizeFactor: 1.3,
                 ),
-              ),
-              Text(
-                'chapter $chapter',
-                style: AppTextStyle.regular20.apply(
-                  color: AppColors.chocolate,
-                  fontSizeFactor: 1.3,
+                Text(
+                  'chapter $chapter',
+                  style: AppTextStyle.regular20.apply(
+                    color: AppColors.chocolate,
+                    fontSizeFactor: 1.3,
+                  ),
                 ),
-              ),
-              SizedBox(height: 30),
-              Text(
-                'Total question:$totalQuestion',
-                style: AppTextStyle.regular14.apply(
-                  color: AppColors.chocolate,
-                  fontSizeFactor: 1.2,
+                SizedBox(height: 30),
+                Text(
+                  'Total question:$totalQuestion',
+                  style: AppTextStyle.regular14.apply(
+                    color: AppColors.chocolate,
+                    fontSizeFactor: 1.2,
+                  ),
                 ),
-              ),
-              Text(
-                'You are on:${classNum}th',
-                style: AppTextStyle.regular14.apply(
-                  color: AppColors.chocolate,
-                  fontSizeFactor: 1.2,
+                Text(
+                  'You are on:${classNum}th',
+                  style: AppTextStyle.regular14.apply(
+                    color: AppColors.chocolate,
+                    fontSizeFactor: 1.2,
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              CustomProgressBar(
-                backgroundColor: AppColors.whiteColor,
-                progressColor: AppColors.blackColor,
-              ),
-              SizedBox(height: 35),
-              PracticeButton(showText: showButtonText),
-            ],
+                SizedBox(height: 15),
+                CustomProgressBar(
+                  backgroundColor: AppColors.whiteColor,
+                  progressColor: AppColors.blackColor,
+                ),
+                SizedBox(height: 35),
+                PracticeButton(showText: showButtonText),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ],
       ),

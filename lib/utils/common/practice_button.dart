@@ -9,7 +9,6 @@ class PracticeButton extends StatelessWidget {
     this.hasRadius = true,
     this.showMoreShadow = false,
   });
-
   final bool showText;
   final bool hasRadius;
   final bool showMoreShadow;
@@ -18,37 +17,33 @@ class PracticeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       decoration: BoxDecoration(
+        // Apply circular shape when no text is shown, or rounded corners when text is present
         borderRadius:
             hasRadius
-                ? BorderRadius.circular(showText ? 40 : 50)
+                ? BorderRadius.circular(
+                  showText ? 40 : 50,
+                ) // larger circle when no text
                 : BorderRadius.zero,
         color: AppColors.whiteColor,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, showMoreShadow ? 5 : 3),
-            color: const Color(0xffF0E4DE),
-          ),
-        ],
+        boxShadow:
+            showMoreShadow
+                ? [BoxShadow(offset: Offset(0, 5), color: Color(0xffF0E4DE))]
+                : [BoxShadow(offset: Offset(0, 3), color: Color(0xffF0E4DE))],
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min, // Prevent overflow
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (showText)
-            Flexible(
-              child: Text(
-                'Start Practice',
-                style: AppTextStyle.bold14.apply(
-                  fontSizeFactor: 1.3,
-                  color: AppColors.chocolate,
-                ),
-                overflow: TextOverflow.ellipsis, // Avoid overflow
+            Text(
+              'Start Practice',
+              style: AppTextStyle.bold14.apply(
+                fontSizeFactor: 1.3,
+                color: AppColors.chocolate,
               ),
             ),
-          const SizedBox(width: 6), // Spacing between text and icon
-          const Icon(Icons.double_arrow_sharp),
+          Icon(Icons.double_arrow_sharp),
         ],
       ),
     );
