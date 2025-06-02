@@ -22,7 +22,6 @@ class HomeScreen extends StatelessWidget {
     'assets/images/chemistry_icon.png',
     'assets/images/biology_icon.png',
     'assets/images/physics_icon.png',
-
   ];
 
   List<String> subjects = ['Math', 'Chemistry', 'Biology', 'Physics'];
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(showTitle: true,),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(

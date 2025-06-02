@@ -19,7 +19,7 @@ class MenuScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.09)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.01)),
               CustomContainer(
                 height: AppStyles.screenHeightPercentage(context, 0.228),
                 width: AppStyles.screenWidthPercentage(context, .490),

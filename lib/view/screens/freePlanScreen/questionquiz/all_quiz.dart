@@ -4,6 +4,8 @@ import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/custom_label.dart';
 import 'package:zidney/utils/common/question_container.dart';
 
+import '../../../widgets/custom_container.dart';
+
 class AllQuiz extends StatelessWidget {
   const AllQuiz({super.key});
 
@@ -34,11 +36,11 @@ class AllQuiz extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: 30,
                     itemBuilder: (_, index) {
-                      return CustomContainer(
+                      /*return CustomContainer(
                         title: 'Biological Exploration',
                         subTitle: 'You are on : 10th',
                         trailIcon: AssetPath.finishIcon,
-                      );
+                      );*/
                     },
                   ),
                 ),

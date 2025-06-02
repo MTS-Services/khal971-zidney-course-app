@@ -4,8 +4,8 @@ import '../../view/widgets/custom_progress_bar.dart';
 import '../app_colors.dart';
 import '../styles/app_text_styles.dart';
 
-class CustomContainer extends StatelessWidget {
-  const CustomContainer({
+class QuestionContainer extends StatelessWidget {
+  const QuestionContainer({
     super.key,
     required this.title,
     required this.subTitle,
