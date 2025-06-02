@@ -14,48 +14,43 @@ class AllSubjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      itemCount: 4,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4),
-          child: Container(
-            width: double.infinity,
-            height: AppStyles.screenHeightPercentage(
-              context,
-              0.055,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: AppColors.grey,
-                width: 1,
-                style: BorderStyle.solid,
+    return Expanded(
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Container(
+              width: double.infinity,
+              height: AppStyles.screenHeightPercentage(context, 0.055),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: AppColors.grey,
+                  width: 1,
+                  style: BorderStyle.solid,
+                ),
+              ),
+              child: Row(
+                children: [
+                  SizedBox(width: 16),
+                  Image.asset(icons[index], height: 30, width: 30),
+                  SizedBox(width: 16),
+                  Text(
+                    subjects[index],
+                    style: TextStyle(
+                      fontWeight: AppStyles.weightMedium,
+                      fontSize: AppStyles.fontM,
+                    ),
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              children: [
-                SizedBox(width: 16),
-                Image.asset(
-                  icons[index],
-                  height: 30,
-                  width: 30,
-                ),
-                SizedBox(width: 16),
-                Text(
-                  subjects[index],
-                  style: TextStyle(
-                    fontWeight: AppStyles.weightMedium,
-                    fontSize: AppStyles.fontM,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

@@ -34,7 +34,7 @@ class TopicScreen extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: 30,
                     itemBuilder: (_, index) {
-                      return CustomContainer(
+                      return QuestionContainer(
                         title: 'Biological Exploration',
                         subTitle: 'You are on : 10th',
                         trailIcon: AssetPath.finishIcon,

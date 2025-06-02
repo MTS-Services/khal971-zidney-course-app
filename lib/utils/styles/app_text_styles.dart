@@ -92,7 +92,7 @@ abstract class AppTextStyle {
   // Bold 14
   static const TextStyle bold14 = TextStyle(
     fontFamily: 'Futura',
-    fontSize: 18,
+    fontSize: 14,
     height: 1.2,
     fontWeight: FontWeight.w700,
   );

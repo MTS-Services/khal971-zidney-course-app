@@ -43,17 +43,14 @@ class CustomButton extends StatelessWidget {
             color: backgroundColor,
             borderRadius: borderRadius,
             boxShadow: [
-              BoxShadow(
-                color:shadowColor,
-                offset: const Offset(0, 10),
-              ),
+              BoxShadow(color: shadowColor, offset: const Offset(0, 10)),
             ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (prefix != null) ...[prefix!,],
+              if (prefix != null) ...[prefix!],
               Padding(
                 padding: AppStyles.paddingM,
                 child: Text(
@@ -65,7 +62,7 @@ class CustomButton extends StatelessWidget {
                   ),
                 ),
               ),
-              if (suffix != null) ...[ suffix!],
+              if (suffix != null) ...[suffix!],
             ],
           ),
         ),
@@ -73,4 +70,3 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
-

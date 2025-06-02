@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/themdata.dart';
 import 'package:zidney/view/auth/language_screen.dart';
 
-
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
 
