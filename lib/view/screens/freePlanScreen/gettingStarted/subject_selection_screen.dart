@@ -35,7 +35,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
       if (selectedSubjects.contains(subject)) {
         selectedSubjects.remove(subject);
       } else {
-        if (selectedSubjects.length < 5) {
+        if (selectedSubjects.length <= 5) {
           selectedSubjects.add(subject);
         }
       }
@@ -44,16 +44,16 @@ class _SubjectSelectionState extends State<SubjectSelection> {
 
   @override
   Widget build(BuildContext context) {
-    bool isReadyToStart = selectedSubjects.length >= 4;
+    bool isReadyToStart = selectedSubjects.length >= 5;
 
     return Scaffold(
       body: AppBackground(
         showBottomImage: false,
-        child:  SingleChildScrollView(
-          child: Center(
+        child:  Center(
+          child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height:AppStyles.screenHeightPercentage(context, 0.1), ),
+                SizedBox(height:AppStyles.screenHeightPercentage(context, 0.03),),
                 CustomLogo(
                   titleText: 'Welcome to Zidney',
                   subTitleText: 'Pick 5 courses to get started!',

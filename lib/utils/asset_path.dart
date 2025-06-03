@@ -46,5 +46,6 @@ class AssetPath{
   static const String ad = '$_basePath/ad.png';
   static const String profileLogo = '$_basePath/profile_logo.svg';
   static const String imageAddIcon = '$_basePath/image_add_icon.svg';
+  static const String calenderIcon = '$_basePath/calender_icon.svg';
 
 }

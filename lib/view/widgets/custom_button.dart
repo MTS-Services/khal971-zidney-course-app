@@ -35,7 +35,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppStyles.paddingVerticalL,
+      padding: AppStyles.paddingVerticalM,
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -46,7 +46,7 @@ class CustomButton extends StatelessWidget {
             color: backgroundColor,
             borderRadius: borderRadius,
             boxShadow: [
-              BoxShadow(color: shadowColor, offset: const Offset(0, 10)),
+              BoxShadow(color: shadowColor, offset: const Offset(0, 12)),
             ],
           ),
           child: Row(

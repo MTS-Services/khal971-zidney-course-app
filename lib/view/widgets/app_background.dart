@@ -18,31 +18,39 @@ class AppBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget backgroundImage = Positioned.fill(
-      child: Image.asset(
-        showBgImage ? AssetPath.appBackgroundSvg : AssetPath.appBackgroundtow,
-        fit: BoxFit.cover,
+    final Widget backgroundImage = SingleChildScrollView(
+      child: Positioned.fill(
+        child: Column(
+          children: [
+            Stack(
+              children: [Image.asset(
+                showBgImage ? AssetPath.appBackgroundSvg : AssetPath.appBackgroundtow,
+                fit: BoxFit.fill, 
+              ),
+                if (showBottomImage)
+                  Positioned(
+                    bottom: 70,
+                    left: 0,
+                    right: 0,
+                    child: Image.asset(
+                      AssetPath.topBackgroundSvg,
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+              ]
+            ),
+          ],
+        ),
       ),
     );
 
     return Stack(
       children: [
         backgroundImage,
-        if (showBottomImage)
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Image.asset(
-              AssetPath.topBackgroundSvg,
-              fit: BoxFit.fitWidth,
-            ),
-          ),
-
         SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) {
-              final content = Padding(
+              return Padding(
                 padding: AppStyles.paddingSymmetricXL,
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
@@ -51,12 +59,6 @@ class AppBackground extends StatelessWidget {
                   child: child ?? const SizedBox.shrink(),
                 ),
               );
-              return isScrollable
-                  ? SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: content,
-              )
-                  : content;
             },
           ),
         ),

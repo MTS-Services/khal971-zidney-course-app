@@ -6,27 +6,18 @@ import 'package:zidney/utils/app_style.dart';
 
 class CustomContainer extends StatelessWidget {
   final double? height;
-
   final double? width;
-
   final BorderRadiusGeometry? borderRadius;
-
   final Color? shadowColor;
-
   final Color? backgroundColor;
   final Widget? child;
 
   const CustomContainer({
     super.key,
-
     this.height,
-
     this.borderRadius,
-
     this.width,
-
     this.shadowColor = AppColors.primaryColor,
-
     this.backgroundColor = Colors.white,
     this.child,
   });
@@ -49,7 +40,7 @@ class CustomContainer extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: shadowColor ?? AppColors.primaryColor,
-            offset: const Offset(0, 10),
+            offset: const Offset(0, 12),
           ),
         ],
       ),

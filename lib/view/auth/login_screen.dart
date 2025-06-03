@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                 labelText: 'Email',
               ),
               CustomTextFormField(hintText: '*******', labelText: 'Password'),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                 buttonText: 'Login',
                 prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.23)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.18)),
               CustomButton(
                 onTap: () {
                   Get.to(()=>CreateAccountScreen());

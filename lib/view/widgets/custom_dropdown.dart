@@ -21,11 +21,11 @@ class CustomDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dropdownHeight = AppStyles.screenHeightPercentage(context, 0.05);
-    final dropdownWidth = AppStyles.screenWidthPercentage(context, 0.86);
+    final dropdownHeight = AppStyles.screenWidthPercentage(context, 0.13);
+    final dropdownWidth = AppStyles.screenWidthPercentage(context, 0.94);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: AppStyles.paddingVerticalM,
       child: Container(
         height: dropdownHeight,
         width: dropdownWidth,
@@ -36,7 +36,7 @@ class CustomDropdown extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: AppColors.primaryColor,
-              offset: const Offset(0, 10),
+              offset: const Offset(0, 12),
             ),
           ],
         ),
@@ -66,8 +66,9 @@ class CustomDropdown extends StatelessWidget {
             iconEnabledColor: Colors.black,
           ),
           dropdownStyleData: DropdownStyleData(
+            isOverButton: false,
             offset: const Offset(0, -12),
-            maxHeight: 200,
+            maxHeight: 140,
             elevation: 10,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
