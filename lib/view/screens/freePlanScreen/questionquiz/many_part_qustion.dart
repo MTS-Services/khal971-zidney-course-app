@@ -5,11 +5,8 @@ import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 import 'package:zidney/view/widgets/custom_container.dart';
 import 'package:zidney/view/widgets/wrong_ans_limit.dart';
-import 'package:zidney/view/widgets/wrong_answer.dart';
 
 import '../../../../utils/common/custom_app_bar.dart';
-import '../../../widgets/answer_bottom_sheet.dart';
-import '../../../widgets/right_answer.dart';
 
 class ManyPartQuestion extends StatelessWidget {
   const ManyPartQuestion({super.key});

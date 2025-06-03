@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
@@ -25,21 +26,26 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: AppStyles.paddingSymmetricXL,
+            padding:
+                AppStyles
+                    .paddingSymmetricXL, // You can internally apply .w/.h in AppStyles too
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                CustomPremiumCotainer(),
-                const SizedBox(height: 20),
-                CustomLabel(text: 'Last Practiced Chapter', showImage: false),
-                SizedBox(height: 15),
+                const CustomPremiumCotainer(),
+                SizedBox(height: 20.h),
+                const CustomLabel(
+                  text: 'Last Practiced Chapter',
+                  showImage: false,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
-                      flex: 3,
+                      flex: 2,
                       child: TopicOverviewCard(
                         chapter: '1',
                         classNum: '10',
@@ -49,17 +55,19 @@ class HomeScreen extends StatelessWidget {
                         showImage: true,
                       ),
                     ),
+                    SizedBox(width: 10),
                     Expanded(
-                      flex: 2,
+                      flex: 1,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
-                        children: [
+                        children: const [
                           SubjectContainer(
                             subject: 'Life Science',
                             chapter: '1',
                             classNum: '10',
                           ),
+                          SizedBox(height: 10),
                           SubjectContainer(
                             subject: 'Life Science',
                             chapter: '1',
@@ -70,12 +78,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 35),
+                SizedBox(height: 35.h),
                 Text(
                   'Practicing Courses',
                   style: AppTextStyle.bold16.apply(fontSizeFactor: 1.2),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
 
                 for (int i = 0; i < 4; i++)
                   QuestionContainer(
@@ -85,12 +93,12 @@ class HomeScreen extends StatelessWidget {
                     showIcon: true,
                     imageIcon: AssetPath.accessIcon,
                   ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 Text(
                   'All Subjects',
                   style: AppTextStyle.bold16.apply(fontSizeFactor: 1.2),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 for (int i = 0; i < 4; i++)
                   AllSubjectScreen(subName: 'Math', image: AssetPath.labelIcon),
               ],

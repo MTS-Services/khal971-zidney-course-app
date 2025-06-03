@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/practice_button.dart';
@@ -12,6 +13,7 @@ class SubjectContainer extends StatelessWidget {
     required this.chapter,
     required this.classNum,
   });
+
   final String subject;
   final String chapter;
   final String classNum;
@@ -19,50 +21,40 @@ class SubjectContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Color(0xffFCC962),
+        borderRadius: BorderRadius.circular(8.r),
+        color: const Color(0xffFCC962),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(AssetPath.labelIcon, height: 32, width: 32),
-                PracticeButton(showText: false),
+                Image.asset(AssetPath.labelIcon, height: 32.h, width: 32.w),
+                const PracticeButton(showText: false),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Text(
               subject,
-              style: AppTextStyle.regular14.apply(
-                color: AppColors.chocolate,
-                fontSizeFactor: 1.3,
-              ),
+              style: AppTextStyle.regular14.apply(color: AppColors.chocolate),
             ),
             Text(
               'chapter $chapter',
-              style: AppTextStyle.regular14.apply(
-                color: AppColors.chocolate,
-                fontSizeFactor: 1.3,
-              ),
+              style: AppTextStyle.regular14.apply(color: AppColors.chocolate),
             ),
-            SizedBox(height: 20),
-
+            SizedBox(height: 10.h),
             Text(
-              'You are on:${classNum}th',
-              style: AppTextStyle.regular14.apply(
-                color: AppColors.chocolate,
-                fontSizeFactor: 1.2,
-              ),
+              'You are on: ${classNum}th',
+              style: AppTextStyle.regular12.apply(color: AppColors.chocolate),
             ),
-            SizedBox(height: 15),
-            CustomProgressBar(
+            SizedBox(height: 15.h),
+            const CustomProgressBar(
               backgroundColor: AppColors.whiteColor,
               progressColor: AppColors.blackColor,
             ),
