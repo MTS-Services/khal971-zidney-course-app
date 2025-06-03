@@ -1,10 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:zidney/utils/app_style.dart';
+import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
+import '../../../../utils/asset_path.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_container.dart';
 import '../../../widgets/custom_dropdown.dart';
@@ -26,7 +32,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
   final TextEditingController schoolController = TextEditingController();
 
   final List<String> gender = ['Male', 'Female', 'Other'];
-  final List<String> classList = ['A level', 'O level', 'B level'];
+  final List<String> classList = ['A level', 'O level', 'B level','C level'];
 
   String? selectedGender = "selected";
   String? selectedClass = "selected";
@@ -36,6 +42,22 @@ class _PersonalInfoState extends State<PersonalInfo> {
     super.initState();
     selectedGender = gender.first;
     selectedClass = classList.first;
+  }
+
+  final ImagePicker _picker = ImagePicker();
+  XFile? _imageFile;
+
+  Future _pickImage() async {
+    final XFile? pickedFile = await _picker.pickImage(source: (ImageSource.gallery));
+    if(pickedFile != null){
+      setState(() {
+        _imageFile = pickedFile;
+      });
+      debugPrint('Selected image : ${_imageFile!.path}');
+    }
+
+
+
   }
 
   @override
@@ -51,15 +73,55 @@ class _PersonalInfoState extends State<PersonalInfo> {
               "Setup your profile Your  \n     to get started",
               style: TextStyle(
                 fontSize: AppStyles.fontXXL,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.025)),
 
             CustomContainer(
               height: AppStyles.screenHeightPercentage(context, 0.25),
               width: AppStyles.screenWidthPercentage(context, 0.55),
+              child: Center(
+                child: CircleAvatar(
+                  maxRadius: 64,
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: _imageFile != null
+                      ? FileImage(File(_imageFile!.path)) as ImageProvider
+                      : null,
+                  child: _imageFile == null
+                      ? Stack(
+                    children: [
+                      SvgPicture.asset(
+                        AssetPath.profileLogo,
+                        height: 64,
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: GestureDetector(
+                          onTap: _pickImage,
+                          child: SvgPicture.asset(AssetPath.imageAddIcon),
+                        ),
+                      ),
+                    ],
+                  )
+                      : Stack(
+                    children: [
+                      // When image is selected, show only the add icon on top of it
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: GestureDetector(
+                          onTap: _pickImage,
+                          child: SvgPicture.asset(AssetPath.imageAddIcon),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.015)),
+            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.025)),
             CustomTextFormField(
               controller: userNameController,
               labelText: 'User Name',
@@ -129,7 +191,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
               },
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.035)),
             CustomButton(
               width: AppStyles.screenWidthPercentage(context, 0.25),
               buttonText: 'Next',
@@ -141,6 +203,8 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 Get.to(()=>SubjectSelection());
               },
             ),
+            SizedBox(height:AppStyles.screenHeightPercentage(context, 0.035)),
+
           ],
         ),
       ),
