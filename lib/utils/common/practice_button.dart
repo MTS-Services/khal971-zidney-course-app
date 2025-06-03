@@ -8,42 +8,46 @@ class PracticeButton extends StatelessWidget {
     this.showText = false,
     this.hasRadius = true,
     this.showMoreShadow = false,
+    this.buttonText = 'Start Practice',
+    this.textColor = AppColors.chocolate,
+    this.buttonColor = AppColors.whiteColor,
+    this.shadowColor = const Color(0xffF0E4DE),
+    this.iconColor = AppColors.blackColor,
   });
   final bool showText;
   final bool hasRadius;
   final bool showMoreShadow;
+  final String buttonText;
+  final Color textColor;
+  final Color buttonColor;
+  final Color shadowColor;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        // Apply circular shape when no text is shown, or rounded corners when text is present
-        borderRadius:
-            hasRadius
-                ? BorderRadius.circular(
-                  showText ? 40 : 50,
-                ) // larger circle when no text
-                : BorderRadius.zero,
-        color: AppColors.whiteColor,
+        borderRadius: hasRadius ? BorderRadius.circular(40) : BorderRadius.zero,
+        color: buttonColor,
         boxShadow:
             showMoreShadow
-                ? [BoxShadow(offset: Offset(0, 5), color: Color(0xffF0E4DE))]
-                : [BoxShadow(offset: Offset(0, 3), color: Color(0xffF0E4DE))],
+                ? [BoxShadow(offset: Offset(0, 5), color: shadowColor)]
+                : [BoxShadow(offset: Offset(0, 3), color: shadowColor)],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (showText)
             Text(
-              'Start Practice',
+              buttonText,
               style: AppTextStyle.bold14.apply(
                 fontSizeFactor: 1.3,
-                color: AppColors.chocolate,
+                color: textColor,
               ),
             ),
-          Icon(Icons.double_arrow_sharp),
+          Icon(Icons.double_arrow_sharp, color: iconColor),
         ],
       ),
     );
