@@ -7,14 +7,14 @@ import 'package:zidney/view/widgets/custom_button.dart';
 import '../../../../utils/app_style.dart';
 import '../../../../utils/common/custom_label.dart';
 
-class AllQuiz extends StatefulWidget {
-  const AllQuiz({super.key});
+class AllQuestions extends StatefulWidget {
+  const AllQuestions({super.key});
 
   @override
-  State<AllQuiz> createState() => _AllQuizState();
+  State<AllQuestions> createState() => _AllQuestionsState();
 }
 
-class _AllQuizState extends State<AllQuiz> {
+class _AllQuestionsState extends State<AllQuestions> {
   bool isSelected = true;
 
   @override
@@ -35,14 +35,13 @@ class _AllQuizState extends State<AllQuiz> {
             SizedBox(height: AppStyles.heightXS),
             Row(
               children: [
-                CustomLabel(
-                  image: AssetPath.labelIcon,
-                  text: 'The world of Molecules',
-                ),
+                CustomLabel(image: AssetPath.labelIcon, text: 'The world of Molecules'),
                 SizedBox(height: 20),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+            SizedBox(
+              height: AppStyles.screenHeightPercentage(context, 0.015),
+            ),
             Row(
               children: [
                 Expanded(
@@ -53,18 +52,17 @@ class _AllQuizState extends State<AllQuiz> {
                       });
                     },
                     backgroundColor:
-                        isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
-                    shadowColor:
-                        isSelected
-                            ? AppColors.primaryShadow
-                            : AppColors.primaryLightColor,
+                    isSelected
+                        ? AppColors.primaryColor
+                        : AppColors.primaryLightColor,
+                    shadowColor:isSelected
+                        ? AppColors.primaryShadow
+                        : AppColors.primaryLightColor ,
                     buttonText: 'Questions',
                     textColor:
-                        isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.question, scale: 9),
                   ),
                 ),
@@ -77,23 +75,23 @@ class _AllQuizState extends State<AllQuiz> {
                     },
                     buttonText: 'Quiz',
                     backgroundColor:
-                        !isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
+                    !isSelected
+                        ? AppColors.primaryColor
+                        : AppColors.primaryLightColor,
                     shadowColor:
-                        !isSelected
-                            ? AppColors.primaryShadow
-                            : AppColors.primaryLightColor,
+                    !isSelected
+                        ? AppColors.primaryShadow
+                        : AppColors.primaryLightColor,
                     textColor:
-                        !isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    !isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.quizImage, scale: 3),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
             Expanded(
               child: Scrollbar(
                 thumbVisibility: true,
@@ -103,21 +101,19 @@ class _AllQuizState extends State<AllQuiz> {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 25),
                   child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return QuestionContainer(
-                        title: 'Quiz ${index + 1}',
-                        subTitle: 'attempts taken 3',
-                        trailIcon: AssetPath.circleCorrectImage,
-                      );
-                    },
-                  ),
+                      itemCount: 10,
+                      itemBuilder: (context,index){
+                        return QuestionContainer(title: 'Question ${index +1}',
+                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
+                        );
+                      }),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
     );
   }
 }
+
