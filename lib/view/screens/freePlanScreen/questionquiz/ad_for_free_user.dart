@@ -30,12 +30,12 @@ class AdForFreeUser extends StatelessWidget {
                   //   ),
                   // ),
                   Positioned(
-                    top: 0,
-                    right: 0,
+                    top: 5,
+                    right: 5,
                     child: TextButton.icon(
                       onPressed: () {
                       },
-                      icon: const SizedBox.shrink(),
+                      icon: SizedBox.shrink(),
                       label: Row(
                         children: const [
                           Text(
@@ -47,7 +47,7 @@ class AdForFreeUser extends StatelessWidget {
                         ],
                       ),
                       style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
                         minimumSize: Size(0, 0),
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                         visualDensity: VisualDensity.compact,
