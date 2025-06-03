@@ -13,7 +13,7 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(showTitle: true, showAction: false),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -21,8 +21,8 @@ class MenuScreen extends StatelessWidget {
             children: [
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.01)),
               CustomContainer(
-                height: AppStyles.screenHeightPercentage(context, 0.228),
-                width: AppStyles.screenWidthPercentage(context, .490),
+                height: 218,
+                width: 218,
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(AssetPath.menuImage),
               ),
@@ -31,8 +31,8 @@ class MenuScreen extends StatelessWidget {
                 'Sophie',
                 style: TextStyle(
                   color: AppColors.chocolate,
-                  fontWeight: AppStyles.weightRegular,
-                  fontSize: AppStyles.fontXXL,
+                  fontWeight: AppStyles.weightMedium,
+                  fontSize: 24,
                 ),
               ),
 
@@ -44,8 +44,8 @@ class MenuScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: SvgPicture.asset(
                       AssetPath.personIcon,
-                      height: AppStyles.screenHeightPercentage(context, .03),
-                      width: AppStyles.screenWidthPercentage(context, .03),
+                      height: 16,
+                      width: 16,
                     ),
                   ),
                   const SizedBox(width: 18),
@@ -59,41 +59,18 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(height: 2, color: AppColors.chocolate),
+              SizedBox(height: 14),
+              Divider(height: 1, color: AppColors.grey),
 
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18),
-                    child: SvgPicture.asset(
-                      AssetPath.securityIcon,
-                      height: AppStyles.screenHeightPercentage(context, .03),
-                      width: AppStyles.screenWidthPercentage(context, .03),
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                  Text(
-                    'Security',
-                    style: TextStyle(
-                      fontSize: AppStyles.fontM,
-                      fontWeight: AppStyles.weightRegular,
-                      color: AppColors.chocolate,
-                    ),
-                  ),
-                ],
-              ),
-              Divider(height: 2, color: AppColors.chocolate),
-
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
+              SizedBox(height: 22),
               Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 18),
                     child: SvgPicture.asset(
                       AssetPath.languageIcon,
-                      height: AppStyles.screenHeightPercentage(context, .03),
-                      width: AppStyles.screenWidthPercentage(context, .03),
+                      height: 16,
+                      width: 16,
                     ),
                   ),
                   const SizedBox(width: 18),
@@ -107,9 +84,9 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(height: 2, color: AppColors.chocolate),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
-
+              SizedBox(height: 14),
+              Divider(height: 1, color: AppColors.grey),
+              SizedBox(height: 22),
 
               Row(
                 children: [
@@ -117,8 +94,8 @@ class MenuScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 18),
                     child: SvgPicture.asset(
                       AssetPath.vector,
-                      height: AppStyles.screenHeightPercentage(context, .03),
-                      width: AppStyles.screenWidthPercentage(context, .03),
+                      height: 16,
+                      width: 16,
                     ),
                   ),
                   const SizedBox(width: 18),
@@ -132,7 +109,8 @@ class MenuScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(height: 2, color: AppColors.chocolate),
+              SizedBox(height: 14),
+              Divider(height: 1, color: AppColors.grey),
             ],
           ),
         ),
