@@ -90,8 +90,11 @@ class TopicOverviewCard extends StatelessWidget {
                   progressColor: AppColors.blackColor,
                 ),
                 SizedBox(height: 35.h),
-                PracticeButton(showText: showButtonText, showMoreShadow: true),
-                SizedBox(height: 10.h),
+                PracticeButton(
+                  showText: showButtonText,
+                  showMoreShadow: true,
+                  iconColor: AppColors.chocolate,
+                ),
               ],
             ),
           ),

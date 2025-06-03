@@ -39,13 +39,15 @@ class HomeScreen extends StatelessWidget {
                   text: 'Last Practiced Chapter',
                   showImage: false,
                 ),
+                SizedBox(height: 10),
                 Row(
+                  spacing: 10,
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(
-                      flex: 2,
+                      flex: 3,
                       child: TopicOverviewCard(
                         chapter: '1',
                         classNum: '10',
@@ -55,10 +57,10 @@ class HomeScreen extends StatelessWidget {
                         showImage: true,
                       ),
                     ),
-                    SizedBox(width: 10),
                     Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: Column(
+                        spacing: 10,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: const [
@@ -67,9 +69,8 @@ class HomeScreen extends StatelessWidget {
                             chapter: '1',
                             classNum: '10',
                           ),
-                          SizedBox(height: 10),
                           SubjectContainer(
-                            subject: 'Life Science',
+                            subject: 'Physical Science',
                             chapter: '1',
                             classNum: '10',
                           ),

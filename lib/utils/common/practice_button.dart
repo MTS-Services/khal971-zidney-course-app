@@ -27,7 +27,7 @@ class PracticeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.all(5),
+      padding: showText ? EdgeInsets.all(9) : EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: hasRadius ? BorderRadius.circular(40) : BorderRadius.zero,
         color: buttonColor,

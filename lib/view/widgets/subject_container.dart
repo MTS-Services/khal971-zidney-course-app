@@ -36,10 +36,13 @@ class SubjectContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(AssetPath.labelIcon, height: 32.h, width: 32.w),
-                const PracticeButton(showText: false),
+                const PracticeButton(
+                  showText: false,
+                  iconColor: AppColors.chocolate,
+                ),
               ],
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 11.h),
             Text(
               subject,
               style: AppTextStyle.regular14.apply(color: AppColors.chocolate),
@@ -48,15 +51,18 @@ class SubjectContainer extends StatelessWidget {
               'chapter $chapter',
               style: AppTextStyle.regular14.apply(color: AppColors.chocolate),
             ),
-            SizedBox(height: 10.h),
+            SizedBox(height: 12.h),
             Text(
               'You are on: ${classNum}th',
               style: AppTextStyle.regular12.apply(color: AppColors.chocolate),
             ),
             SizedBox(height: 15.h),
-            const CustomProgressBar(
-              backgroundColor: AppColors.whiteColor,
-              progressColor: AppColors.blackColor,
+            Padding(
+              padding: EdgeInsets.only(bottom: 10.r),
+              child: const CustomProgressBar(
+                backgroundColor: AppColors.whiteColor,
+                progressColor: AppColors.blackColor,
+              ),
             ),
           ],
         ),
