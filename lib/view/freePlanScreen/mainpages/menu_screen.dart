@@ -13,7 +13,7 @@ class MenuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: CustomAppBar(showTitle: true, showAction: false),
+      appBar: CustomAppBar(showTitle: true,title: 'Sophie',classTitle: 'class', showAction: false),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
