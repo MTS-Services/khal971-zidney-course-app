@@ -25,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppStyles.paddingSymmetricM,
+      padding: AppStyles.paddingVerticalM,
       child: Container(
         height: AppStyles.heightL,
         width: double.infinity,
@@ -34,7 +34,7 @@ class CustomTextFormField extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: AppColors.primaryColor,
-              offset: const Offset(0, 4),
+              offset: const Offset(0, 1),
             ),
           ],
         ),

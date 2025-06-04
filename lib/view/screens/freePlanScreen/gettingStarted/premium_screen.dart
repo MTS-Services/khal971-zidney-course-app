@@ -18,15 +18,14 @@ class PremiumScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: false,
+        showBgImage: 0,
         isScrollable: true,
-        showBottomImage: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.05)),
               Center(
                 child: SvgPicture.asset(
                   AssetPath.vector,
@@ -38,28 +37,28 @@ class PremiumScreen extends StatelessWidget {
               Text("Zidney Premium ", style: AppTextStyle.bold20),
               Text("Starts at \$9.99 only", style: AppTextStyle.regular16),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.05)),
-
+          
               featureRow(
                 context,
                 "Unlimited attempts",
                 AssetPath.vectorInfinity,
               ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
-
+          
               featureRow(
                 context,
                 "Access to all questions",
                 AssetPath.accessIcon,
               ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
-
+          
               featureRow(
                 context,
                 "Access to solutions",
                 AssetPath.sulationIcon,
               ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
-
+          
               featureRow(context, "Priority support", AssetPath.priorityIcon),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
               CustomButton(
@@ -72,7 +71,7 @@ class PremiumScreen extends StatelessWidget {
                 shadowColor: AppColors.secondaryShadow,
                 prefix: Image.asset(AssetPath.logInIcon),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.2)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.15)),
               TextButton.icon(onPressed: (){},
                   label:Row(
                     mainAxisAlignment: MainAxisAlignment.center,

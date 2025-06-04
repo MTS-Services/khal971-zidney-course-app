@@ -17,14 +17,13 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: true,
         isScrollable: true,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: AppStyles.heightXXL,),
+              SizedBox(height: AppStyles.heightXXL),
               CustomLogo(
                 titleText: 'Welcome to Zedney',
                 subTitleText: 'We missed you',
@@ -35,19 +34,19 @@ class LoginScreen extends StatelessWidget {
                 labelText: 'Email',
               ),
               CustomTextFormField(hintText: '*******', labelText: 'Password'),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-                  Get.to(()=>MainBottomNavScreen());
+                  Get.to(() => MainBottomNavScreen());
                 },
                 buttonText: 'Login',
-                prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
+                prefix: Image.asset(AssetPath.logInIcon, height: 25),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.23)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.18)),
               CustomButton(
                 onTap: () {
-                  Get.to(()=>CreateAccountScreen());
+                  Get.to(() => CreateAccountScreen());
                 },
                 buttonText: 'Create an Account',
                 backgroundColor: AppColors.chocolate,

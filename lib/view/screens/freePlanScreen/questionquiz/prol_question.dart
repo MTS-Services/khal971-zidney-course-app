@@ -4,44 +4,39 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/question_container.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
+import '../../../../utils/app_style.dart';
+import '../../../../utils/common/custom_label.dart';
 
-import '../../../utils/app_style.dart';
-
-class BookmarkScreen extends StatefulWidget {
-  const BookmarkScreen({super.key});
+class ProlQuestion extends StatefulWidget {
+  const ProlQuestion({super.key});
 
   @override
-  State<BookmarkScreen> createState() => _BookmarkScreenState();
+  State<ProlQuestion> createState() => _ProlQuestionState();
 }
 
-class _BookmarkScreenState extends State<BookmarkScreen> {
+class _ProlQuestionState extends State<ProlQuestion> {
   bool isSelected = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: CustomAppBar(showTitle: true),
+      appBar: CustomAppBar(
+        showTitle: true,
+        title: 'Jabed',
+        classTitle: 'Class',
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: AppStyles.heightXS),
             Row(
               children: [
-                Image.asset(AssetPath.bookmarkAddIcon, scale: 4),
-                SizedBox(
-                  width: AppStyles.screenWidthPercentage(context, 0.078),
-                ),
-                Text(
-                  'Bookmarks',
-                  style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontWeight: AppStyles.weightBold,
-                    fontSize: AppStyles.fontL,
-                  ),
-                ),
-                Spacer(),
-                Image.asset(AssetPath.filterImage, scale: 4),
+                CustomLabel(image: AssetPath.labelIcon, text: 'The world of Molecules'),
+                SizedBox(height: 20),
               ],
             ),
             SizedBox(
@@ -57,17 +52,17 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                       });
                     },
                     backgroundColor:
-                        isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
-                    shadowColor:isSelected
+                    isSelected
                         ? AppColors.primaryColor
+                        : AppColors.primaryLightColor,
+                    shadowColor:isSelected
+                        ? AppColors.primaryShadow
                         : AppColors.primaryLightColor ,
                     buttonText: 'Questions',
                     textColor:
-                        isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.question, scale: 9),
                   ),
                 ),
@@ -80,32 +75,40 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     },
                     buttonText: 'Quiz',
                     backgroundColor:
-                        !isSelected
-                            ? AppColors.primaryColor
-                            : AppColors.primaryLightColor,
-                    shadowColor:
                     !isSelected
                         ? AppColors.primaryColor
                         : AppColors.primaryLightColor,
+                    shadowColor:
+                    !isSelected
+                        ? AppColors.primaryShadow
+                        : AppColors.primaryLightColor,
                     textColor:
-                        !isSelected
-                            ? AppColors.whiteColor
-                            : AppColors.blackColor,
+                    !isSelected
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.quizImage, scale: 3),
                   ),
                 ),
               ],
             ),
             SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.65),
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context,index){
-                    return QuestionContainer(title: 'What are the building block of life?',
-                        subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
+            Expanded(
+              child: Scrollbar(
+                thumbVisibility: true,
+                thickness: 10,
+                radius: Radius.circular(10),
+                trackVisibility: true,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 25),
+                  child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (context,index){
+                        return QuestionContainer(title: 'How do Chemical Reactions shape',
+                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
                         );
-                  }),
+                      }),
+                ),
+              ),
             )
           ],
         ),

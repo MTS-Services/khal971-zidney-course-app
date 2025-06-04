@@ -4,49 +4,45 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/question_container.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
+import '../../../../utils/app_style.dart';
+import '../../../../utils/common/custom_label.dart';
 
-import '../../../utils/app_style.dart';
-
-class BookmarkScreen extends StatefulWidget {
-  const BookmarkScreen({super.key});
+class AllQuiz extends StatefulWidget {
+  const AllQuiz({super.key});
 
   @override
-  State<BookmarkScreen> createState() => _BookmarkScreenState();
+  State<AllQuiz> createState() => _AllQuizState();
 }
 
-class _BookmarkScreenState extends State<BookmarkScreen> {
+class _AllQuizState extends State<AllQuiz> {
   bool isSelected = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: CustomAppBar(showTitle: true),
+      appBar: CustomAppBar(
+        showTitle: true,
+        title: 'Jabed',
+        classTitle: 'Class',
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: AppStyles.heightXS),
             Row(
               children: [
-                Image.asset(AssetPath.bookmarkAddIcon, scale: 4),
-                SizedBox(
-                  width: AppStyles.screenWidthPercentage(context, 0.078),
+                CustomLabel(
+                  image: AssetPath.labelIcon,
+                  text: 'The world of Molecules',
                 ),
-                Text(
-                  'Bookmarks',
-                  style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontWeight: AppStyles.weightBold,
-                    fontSize: AppStyles.fontL,
-                  ),
-                ),
-                Spacer(),
-                Image.asset(AssetPath.filterImage, scale: 4),
+                SizedBox(height: 20),
               ],
             ),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.015),
-            ),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
             Row(
               children: [
                 Expanded(
@@ -60,9 +56,10 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         isSelected
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
-                    shadowColor:isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor ,
+                    shadowColor:
+                        isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     buttonText: 'Questions',
                     textColor:
                         isSelected
@@ -84,9 +81,9 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
                     shadowColor:
-                    !isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     textColor:
                         !isSelected
                             ? AppColors.whiteColor
@@ -96,21 +93,31 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                 ),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.65),
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context,index){
-                    return QuestionContainer(title: 'What are the building block of life?',
-                        subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
-                  }),
-            )
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+            Expanded(
+              child: Scrollbar(
+                thumbVisibility: true,
+                thickness: 10,
+                radius: Radius.circular(10),
+                trackVisibility: true,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 25),
+                  child: ListView.builder(
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return QuestionContainer(
+                        title: 'Quiz ${index + 1}',
+                        subTitle: 'attempts taken 3',
+                        trailIcon: AssetPath.circleCorrectImage,
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

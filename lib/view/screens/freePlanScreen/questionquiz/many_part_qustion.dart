@@ -4,7 +4,7 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 import 'package:zidney/view/widgets/custom_container.dart';
-import 'package:zidney/view/widgets/wrong_ans_limit.dart';
+import 'package:zidney/view/widgets/right_answer.dart';
 
 import '../../../../utils/common/custom_app_bar.dart';
 
@@ -94,7 +94,7 @@ class ManyPartQuestion extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) => WrongAnsLimit(
+      builder: (context) => RightAnswer(
         answerController: answerController,
         onSubmit: (answer) {
           print('Answer Submitted: $answer');
