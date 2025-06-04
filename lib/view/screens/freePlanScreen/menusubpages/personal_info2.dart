@@ -71,7 +71,7 @@ class _PersonalInfoState extends State<PersonalInfo2> {
 
       // body //
       body: AppBackground(
-        showBottomImage: false,
+ 
         isScrollable: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -18,9 +18,8 @@ class PremiumScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: false,
+        showBgImage: 0,
         isScrollable: true,
-        showBottomImage: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -1,4 +1,4 @@
-class AssetPath{
+class AssetPath {
   static const String _basePath = 'assets/images';
   static const String appLogo = '$_basePath/logo.png';
   static const String vector = '$_basePath/Vector.svg';
@@ -6,11 +6,9 @@ class AssetPath{
   static const String vectorInfinity = '$_basePath/vector_infinity.svg';
   static const String vectorBackground = '$_basePath/vector_background.svg';
   static const String arithMaticLogo = '$_basePath/arithmatic_logo.svg';
-  static const String vectorSmallBackground = '$_basePath/vectorSmallBackground.svg';
-
-  static const String appBackgroundSvg = '$_basePath/appbackground.png';
+  static const String vectorSmallBackground ='$_basePath/vectorSmallBackground.svg';
+  static const String appBackgroundPng = '$_basePath/appbackground.png';
   static const String appBackgroundtow = '$_basePath/appbackgroundtwo.png';
-  static const String topBackgroundSvg = '$_basePath/topBackground.png';
   static const String logInIcon = '$_basePath/buttonLogo.png';
   static const String homeIcon = '$_basePath/home_icon.png';
   static const String bookmarkIcon = '$_basePath/bookmark_icon.png';
@@ -47,5 +45,5 @@ class AssetPath{
   static const String profileLogo = '$_basePath/profile_logo.svg';
   static const String imageAddIcon = '$_basePath/image_add_icon.svg';
   static const String calenderIcon = '$_basePath/calender_icon.svg';
-
+  static const String backgroundImage = '$_basePath/backgroundImage.png';
 }

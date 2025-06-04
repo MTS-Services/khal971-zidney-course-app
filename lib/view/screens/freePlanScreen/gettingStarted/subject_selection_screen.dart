@@ -48,7 +48,6 @@ class _SubjectSelectionState extends State<SubjectSelection> {
 
     return Scaffold(
       body: AppBackground(
-        showBottomImage: false,
         child:  Center(
           child: SingleChildScrollView(
             child: Column(

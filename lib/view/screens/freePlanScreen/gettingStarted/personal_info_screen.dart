@@ -7,8 +7,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:zidney/utils/app_style.dart';
-import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection_screen.dart';
 import 'package:zidney/view/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
@@ -80,7 +78,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBottomImage: false,
         isScrollable: true,
         child: SingleChildScrollView(
           child: Column(
