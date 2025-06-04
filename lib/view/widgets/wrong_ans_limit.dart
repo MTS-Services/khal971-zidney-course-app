@@ -35,7 +35,7 @@ class WrongAnsLimit extends StatelessWidget {
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
           SvgPicture.asset(AssetPath.cross1),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02),),
-          Text('You have reached your   attempts limit',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
+          Text('You have reached your  attempts limit',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.03),),
 
           TextField(
