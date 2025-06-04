@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
-import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
 
 class QuizWrongAnsLimit extends StatelessWidget {
@@ -36,7 +35,7 @@ class QuizWrongAnsLimit extends StatelessWidget {
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
           SvgPicture.asset(AssetPath.cross1),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02),),
-          Text('You have reached your   attempts limit',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
+          Text('You have reached your  attempts limit',style: TextStyle(color: AppColors.red, fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
           SizedBox(height: AppStyles.screenHeightPercentage(context, 0.03),),
 
           CustomButton(buttonText: 'Essential molecules.',

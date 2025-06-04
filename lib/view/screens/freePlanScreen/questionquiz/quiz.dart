@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
-import 'package:zidney/view/widgets/qiuiz_wrong_ans.dart';
-import 'package:zidney/view/widgets/quiz_right_ans.dart';
 import 'package:zidney/view/widgets/quiz_wrong_ans_limit.dart';
 import '../../../../utils/common/custom_app_bar.dart';
 
@@ -19,9 +15,9 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  bool isSelected = true;
   @override
   Widget build(BuildContext context) {
-    bool isSelected = true;
     return Scaffold(
       appBar: CustomAppBar(showAction: true, showActionIcon: true),
       body: SingleChildScrollView(
@@ -52,30 +48,36 @@ class _QuizState extends State<Quiz> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(
+                      onTap: () {},
                       buttonText: 'Essential molecules.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
-                              .primaryColor),
-                      backgroundColor: isSelected
-                          ? AppColors.primaryColor
-                          : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
-                          .blackColor,
+                        color:
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.primaryColor,
+                      ),
+                      backgroundColor:
+                          isSelected ? AppColors.primaryColor : Colors.white,
+                      textColor:
+                          isSelected ? Colors.white : AppColors.blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(
+                      onTap: () {},
                       buttonText: 'Health impact.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
-                              .primaryColor),
-                      backgroundColor: isSelected
-                          ? AppColors.primaryColor
-                          : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
-                          .blackColor,
+                        color:
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.primaryColor,
+                      ),
+                      backgroundColor:
+                          isSelected ? AppColors.primaryColor : Colors.white,
+                      textColor:
+                          isSelected ? Colors.white : AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -84,30 +86,36 @@ class _QuizState extends State<Quiz> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(
+                      onTap: () {},
                       buttonText: 'Misleading claim.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
-                              .primaryColor),
-                      backgroundColor: isSelected
-                          ? AppColors.primaryColor
-                          : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
-                          .blackColor,
+                        color:
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.primaryColor,
+                      ),
+                      backgroundColor:
+                          isSelected ? AppColors.primaryColor : Colors.white,
+                      textColor:
+                          isSelected ? Colors.white : AppColors.blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(
+                      onTap: () {},
                       buttonText: 'False statement.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
-                              .primaryColor),
-                      backgroundColor: isSelected
-                          ? AppColors.primaryColor
-                          : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
-                          .blackColor,
+                        color:
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.primaryColor,
+                      ),
+                      backgroundColor:
+                          isSelected ? AppColors.primaryColor : Colors.white,
+                      textColor:
+                          isSelected ? Colors.white : AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -115,13 +123,14 @@ class _QuizState extends State<Quiz> {
 
               CustomButton(
                 onTap: () {
-                    showAnswerBottomSheet(context);
+                  showAnswerBottomSheet(context);
                 },
-                backgroundColor: isSelected ? AppColors.buttonGreen : AppColors
-                    .grey,
-                shadowColor: isSelected
-                    ? AppColors.buttonGreenShadow
-                    : AppColors.greyShadow,
+                backgroundColor:
+                    isSelected ? AppColors.buttonGreen : AppColors.grey,
+                shadowColor:
+                    isSelected
+                        ? AppColors.buttonGreenShadow
+                        : AppColors.greyShadow,
                 textColor: AppColors.blackColor,
                 suffix: Icon(Icons.double_arrow_outlined),
                 buttonText: "Submit",
@@ -142,11 +151,10 @@ class _QuizState extends State<Quiz> {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) =>
-          QuizWrongAnsLimit(
+      builder:
+          (context) => QuizWrongAnsLimit(
             answerController: answerController,
             onSubmit: (answer) {
-              print('Answer Submitted: $answer');
               Navigator.pop(context);
             },
           ),

@@ -5,7 +5,6 @@ import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
-import 'package:zidney/view/widgets/details_ans_check_progress_bar.dart';
 
 class QuizRightAns extends StatelessWidget {
   final TextEditingController answerController;
