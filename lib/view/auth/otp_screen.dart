@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 
-import '../widgets/custom_button.dart';
-import '../widgets/custom_logo.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});

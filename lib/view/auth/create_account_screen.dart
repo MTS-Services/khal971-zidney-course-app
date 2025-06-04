@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/view/auth/login_screen.dart';
 import 'package:zidney/view/auth/otp_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import '../../utils/app_style.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_logo.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 
-import '../../utils/app_style.dart';
+import '../../../../../utils/app_style.dart';
 
 class AllSubjectScreen extends StatelessWidget {
   const AllSubjectScreen({

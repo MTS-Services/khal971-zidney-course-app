@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 
-import '../../utils/asset_path.dart';
+import '../../../../../utils/asset_path.dart';
 
 class CustomLogo extends StatelessWidget {
   final String? titleText;

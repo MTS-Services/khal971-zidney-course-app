@@ -7,14 +7,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/subject_selection_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/asset_path.dart';
-import '../../../widgets/calender_screen.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_container.dart';
-import '../../../widgets/custom_dropdown.dart';
-import '../../../widgets/custom_text_form_field.dart';
+import '../questionquiz/widgets/calender_screen.dart';
+import '../questionquiz/widgets/custom_button.dart';
+import '../questionquiz/widgets/custom_container.dart';
+import '../questionquiz/widgets/custom_dropdown.dart';
+import '../questionquiz/widgets/custom_text_form_field.dart';
 
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});

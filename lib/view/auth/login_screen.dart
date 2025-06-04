@@ -4,12 +4,12 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/auth/create_account_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 
 import '../freePlanScreen/mainpages/main_bottom_nav_screen.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_logo.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

@@ -5,10 +5,10 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/premium_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
-import '../../../widgets/custom_Conditional_buton.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_logo.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
+import '../questionquiz/widgets/custom_Conditional_buton.dart';
+import '../questionquiz/widgets/custom_button.dart';
+import '../questionquiz/widgets/custom_logo.dart';
 
 class SubjectSelection extends StatefulWidget {
   const SubjectSelection({super.key});

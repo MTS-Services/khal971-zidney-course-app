@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/show_bottom_sheet_widget.dart';
 
-class AnswerBottomSheet extends StatelessWidget {
+class AnswerBottomSheet extends StatefulWidget {
   final TextEditingController answerController;
   final Function(String) onSubmit;
+
   const AnswerBottomSheet({
     super.key,
     required this.answerController,
@@ -14,11 +17,19 @@ class AnswerBottomSheet extends StatelessWidget {
   });
 
   @override
+  _AnswerBottomSheetState createState() => _AnswerBottomSheetState();
+}
+
+class _AnswerBottomSheetState extends State<AnswerBottomSheet> {
+  bool isCorrect = true;
+  int isWrongAns = 0;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color:AppColors.navigationColor,
+        color: AppColors.navigationColor,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
         boxShadow: [
           BoxShadow(
@@ -35,11 +46,13 @@ class AnswerBottomSheet extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLines: 5,
-              controller: answerController,
+              controller: widget.answerController,
               decoration: InputDecoration(
                 hintText: 'Your answer',
-                contentPadding:
-                const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                contentPadding: const EdgeInsets.symmetric(
+                  vertical: 14,
+                  horizontal: 16,
+                ),
               ),
             ),
           ),
@@ -49,7 +62,18 @@ class AnswerBottomSheet extends StatelessWidget {
             buttonText: "Submit",
             width: AppStyles.screenWidthPercentage(context, 0.90),
             onTap: () {
-              onSubmit(answerController.text);
+              if (isCorrect == true) {
+                isWrongAns++;
+                if (isWrongAns == 1) {
+                  showAnswerBottomSheet(context, 1, true, true , true);
+                } else if (isWrongAns == 2) {
+                  showAnswerBottomSheet(context, 2, true, true,true);
+                } else {
+                  showAnswerBottomSheet(context, 3, true, true, true);
+                }
+              } else {
+                showAnswerBottomSheet(context, 3, true, true,true);
+              }
             },
           ),
         ],

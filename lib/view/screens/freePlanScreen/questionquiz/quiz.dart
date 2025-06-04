@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
-import 'package:zidney/view/widgets/quiz_wrong_ans_limit.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/show_bottom_sheet_widget.dart';
 import '../../../../utils/common/custom_app_bar.dart';
 
 class Quiz extends StatefulWidget {
@@ -15,7 +16,9 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  bool isSelected = true;
+  int? selectedOption;
+  bool isOptions = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,78 +47,117 @@ class _QuizState extends State<Quiz> {
               ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.20)),
 
+              // Button Row 1
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
                     child: CustomButton(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 0;
+                          isOptions = true;
+                        });
+                      },
                       buttonText: 'Essential molecules.',
                       border: Border.all(
                         color:
-                            isSelected
+                            selectedOption == 0
                                 ? AppColors.primaryColor
                                 : AppColors.primaryColor,
                       ),
                       backgroundColor:
-                          isSelected ? AppColors.primaryColor : Colors.white,
+                          selectedOption == 0
+                              ? AppColors.primaryColor
+                              : AppColors.whiteColor,
                       textColor:
-                          isSelected ? Colors.white : AppColors.blackColor,
+                          selectedOption == 0
+                              ? Colors.white
+                              : AppColors.blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
                     child: CustomButton(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 1;
+                          isOptions = true;
+                        });
+                      },
                       buttonText: 'Health impact.',
                       border: Border.all(
                         color:
-                            isSelected
+                            selectedOption == 1
                                 ? AppColors.primaryColor
                                 : AppColors.primaryColor,
                       ),
                       backgroundColor:
-                          isSelected ? AppColors.primaryColor : Colors.white,
+                          selectedOption == 1
+                              ? AppColors.primaryColor
+                              : AppColors.whiteColor,
                       textColor:
-                          isSelected ? Colors.white : AppColors.blackColor,
+                          selectedOption == 1
+                              ? Colors.white
+                              : AppColors.blackColor,
                     ),
                   ),
                 ],
               ),
+
+              // Button Row 2
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
                     child: CustomButton(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 2;
+                          isOptions = true;
+                        });
+                      },
                       buttonText: 'Misleading claim.',
                       border: Border.all(
                         color:
-                            isSelected
+                            selectedOption == 2
                                 ? AppColors.primaryColor
                                 : AppColors.primaryColor,
                       ),
                       backgroundColor:
-                          isSelected ? AppColors.primaryColor : Colors.white,
+                          selectedOption == 2
+                              ? AppColors.primaryColor
+                              : AppColors.whiteColor,
                       textColor:
-                          isSelected ? Colors.white : AppColors.blackColor,
+                          selectedOption == 2
+                              ? Colors.white
+                              : AppColors.blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
                     child: CustomButton(
-                      onTap: () {},
+                      onTap: () {
+                        setState(() {
+                          selectedOption = 3;
+                          isOptions = true;
+                        });
+                      },
                       buttonText: 'False statement.',
                       border: Border.all(
                         color:
-                            isSelected
+                            selectedOption == 3
                                 ? AppColors.primaryColor
                                 : AppColors.primaryColor,
                       ),
                       backgroundColor:
-                          isSelected ? AppColors.primaryColor : Colors.white,
+                          selectedOption == 3
+                              ? AppColors.primaryColor
+                              : AppColors.whiteColor,
                       textColor:
-                          isSelected ? Colors.white : AppColors.blackColor,
+                          selectedOption == 3
+                              ? Colors.white
+                              : AppColors.blackColor,
                     ),
                   ),
                 ],
@@ -123,12 +165,20 @@ class _QuizState extends State<Quiz> {
 
               CustomButton(
                 onTap: () {
-                  showAnswerBottomSheet(context);
+                  if (selectedOption != null) {
+                    if (isOptions) {
+                      showAnswerBottomSheet(context, 1, false, false, false);
+                    } else {
+                      showAnswerBottomSheet(context, 3, true, true, false);
+                    }
+                  }
                 },
                 backgroundColor:
-                    isSelected ? AppColors.buttonGreen : AppColors.grey,
+                    selectedOption != null
+                        ? AppColors.buttonGreen
+                        : AppColors.grey,
                 shadowColor:
-                    isSelected
+                    selectedOption != null
                         ? AppColors.buttonGreenShadow
                         : AppColors.greyShadow,
                 textColor: AppColors.blackColor,
@@ -140,24 +190,6 @@ class _QuizState extends State<Quiz> {
           ),
         ),
       ),
-    );
-  }
-
-  void showAnswerBottomSheet(BuildContext context) {
-    final answerController = TextEditingController();
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder:
-          (context) => QuizWrongAnsLimit(
-            answerController: answerController,
-            onSubmit: (answer) {
-              Navigator.pop(context);
-            },
-          ),
     );
   }
 }

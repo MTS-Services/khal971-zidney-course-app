@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/utils/common/question_container.dart';
+import 'package:zidney/utils/common/custom_label.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_quiz.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 
 import '../../../utils/app_style.dart';
@@ -18,16 +19,15 @@ class BookmarkScreen extends StatefulWidget {
 }
 
 class _BookmarkScreenState extends State<BookmarkScreen> {
-  bool isSelected = true;
+  bool isSelected = true; // Track the current selection (Questions or Quiz)
 
   @override
   Widget build(BuildContext context) {
-    final BottomNavController controller = Get.find();
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       appBar: CustomAppBar(showTitle: true),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             Row(
@@ -48,7 +48,8 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                 Image.asset(AssetPath.filterImage, scale: 4),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.01)),
+
             Row(
               children: [
                 Expanded(
@@ -78,8 +79,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   child: CustomButton(
                     onTap: () {
                       setState(() {
-                        isSelected = false;
-                        controller.openWithChild(AllQuiz());
+                        isSelected = false; // Show Quiz screen
                       });
                     },
                     buttonText: 'Quiz',
@@ -101,29 +101,8 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               ],
             ),
             SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.65),
-              child: Scrollbar(
-                thumbVisibility: true,
-                thickness: 10,
-                radius: Radius.circular(10),
-                trackVisibility: true,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 25),
-                  child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return QuestionContainer(
-                        title: 'What are the building block of life?',
-                        subTitle: 'attempts taken 3',
-                        trailIcon: AssetPath.circleCorrectImage,
-                        onTap: () {},
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
+
+            Expanded(child: isSelected ? AllQuestions() : AllQuiz()),
           ],
         ),
       ),

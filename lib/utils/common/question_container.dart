@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/practice_button.dart';
 
-import '../../view/widgets/custom_progress_bar.dart';
+import '../../view/screens/freePlanScreen/questionquiz/widgets/custom_progress_bar.dart';
 import '../app_colors.dart';
 import '../styles/app_text_styles.dart';
 
@@ -65,7 +65,10 @@ class QuestionContainer extends StatelessWidget {
                 ],
               ),
               showTrailIcon
-                  ? Image.asset(trailIcon, scale: 4)
+                  ? InkWell(
+                    onTap: onTap,
+                    child: Image.asset(trailIcon, scale: 4),
+                  )
                   : PracticeButton(
                     showText: true,
                     buttonText: 'Practice',

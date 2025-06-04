@@ -4,7 +4,7 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/view/widgets/custom_container.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_container.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});

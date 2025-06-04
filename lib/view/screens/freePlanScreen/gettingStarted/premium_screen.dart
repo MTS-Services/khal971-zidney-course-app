@@ -5,12 +5,12 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/view/freePlanScreen/mainpages/home_screen.dart';
 import 'package:zidney/view/freePlanScreen/mainpages/main_bottom_nav_screen.dart';
 import 'package:zidney/view/screens/freePlanScreen/menusubpages/plans.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 
 import '../../../../utils/app_style.dart';
 import '../../../../utils/asset_path.dart';
 import '../../../../utils/styles/app_text_styles.dart';
-import '../../../widgets/app_background.dart';
+import '../questionquiz/widgets/app_background.dart';
 
 class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key});

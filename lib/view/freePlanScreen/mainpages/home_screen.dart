@@ -9,12 +9,12 @@ import 'package:zidney/utils/common/question_container.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/premium_screen.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/topic_screen.dart';
-import 'package:zidney/view/widgets/custom_premium_container.dart';
-import 'package:zidney/view/widgets/subject_container.dart';
-import 'package:zidney/view/widgets/topic_overview_card.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_premium_container.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/subject_container.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/topic_overview_card.dart';
 import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 
-import '../../widgets/all_subject_screen.dart';
+import '../../screens/freePlanScreen/questionquiz/widgets/all_subject_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
