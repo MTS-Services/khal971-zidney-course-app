@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_style.dart';
+import 'package:zidney/utils/styles/app_text_styles.dart';
 
 import '../../utils/asset_path.dart';
 
 class CustomLogo extends StatelessWidget {
   final String? titleText;
   final String? subTitleText;
-  const CustomLogo({
-    super.key, this.titleText, this.subTitleText,
-  });
+  const CustomLogo({super.key, this.titleText, this.subTitleText});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 10,
       children: [
         SizedBox(
           height: AppStyles.heightL,
@@ -20,14 +20,10 @@ class CustomLogo extends StatelessWidget {
           child: Image.asset(AssetPath.appLogo),
         ),
         SizedBox(height: 10),
-        Text(
-          titleText!,
-          style: TextStyle(
-            fontSize: AppStyles.fontM, fontWeight: AppStyles.weightBold,),
-        ),
+        Text(titleText!, style: AppTextStyle.bold20),
         Text(
           subTitleText!,
-          style: TextStyle(fontSize: AppStyles.fontM,),
+          style: AppTextStyle.regular12.apply(fontSizeFactor: 1.2),
         ),
       ],
     );

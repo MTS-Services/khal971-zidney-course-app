@@ -35,13 +35,14 @@ class _AllQuestionsState extends State<AllQuestions> {
             SizedBox(height: AppStyles.heightXS),
             Row(
               children: [
-                CustomLabel(image: AssetPath.labelIcon, text: 'The world of Molecules'),
+                CustomLabel(
+                  image: AssetPath.labelIcon,
+                  text: 'The world of Molecules',
+                ),
                 SizedBox(height: 20),
               ],
             ),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.015),
-            ),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
             Row(
               children: [
                 Expanded(
@@ -52,17 +53,18 @@ class _AllQuestionsState extends State<AllQuestions> {
                       });
                     },
                     backgroundColor:
-                    isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
-                    shadowColor:isSelected
-                        ? AppColors.primaryShadow
-                        : AppColors.primaryLightColor ,
+                        isSelected
+                            ? AppColors.primaryColor
+                            : AppColors.primaryLightColor,
+                    shadowColor:
+                        isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     buttonText: 'Questions',
                     textColor:
-                    isSelected
-                        ? AppColors.whiteColor
-                        : AppColors.blackColor,
+                        isSelected
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.question, scale: 9),
                   ),
                 ),
@@ -75,23 +77,23 @@ class _AllQuestionsState extends State<AllQuestions> {
                     },
                     buttonText: 'Quiz',
                     backgroundColor:
-                    !isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryColor
+                            : AppColors.primaryLightColor,
                     shadowColor:
-                    !isSelected
-                        ? AppColors.primaryShadow
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     textColor:
-                    !isSelected
-                        ? AppColors.whiteColor
-                        : AppColors.blackColor,
+                        !isSelected
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.quizImage, scale: 3),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
             Expanded(
               child: Scrollbar(
                 thumbVisibility: true,
@@ -101,19 +103,22 @@ class _AllQuestionsState extends State<AllQuestions> {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 25),
                   child: ListView.builder(
-                      itemCount: 10,
-                      itemBuilder: (context,index){
-                        return QuestionContainer(title: 'Question ${index +1}',
-                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
-                      }),
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return QuestionContainer(
+                        title: 'Question ${index + 1}',
+                        subTitle: 'attempts taken 3',
+                        trailIcon: AssetPath.circleCorrectImage,
+                        onTap: () {},
+                      );
+                    },
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/view/auth/login_screen.dart';
@@ -33,12 +34,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: 50.h),
               SizedBox(height: AppStyles.heightS),
               CustomLogo(
                 subTitleText: 'The one you are comfortable with ',
                 titleText: 'Select Your language first',
               ),
+              SizedBox(height: 10.h),
               SizedBox(
                 height: AppStyles.screenHeightPercentage(context, 0.52),
                 width: double.infinity,
@@ -47,15 +49,18 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: languages.length,
                   itemBuilder: (context, index) {
-                    return CustomConditionalButton(
-                      isSelected: selectedIndex == index,
-                      buttonText: languages[index],
-                      prefix: Icon(Icons.language),
-                      onTap: () {
-                        setState(() {
-                          selectedIndex = index;
-                        });
-                      },
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: CustomConditionalButton(
+                        isSelected: selectedIndex == index,
+                        buttonText: languages[index],
+                        prefix: Icon(Icons.language),
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        },
+                      ),
                     );
                   },
                 ),
@@ -70,7 +75,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   }
                 }, //nothing
                 buttonText: 'Select',
-                prefix: Image.asset(AssetPath.logInIcon, height: 25),
+                prefix: Image.asset(AssetPath.logInIcon, height: 25.h),
               ),
             ],
           ),

@@ -32,7 +32,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
   final TextEditingController schoolController = TextEditingController();
 
   final List<String> gender = ['Male', 'Female', 'Other'];
-  final List<String> classList = ['A level', 'O level', 'B level','C level'];
+  final List<String> classList = ['A level', 'O level', 'B level', 'C level'];
 
   String? selectedGender = "selected";
   String? selectedClass = "selected";
@@ -48,16 +48,19 @@ class _PersonalInfoState extends State<PersonalInfo> {
   XFile? _imageFile;
 
   Future _pickImage() async {
-    final XFile? pickedFile = await _picker.pickImage(source: (ImageSource.gallery));
-    if(pickedFile != null){
+    final XFile? pickedFile = await _picker.pickImage(
+      source: (ImageSource.gallery),
+    );
+    if (pickedFile != null) {
       setState(() {
         _imageFile = pickedFile;
       });
       debugPrint('Selected image : ${_imageFile!.path}');
     }
   }
+
   DateTime? _selectedDate;
-  final DateFormat _formatter = DateFormat('MM/dd/yyyy',);
+  final DateFormat _formatter = DateFormat('MM/dd/yyyy');
 
   Future<void> _pickDate(BuildContext context) async {
     final DateTime? datePicked = await showDatePicker(
@@ -77,6 +80,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
+        showBgImage: 1,
         isScrollable: true,
         child: SingleChildScrollView(
           child: Column(
@@ -89,8 +93,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height:AppStyles.screenHeightPercentage(context, 0.025)),
-          
+              SizedBox(
+                height: AppStyles.screenHeightPercentage(context, 0.025),
+              ),
+
               CustomContainer(
                 height: AppStyles.screenHeightPercentage(context, 0.25),
                 width: AppStyles.screenWidthPercentage(context, 0.55),
@@ -98,43 +104,51 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   child: CircleAvatar(
                     maxRadius: 64,
                     backgroundColor: Colors.transparent,
-                    backgroundImage: _imageFile != null
-                        ? FileImage(File(_imageFile!.path)) as ImageProvider
-                        : null,
-                    child: _imageFile == null
-                        ? Stack(
-                      children: [
-                        SvgPicture.asset(
-                          AssetPath.profileLogo,
-                          height: 64,
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: GestureDetector(
-                            onTap: _pickImage,
-                            child: SvgPicture.asset(AssetPath.imageAddIcon),
-                          ),
-                        ),
-                      ],
-                    )
-                        : Stack(
-                      children: [
-                        // When image is selected, show only the add icon on top of it
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          child: GestureDetector(
-                            onTap: _pickImage,
-                            child: SvgPicture.asset(AssetPath.imageAddIcon),
-                          ),
-                        ),
-                      ],
-                    ),
+                    backgroundImage:
+                        _imageFile != null
+                            ? FileImage(File(_imageFile!.path)) as ImageProvider
+                            : null,
+                    child:
+                        _imageFile == null
+                            ? Stack(
+                              children: [
+                                SvgPicture.asset(
+                                  AssetPath.profileLogo,
+                                  height: 64,
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: GestureDetector(
+                                    onTap: _pickImage,
+                                    child: SvgPicture.asset(
+                                      AssetPath.imageAddIcon,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                            : Stack(
+                              children: [
+                                // When image is selected, show only the add icon on top of it
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: GestureDetector(
+                                    onTap: _pickImage,
+                                    child: SvgPicture.asset(
+                                      AssetPath.imageAddIcon,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                   ),
                 ),
               ),
-              SizedBox(height:AppStyles.screenHeightPercentage(context, 0.025)),
+              SizedBox(
+                height: AppStyles.screenHeightPercentage(context, 0.025),
+              ),
               CustomTextFormField(
                 controller: userNameController,
                 labelText: 'User Name',
@@ -165,7 +179,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   });
                 },
               ),
-          
+
               const SizedBox(height: 30),
               Align(
                 alignment: Alignment.centerLeft,
@@ -174,7 +188,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
               ),
-          
+
               Row(
                 children: [
                   Expanded(
@@ -199,7 +213,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 labelText: 'School Name',
                 hintText: 'example',
               ),
-          
+
               CustomDropdown(
                 itemList: classList,
                 selectedItem: selectedClass,
@@ -209,8 +223,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   });
                 },
               ),
-          
-              SizedBox(height:AppStyles.screenHeightPercentage(context, 0.035)),
+
+              SizedBox(
+                height: AppStyles.screenHeightPercentage(context, 0.035),
+              ),
               CustomButton(
                 width: AppStyles.screenWidthPercentage(context, 0.25),
                 buttonText: 'Next',
@@ -218,12 +234,13 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   Icons.double_arrow_outlined,
                   color: AppColors.lightPink,
                 ),
-                onTap: (){
-                  Get.to(()=>SubjectSelection());
+                onTap: () {
+                  Get.to(() => SubjectSelection());
                 },
               ),
-              SizedBox(height:AppStyles.screenHeightPercentage(context, 0.035)),
-          
+              SizedBox(
+                height: AppStyles.screenHeightPercentage(context, 0.035),
+              ),
             ],
           ),
         ),

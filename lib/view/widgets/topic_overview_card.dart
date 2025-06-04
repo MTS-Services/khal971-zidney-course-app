@@ -94,6 +94,9 @@ class TopicOverviewCard extends StatelessWidget {
                   showText: showButtonText,
                   showMoreShadow: true,
                   iconColor: AppColors.chocolate,
+                  onTap: () {
+                    
+                  },
                 ),
               ],
             ),

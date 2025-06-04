@@ -48,11 +48,14 @@ class _SubjectSelectionState extends State<SubjectSelection> {
 
     return Scaffold(
       body: AppBackground(
-        child:  Center(
+        showBgImage: 1,
+        child: Center(
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height:AppStyles.screenHeightPercentage(context, 0.03),),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.03),
+                ),
                 CustomLogo(
                   titleText: 'Welcome to Zidney',
                   subTitleText: 'Pick 5 courses to get started!',
@@ -70,14 +73,24 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                         buttonText: subject,
                         prefix: Icon(
                           Icons.language,
-                          color: isSelected ? AppColors.lightPink : AppColors.chocolateShadow,
+                          color:
+                              isSelected
+                                  ? AppColors.lightPink
+                                  : AppColors.chocolateShadow,
                         ),
                         isSelected: isSelected,
                         backgroundColor:
-                        isSelected ? AppColors.primaryColor: AppColors.chocolateShadow,
-                        textColor: isSelected ? Colors.white : AppColors.chocolateShadow,
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.chocolateShadow,
+                        textColor:
+                            isSelected
+                                ? Colors.white
+                                : AppColors.chocolateShadow,
                         shadowColor:
-                        isSelected ? AppColors.primaryShadow : AppColors.chocolateShadow,
+                            isSelected
+                                ? AppColors.primaryShadow
+                                : AppColors.chocolateShadow,
                         onTap: () => toggleSubject(subject),
                       );
                     },
@@ -87,23 +100,26 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                   width: AppStyles.screenHeightPercentage(context, 0.20),
                   prefix: Image.asset(AssetPath.logInIcon),
                   onTap:
-                  isReadyToStart
-                      ? () {
-                    Get.to(()=>PremiumScreen());
-                  }
-                      : null,
+                      isReadyToStart
+                          ? () {
+                            Get.to(() => PremiumScreen());
+                          }
+                          : null,
                   buttonText:
-                  isReadyToStart ? 'Get Started' : '4 More to Start',
+                      isReadyToStart ? 'Get Started' : '4 More to Start',
                   backgroundColor:
-                  isReadyToStart ? AppColors.primaryColor : AppColors.grey,
+                      isReadyToStart ? AppColors.primaryColor : AppColors.grey,
                   textColor: Colors.white,
-                  shadowColor: isReadyToStart?AppColors.primaryShadow : AppColors.greyShadow,
+                  shadowColor:
+                      isReadyToStart
+                          ? AppColors.primaryShadow
+                          : AppColors.greyShadow,
                 ),
               ],
             ),
           ),
         ),
-      )
+      ),
     );
   }
 }

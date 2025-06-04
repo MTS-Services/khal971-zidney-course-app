@@ -104,7 +104,9 @@ class _ProlQuestionState extends State<ProlQuestion> {
                       itemCount: 10,
                       itemBuilder: (context,index){
                         return QuestionContainer(title: 'How do Chemical Reactions shape',
-                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
+                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage,onTap: () {
+                              
+                            },
                         );
                       }),
                 ),

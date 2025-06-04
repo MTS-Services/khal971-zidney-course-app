@@ -15,6 +15,7 @@ class QuestionContainer extends StatelessWidget {
     this.showIcon = false,
     this.trailIcon = AssetPath.labelIcon,
     this.showTrailIcon = true,
+    required this.onTap,
   });
 
   final String title;
@@ -23,6 +24,8 @@ class QuestionContainer extends StatelessWidget {
   final bool showIcon;
   final String trailIcon;
   final bool showTrailIcon;
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +74,7 @@ class QuestionContainer extends StatelessWidget {
                     shadowColor: AppColors.primaryShadow,
                     textColor: AppColors.whiteColor,
                     iconColor: AppColors.whiteColor,
+                    onTap: onTap,
                   ),
             ],
           ),

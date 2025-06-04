@@ -109,6 +109,9 @@ class _AllQuizState extends State<AllQuiz> {
                         title: 'Quiz ${index + 1}',
                         subTitle: 'attempts taken 3',
                         trailIcon: AssetPath.circleCorrectImage,
+                        onTap: () {
+                          
+                        },
                       );
                     },
                   ),

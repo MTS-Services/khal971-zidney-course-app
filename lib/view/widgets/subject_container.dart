@@ -36,9 +36,10 @@ class SubjectContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(AssetPath.labelIcon, height: 32.h, width: 32.w),
-                const PracticeButton(
+                 PracticeButton(
                   showText: false,
                   iconColor: AppColors.chocolate,
+                  onTap: (){},
                 ),
               ],
             ),
