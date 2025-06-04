@@ -61,7 +61,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
                     shadowColor:isSelected
-                        ? AppColors.primaryColor
+                        ? AppColors.primaryShadow
                         : AppColors.primaryLightColor ,
                     buttonText: 'Questions',
                     textColor:
@@ -85,7 +85,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             : AppColors.primaryLightColor,
                     shadowColor:
                     !isSelected
-                        ? AppColors.primaryColor
+                        ? AppColors.primaryShadow
                         : AppColors.primaryLightColor,
                     textColor:
                         !isSelected
@@ -99,13 +99,22 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
             SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
             SizedBox(
               height: AppStyles.screenHeightPercentage(context, 0.65),
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context,index){
-                    return QuestionContainer(title: 'What are the building block of life?',
-                        subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
-                  }),
+              child: Scrollbar(
+                thumbVisibility: true,
+                thickness: 10,
+                radius: Radius.circular(10),
+                trackVisibility: true,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 25),
+                  child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (context,index){
+                        return QuestionContainer(title: 'What are the building block of life?',
+                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
+                            );
+                      }),
+                ),
+              ),
             )
           ],
         ),
