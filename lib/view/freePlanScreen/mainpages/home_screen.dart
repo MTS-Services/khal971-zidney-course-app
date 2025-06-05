@@ -101,6 +101,7 @@ class HomeScreen extends StatelessWidget {
                     showTrailIcon: false,
                     showIcon: true,
                     imageIcon: AssetPath.accessIcon,
+                    percentage: 0.5,
                     onTap: () {
                       controller.openWithChild(TopicScreen());
                     },

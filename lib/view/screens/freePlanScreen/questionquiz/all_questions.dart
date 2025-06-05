@@ -45,6 +45,7 @@ class _AllQuestionsState extends State<AllQuestions> {
                         title: 'Question ${index + 1}',
                         subTitle: 'attempts taken 3',
                         trailIcon: AssetPath.circleCorrectImage,
+                        percentage: 0.4,
                         onTap: () {
                           Get.to(() => ManyPartQuestion());
                         },

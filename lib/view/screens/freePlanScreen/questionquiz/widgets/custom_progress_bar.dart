@@ -6,9 +6,11 @@ class CustomProgressBar extends StatelessWidget {
     super.key,
     required this.backgroundColor,
     required this.progressColor,
+    required this.percentage,
   });
   final Color backgroundColor;
   final Color progressColor;
+  final double percentage;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class CustomProgressBar extends StatelessWidget {
         lineHeight: 6,
         backgroundColor: backgroundColor,
         progressColor: progressColor,
-        percent: 0.5,
+        percent: percentage,
         barRadius: Radius.circular(5),
       ),
     );

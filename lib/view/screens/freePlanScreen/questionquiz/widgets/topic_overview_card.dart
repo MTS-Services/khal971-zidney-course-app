@@ -88,6 +88,7 @@ class TopicOverviewCard extends StatelessWidget {
                 const CustomProgressBar(
                   backgroundColor: AppColors.whiteColor,
                   progressColor: AppColors.blackColor,
+                  percentage: 0.5,
                 ),
                 SizedBox(height: 35.h),
                 PracticeButton(

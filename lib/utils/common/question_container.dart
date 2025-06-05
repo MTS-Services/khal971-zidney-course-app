@@ -15,7 +15,7 @@ class QuestionContainer extends StatelessWidget {
     this.showIcon = false,
     this.trailIcon = AssetPath.labelIcon,
     this.showTrailIcon = true,
-    required this.onTap,
+    required this.onTap, required this.percentage,
   });
 
   final String title;
@@ -24,7 +24,7 @@ class QuestionContainer extends StatelessWidget {
   final bool showIcon;
   final String trailIcon;
   final bool showTrailIcon;
-
+  final double percentage;
   final VoidCallback onTap;
 
   @override
@@ -38,6 +38,7 @@ class QuestionContainer extends StatelessWidget {
           child: CustomProgressBar(
             progressColor: AppColors.primaryColor,
             backgroundColor: Colors.grey.shade300,
+            percentage: percentage,
           ),
         ),
         Container(

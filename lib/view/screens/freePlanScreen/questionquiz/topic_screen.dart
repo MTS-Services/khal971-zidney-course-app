@@ -43,6 +43,7 @@ class TopicScreen extends StatelessWidget {
                           title: 'Biological Exploration',
                           subTitle: 'You are on : 10th',
                           trailIcon: AssetPath.finishIcon,
+                          percentage: 0.7,
                           onTap: () {
                             Get.to(() => Question());
                           },

@@ -36,10 +36,10 @@ class SubjectContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(AssetPath.labelIcon, height: 32.h, width: 32.w),
-                 PracticeButton(
+                PracticeButton(
                   showText: false,
                   iconColor: AppColors.chocolate,
-                  onTap: (){},
+                  onTap: () {},
                 ),
               ],
             ),
@@ -63,6 +63,7 @@ class SubjectContainer extends StatelessWidget {
               child: const CustomProgressBar(
                 backgroundColor: AppColors.whiteColor,
                 progressColor: AppColors.blackColor,
+                percentage: 0.5,
               ),
             ),
           ],
