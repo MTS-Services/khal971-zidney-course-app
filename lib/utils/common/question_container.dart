@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/practice_button.dart';
 
-import '../../view/widgets/custom_progress_bar.dart';
+import '../../view/screens/freePlanScreen/questionquiz/widgets/custom_progress_bar.dart';
 import '../app_colors.dart';
 import '../styles/app_text_styles.dart';
 
@@ -15,13 +15,17 @@ class QuestionContainer extends StatelessWidget {
     this.showIcon = false,
     this.trailIcon = AssetPath.labelIcon,
     this.showTrailIcon = true,
+    required this.onTap,
   });
+
   final String title;
   final String subTitle;
   final String imageIcon;
   final bool showIcon;
   final String trailIcon;
   final bool showTrailIcon;
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +43,7 @@ class QuestionContainer extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(bottom: 10),
           padding: EdgeInsets.all(15),
+
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade400, width: 1),
             borderRadius: BorderRadius.circular(10),
@@ -60,7 +65,10 @@ class QuestionContainer extends StatelessWidget {
                 ],
               ),
               showTrailIcon
-                  ? Image.asset(trailIcon, scale: 4)
+                  ? InkWell(
+                    onTap: onTap,
+                    child: Image.asset(trailIcon, scale: 4),
+                  )
                   : PracticeButton(
                     showText: true,
                     buttonText: 'Practice',
@@ -69,6 +77,7 @@ class QuestionContainer extends StatelessWidget {
                     shadowColor: AppColors.primaryShadow,
                     textColor: AppColors.whiteColor,
                     iconColor: AppColors.whiteColor,
+                    onTap: onTap,
                   ),
             ],
           ),

@@ -5,10 +5,10 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/premium_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
-import '../../../widgets/custom_Conditional_buton.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_logo.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
+import '../questionquiz/widgets/custom_Conditional_buton.dart';
+import '../questionquiz/widgets/custom_button.dart';
+import '../questionquiz/widgets/custom_logo.dart';
 
 class SubjectSelection extends StatefulWidget {
   const SubjectSelection({super.key});
@@ -35,7 +35,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
       if (selectedSubjects.contains(subject)) {
         selectedSubjects.remove(subject);
       } else {
-        if (selectedSubjects.length < 5) {
+        if (selectedSubjects.length <= 5) {
           selectedSubjects.add(subject);
         }
       }
@@ -44,16 +44,18 @@ class _SubjectSelectionState extends State<SubjectSelection> {
 
   @override
   Widget build(BuildContext context) {
-    bool isReadyToStart = selectedSubjects.length >= 4;
+    bool isReadyToStart = selectedSubjects.length >= 5;
 
     return Scaffold(
       body: AppBackground(
-        showBottomImage: false,
-        child:  SingleChildScrollView(
-          child: Center(
+        showBgImage: 1,
+        child: Center(
+          child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height:AppStyles.screenHeightPercentage(context, 0.1), ),
+                SizedBox(
+                  height: AppStyles.screenHeightPercentage(context, 0.03),
+                ),
                 CustomLogo(
                   titleText: 'Welcome to Zidney',
                   subTitleText: 'Pick 5 courses to get started!',
@@ -71,14 +73,24 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                         buttonText: subject,
                         prefix: Icon(
                           Icons.language,
-                          color: isSelected ? AppColors.lightPink : AppColors.chocolateShadow,
+                          color:
+                              isSelected
+                                  ? AppColors.lightPink
+                                  : AppColors.chocolateShadow,
                         ),
                         isSelected: isSelected,
                         backgroundColor:
-                        isSelected ? AppColors.primaryColor: AppColors.chocolateShadow,
-                        textColor: isSelected ? Colors.white : AppColors.chocolateShadow,
+                            isSelected
+                                ? AppColors.primaryColor
+                                : AppColors.chocolateShadow,
+                        textColor:
+                            isSelected
+                                ? Colors.white
+                                : AppColors.chocolateShadow,
                         shadowColor:
-                        isSelected ? AppColors.primaryShadow : AppColors.chocolateShadow,
+                            isSelected
+                                ? AppColors.primaryShadow
+                                : AppColors.chocolateShadow,
                         onTap: () => toggleSubject(subject),
                       );
                     },
@@ -88,23 +100,26 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                   width: AppStyles.screenHeightPercentage(context, 0.20),
                   prefix: Image.asset(AssetPath.logInIcon),
                   onTap:
-                  isReadyToStart
-                      ? () {
-                    Get.to(()=>PremiumScreen());
-                  }
-                      : null,
+                      isReadyToStart
+                          ? () {
+                            Get.to(() => PremiumScreen());
+                          }
+                          : null,
                   buttonText:
-                  isReadyToStart ? 'Get Started' : '4 More to Start',
+                      isReadyToStart ? 'Get Started' : '4 More to Start',
                   backgroundColor:
-                  isReadyToStart ? AppColors.primaryColor : AppColors.grey,
+                      isReadyToStart ? AppColors.primaryColor : AppColors.grey,
                   textColor: Colors.white,
-                  shadowColor: isReadyToStart?AppColors.primaryShadow : AppColors.greyShadow,
+                  shadowColor:
+                      isReadyToStart
+                          ? AppColors.primaryShadow
+                          : AppColors.greyShadow,
                 ),
               ],
             ),
           ),
         ),
-      )
+      ),
     );
   }
 }

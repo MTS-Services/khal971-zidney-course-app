@@ -4,12 +4,12 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/view/auth/create_account_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 
 import '../freePlanScreen/mainpages/main_bottom_nav_screen.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_logo.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -17,16 +17,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: true,
         isScrollable: true,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: AppStyles.heightXXL,),
+              SizedBox(height: AppStyles.heightXXL),
               CustomLogo(
-                titleText: 'Welcome to Zedney',
+                titleText: 'Welcome to Zidney',
                 subTitleText: 'We missed you',
               ),
               SizedBox(height: 20),
@@ -35,19 +34,19 @@ class LoginScreen extends StatelessWidget {
                 labelText: 'Email',
               ),
               CustomTextFormField(hintText: '*******', labelText: 'Password'),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-                  Get.to(()=>MainBottomNavScreen());
+                  Get.to(() => MainBottomNavScreen());
                 },
                 buttonText: 'Login',
-                prefix:Image.asset(AssetPath.logInIcon, height:25,) ,
+                prefix: Image.asset(AssetPath.logInIcon, height: 25),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.23)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.18)),
               CustomButton(
                 onTap: () {
-                  Get.to(()=>CreateAccountScreen());
+                  Get.to(() => CreateAccountScreen());
                 },
                 buttonText: 'Create an Account',
                 backgroundColor: AppColors.chocolate,

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_colors.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/question.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
+import 'package:zidney/view/freePlanScreen/mainpages/main_bottom_nav_screen.dart';
+import 'package:zidney/view/screens/freePlanScreen/menusubpages/plans.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 
 import '../../../../utils/app_style.dart';
 import '../../../../utils/asset_path.dart';
 import '../../../../utils/styles/app_text_styles.dart';
-import '../../../widgets/app_background.dart';
+import '../questionquiz/widgets/app_background.dart';
 
 class PremiumScreen extends StatelessWidget {
   const PremiumScreen({super.key});
@@ -18,15 +18,14 @@ class PremiumScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: false,
+        showBgImage: 2,
         isScrollable: true,
-        showBottomImage: false,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.2)),
               Center(
                 child: SvgPicture.asset(
                   AssetPath.vector,
@@ -63,8 +62,8 @@ class PremiumScreen extends StatelessWidget {
               featureRow(context, "Priority support", AssetPath.priorityIcon),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.1)),
               CustomButton(
-                onTap: (){
-                  Get.to(()=>Question());
+                onTap: () {
+                  Get.to(() => Plans());
                 },
                 width: AppStyles.screenWidthPercentage(context, 0.4),
                 buttonText: "Get stared",
@@ -72,15 +71,17 @@ class PremiumScreen extends StatelessWidget {
                 shadowColor: AppColors.secondaryShadow,
                 prefix: Image.asset(AssetPath.logInIcon),
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.2)),
-              TextButton.icon(onPressed: (){},
-                  label:Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Skip For Now", style: AppTextStyle.bold14,),
-                  Icon(Icons.double_arrow_outlined),
-                ],
-              ))
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.15)),
+              TextButton.icon(
+                onPressed: () => Get.to(() => MainBottomNavScreen()),
+                label: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Skip For Now", style: AppTextStyle.bold14),
+                    Icon(Icons.double_arrow_outlined),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
