@@ -71,8 +71,8 @@ class _PersonalInfoState extends State<PersonalInfo2> {
 
       // body //
       body: AppBackground(
- 
         isScrollable: true,
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -165,7 +165,7 @@ class _PersonalInfoState extends State<PersonalInfo2> {
             // button //
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CustomButton(
                   backgroundColor: AppColors.grey,
@@ -181,7 +181,7 @@ class _PersonalInfoState extends State<PersonalInfo2> {
                   buttonText: 'Save',
                   suffix: Icon(
                     Icons.double_arrow_outlined,
-                    color: Colors.white, 
+                    color: Colors.white,
                   ),
                 ),
               ],
