@@ -6,8 +6,6 @@ import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/widgets/custom_button.dart';
-import 'package:zidney/view/widgets/qiuiz_wrong_ans.dart';
-import 'package:zidney/view/widgets/quiz_right_ans.dart';
 import 'package:zidney/view/widgets/quiz_wrong_ans_limit.dart';
 import '../../../../utils/common/custom_app_bar.dart';
 
@@ -19,9 +17,9 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  int? selectedIndex;
   @override
   Widget build(BuildContext context) {
-    bool isSelected = true;
     return Scaffold(
       appBar: CustomAppBar(showAction: true, showActionIcon: true),
       body: SingleChildScrollView(
@@ -52,29 +50,37 @@ class _QuizState extends State<Quiz> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(onTap: () {
+                      setState(() {
+                        selectedIndex = 0;
+                      });
+                    },
                       buttonText: 'Essential molecules.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
+                          color: selectedIndex == 0 ? AppColors.primaryColor : AppColors
                               .primaryColor),
-                      backgroundColor: isSelected
+                      backgroundColor: selectedIndex == 0
                           ? AppColors.primaryColor
                           : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
+                      textColor: selectedIndex == 0 ? Colors.white : AppColors
                           .blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(onTap: () {
+                      setState(() {
+                        selectedIndex = 1;
+                      });
+                    },
                       buttonText: 'Health impact.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
+                          color: selectedIndex == 1 ? AppColors.primaryColor : AppColors
                               .primaryColor),
-                      backgroundColor: isSelected
+                      backgroundColor: selectedIndex == 1
                           ? AppColors.primaryColor
                           : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
+                      textColor: selectedIndex == 1 ? Colors.white : AppColors
                           .blackColor,
                     ),
                   ),
@@ -84,29 +90,33 @@ class _QuizState extends State<Quiz> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(onTap: () {
+                      selectedIndex == 2;
+                    },
                       buttonText: 'Misleading claim.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
+                          color: selectedIndex == 2 ? AppColors.primaryColor : AppColors
                               .primaryColor),
-                      backgroundColor: isSelected
+                      backgroundColor: selectedIndex == 2
                           ? AppColors.primaryColor
                           : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
+                      textColor: selectedIndex == 2 ? Colors.white : AppColors
                           .blackColor,
                     ),
                   ),
                   SizedBox(width: 15),
                   Expanded(
-                    child: CustomButton(onTap: () {},
+                    child: CustomButton(onTap: () {
+                      selectedIndex == 3;
+                    },
                       buttonText: 'False statement.',
                       border: Border.all(
-                          color: isSelected ? AppColors.primaryColor : AppColors
+                          color: selectedIndex == 3 ? AppColors.primaryColor : AppColors
                               .primaryColor),
-                      backgroundColor: isSelected
+                      backgroundColor: selectedIndex == 3
                           ? AppColors.primaryColor
                           : Colors.white,
-                      textColor: isSelected ? Colors.white : AppColors
+                      textColor: selectedIndex == 3 ? Colors.white : AppColors
                           .blackColor,
                     ),
                   ),
@@ -117,9 +127,9 @@ class _QuizState extends State<Quiz> {
                 onTap: () {
                     showAnswerBottomSheet(context);
                 },
-                backgroundColor: isSelected ? AppColors.buttonGreen : AppColors
+                backgroundColor: selectedIndex != null ? AppColors.buttonGreen : AppColors
                     .grey,
-                shadowColor: isSelected
+                shadowColor: selectedIndex != null
                     ? AppColors.buttonGreenShadow
                     : AppColors.greyShadow,
                 textColor: AppColors.blackColor,
