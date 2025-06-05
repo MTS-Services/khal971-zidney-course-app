@@ -3,6 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/asset_path.dart';
+import 'package:zidney/utils/common/custom_background_image.dart';
+import 'package:zidney/utils/common/custom_bottom_shape.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 
@@ -50,82 +53,66 @@ class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AppBackground(
-        showBgImage: 1,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(height: 150),
-                SizedBox(height: 120),
-                CustomLogo(
-                  titleText: 'Welcome to Zidney',
-                  subTitleText: 'Sent on OTP to ex********mail.com',
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
+      body: Stack(
+        children: [
+          CustomBackground(image: AssetPath.appBackgroundPng),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomLogo(
+                    titleText: 'Welcome to Zidney',
+                    subTitleText: 'Sent on OTP to ex********mail.com',
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      children: [
+                        Expanded(child: CustomTextFormField()),
+                        SizedBox(width: 20),
+                        Expanded(child: CustomTextFormField()),
+                        SizedBox(width: 20),
+                        Expanded(child: CustomTextFormField()),
+                        SizedBox(width: 20),
+                        Expanded(child: CustomTextFormField()),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(child: CustomTextFormField()),
-                      SizedBox(width: 20),
-                      Expanded(child: CustomTextFormField()),
-                      SizedBox(width: 20),
-                      Expanded(child: CustomTextFormField()),
-                      SizedBox(width: 20),
-                      Expanded(child: CustomTextFormField()),
+                      CustomButton(
+                        backgroundColor: Colors.grey,
+                        shadowColor: AppColors.greyShadow,
+                        onTap: () {
+                          if (enableResend) {
+                            startTimer();
+                          }
+                        },
+                        buttonText:
+                            enableResend
+                                ? 'Resend OTP'
+                                : 'Resent OTP in ${secondRemaining}s',
+                      ),
+                      SizedBox(width: 30),
+                      CustomButton(
+                        onTap: () => Get.to(() => PersonalInfo()),
+                        buttonText: 'Verify',
+                        suffix: Icon(
+                          Icons.double_arrow_outlined,
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomButton(
-                      backgroundColor: Colors.grey,
-                      shadowColor: AppColors.greyShadow,
-                      onTap: () {
-                        if (enableResend) {
-                          startTimer();
-                        }
-                      },
-                      buttonText:
-                          enableResend
-                              ? 'Resend OTP'
-                              : 'Resent OTP in ${secondRemaining}s',
-                    ),
-                    SizedBox(width: 30),
-                    CustomButton(
-                      onTap: () => Get.to(() => PersonalInfo()),
-                      buttonText: 'Verify',
-                      suffix: Icon(
-                        Icons.double_arrow_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 150),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(width: 20),
-                    TextButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Icon(Icons.arrow_back_outlined),
-                          SizedBox(width: 10),
-                          Text('Edit Email'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
+          CustomBottomShape(showTextButton: true),
+        ],
       ),
     );
   }

@@ -6,7 +6,8 @@ class AssetPath {
   static const String vectorInfinity = '$_basePath/vector_infinity.svg';
   static const String vectorBackground = '$_basePath/vector_background.svg';
   static const String arithMaticLogo = '$_basePath/arithmatic_logo.svg';
-  static const String vectorSmallBackground ='$_basePath/vectorSmallBackground.svg';
+  static const String vectorSmallBackground =
+      '$_basePath/vectorSmallBackground.svg';
   static const String appBackgroundPng = '$_basePath/appbackground.png';
   static const String appBackgroundtow = '$_basePath/appbackgroundtwo.png';
   static const String logInIcon = '$_basePath/buttonLogo.png';
@@ -46,4 +47,5 @@ class AssetPath {
   static const String imageAddIcon = '$_basePath/image_add_icon.svg';
   static const String calenderIcon = '$_basePath/calender_icon.svg';
   static const String backgroundImage = '$_basePath/backgroundImage.png';
+  static const String bottomShape = '$_basePath/bottomShape.png';
 }
