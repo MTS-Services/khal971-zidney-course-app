@@ -7,7 +7,6 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_background_image.dart';
 import 'package:zidney/utils/common/custom_bottom_shape.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 
 import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
