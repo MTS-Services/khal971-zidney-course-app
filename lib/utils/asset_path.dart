@@ -35,5 +35,17 @@ class AssetPath{
   static const String question = '$_basePath/Question.png';
   static const String penPng = '$_basePath/Pen.png';
   static const String subjectImage = '$_basePath/subjectImage.png';
+  static const String containerBack = '$_basePath/container_back.png';
+  static const String filterImage = '$_basePath/filter.png';
+  static const String quizImage = '$_basePath/quiz_icon.png';
+  static const String circleCorrectImage = '$_basePath/circle_correction.png';
   static const String uerImage = '$_basePath/userImage.png';
+  static const String VectorRightAnswer = '$_basePath/vector_right_answer.svg';
+  static const String cross = '$_basePath/cross.svg';
+  static const String cross1 = '$_basePath/cross1.svg';
+  static const String ad = '$_basePath/ad.png';
+  static const String profileLogo = '$_basePath/profile_logo.svg';
+  static const String imageAddIcon = '$_basePath/image_add_icon.svg';
+  static const String calenderIcon = '$_basePath/calender_icon.svg';
+
 }

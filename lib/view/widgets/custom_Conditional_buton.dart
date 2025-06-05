@@ -44,7 +44,7 @@ class CustomConditionalButton extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: shadowColor,
-                offset: const Offset(0, 10),
+                offset: const Offset(0, 12),
               ),
             ],
           )
