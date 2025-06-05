@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/practice_button.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
-import 'package:zidney/view/widgets/custom_progress_bar.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_progress_bar.dart';
 
 class TopicOverviewCard extends StatelessWidget {
   const TopicOverviewCard({
@@ -16,6 +17,7 @@ class TopicOverviewCard extends StatelessWidget {
     required this.totalQuestion,
     this.showImage = false,
   });
+
   final String subject;
   final String chapter;
   final String classNum;
@@ -26,11 +28,12 @@ class TopicOverviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Color(0xffFCC962),
-        boxShadow: [BoxShadow(offset: Offset(0, 10), color: Color(0xffE49F13))],
+        borderRadius: BorderRadius.circular(8.r),
+        color: const Color(0xffFCC962),
+        boxShadow: [
+          BoxShadow(offset: Offset(0, 10.h), color: const Color(0xffE49F13)),
+        ],
       ),
       child: Stack(
         children: [
@@ -39,59 +42,62 @@ class TopicOverviewCard extends StatelessWidget {
               child: Image.asset(AssetPath.containerBack, fit: BoxFit.cover),
             ),
           Padding(
-            padding: const EdgeInsets.all(17),
+            padding: EdgeInsets.all(17.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SvgPicture.asset(
                       AssetPath.arithMaticLogo,
-                      height: 48,
-                      width: 48,
+                      height: 48.h,
+                      width: 48.w,
                     ),
                   ],
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
                 Text(
                   subject,
                   style: AppTextStyle.regular20.apply(
                     color: AppColors.chocolate,
-                    fontSizeFactor: 1.3,
                   ),
                 ),
                 Text(
                   'chapter $chapter',
                   style: AppTextStyle.regular20.apply(
                     color: AppColors.chocolate,
-                    fontSizeFactor: 1.3,
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 Text(
-                  'Total question:$totalQuestion',
+                  'Total question: $totalQuestion',
                   style: AppTextStyle.regular14.apply(
                     color: AppColors.chocolate,
-                    fontSizeFactor: 1.2,
                   ),
                 ),
                 Text(
-                  'You are on:${classNum}th',
+                  'You are on: ${classNum}th',
                   style: AppTextStyle.regular14.apply(
                     color: AppColors.chocolate,
-                    fontSizeFactor: 1.2,
                   ),
                 ),
-                SizedBox(height: 15),
-                CustomProgressBar(
+                SizedBox(height: 15.h),
+                const CustomProgressBar(
                   backgroundColor: AppColors.whiteColor,
                   progressColor: AppColors.blackColor,
                 ),
-                SizedBox(height: 35),
-                PracticeButton(showText: showButtonText),
-                SizedBox(height: 20),
+                SizedBox(height: 35.h),
+                PracticeButton(
+                  showText: showButtonText,
+                  showMoreShadow: true,
+                  iconColor: AppColors.chocolate,
+                  onTap: () {
+                    
+                  },
+                ),
               ],
             ),
           ),

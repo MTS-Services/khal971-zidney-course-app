@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
-import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/auth/login_screen.dart';
+import 'package:zidney/view/auth/otp_screen.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import '../../utils/app_style.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_logo.dart';
-import '../widgets/custom_text_form_field.dart';
-
+import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
+import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class CreateAccountScreen extends StatelessWidget {
   const CreateAccountScreen({super.key});
@@ -21,7 +21,7 @@ class CreateAccountScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height:AppStyles.screenWidthPercentage(context, 0.25)),
+              SizedBox(height: AppStyles.screenWidthPercentage(context, 0.25)),
               CustomLogo(
                 titleText: 'Welcome to Zidney',
                 subTitleText: 'Lets make learning easy and interesting!',
@@ -52,17 +52,14 @@ class CreateAccountScreen extends StatelessWidget {
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-                   Get.to(()=>PersonalInfo());
+                  Get.to(() => OtpScreen());
                 },
                 buttonText: 'Next',
-                suffix: Icon(
-                  Icons.double_arrow_outlined,
-                  color: Colors.white,
-                ),
+                suffix: Icon(Icons.double_arrow_outlined, color: Colors.white),
               ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.26)),
               CustomButton(
-                onTap: () {},
+                onTap: () => Get.to(() => LoginScreen()),
                 buttonText: 'Have an account',
                 backgroundColor: AppColors.chocolate,
                 shadowColor: AppColors.chocolateShadow,
@@ -70,7 +67,7 @@ class CreateAccountScreen extends StatelessWidget {
             ],
           ),
         ),
-      )
+      ),
     );
   }
 }

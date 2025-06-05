@@ -6,16 +6,31 @@ import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_b
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/show_bottom_sheet_widget.dart';
 import '../../../../utils/common/custom_app_bar.dart';
 
-class Question extends StatelessWidget {
-  const Question({super.key});
+class ThreeTimeAnswerScreen extends StatefulWidget {
+  const ThreeTimeAnswerScreen({super.key, required this.isTrue});
+  final bool isTrue;
+
+  @override
+  State<ThreeTimeAnswerScreen> createState() => _ThreeTimeAnswerScreenState();
+}
+
+class _ThreeTimeAnswerScreenState extends State<ThreeTimeAnswerScreen> {
+  int? selectedOption;
+  bool isOptions = false;
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      showAnswerBottomSheet(context, 1, false, false, true);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(showAction: true, showActionIcon: true),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Column(
             children: [
               Center(child: Image.asset(AssetPath.question, height: 100)),
@@ -35,43 +50,20 @@ class Question extends StatelessWidget {
                 style: AppTextStyle.regular16,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.40)),
+              SizedBox(height: AppStyles.screenHeightPercentage(context, 0.20)),
+
+              // Button to trigger the bottom sheet
               CustomButton(
+                buttonText: "Show Answer",
                 onTap: () {
-                  showAnswerBottomSheet(context, 0, true, true, true);
+                  widget.isTrue;
+                  showAnswerBottomSheet(context, 1, false, false, true);
                 },
-                prefix: Image.asset(AssetPath.penPng, width: 24, height: 24),
-                buttonText: "answer",
-                width: AppStyles.screenWidthPercentage(context, 0.98),
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget optionRow(
-    BuildContext context,
-    String optionLabel,
-    String optionText,
-  ) {
-    return Row(
-      children: [
-        Text(
-          optionLabel,
-          style: AppTextStyle.bold16,
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(width: AppStyles.screenWidthPercentage(context, 0.015)),
-        Expanded(
-          child: Text(
-            optionText,
-            style: AppTextStyle.regular16,
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ],
     );
   }
 }
