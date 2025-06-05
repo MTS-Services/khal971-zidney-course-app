@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
@@ -17,10 +16,10 @@ class AnswerBottomSheet extends StatefulWidget {
   });
 
   @override
-  _AnswerBottomSheetState createState() => _AnswerBottomSheetState();
+  AnswerBottomSheetState createState() => AnswerBottomSheetState();
 }
 
-class _AnswerBottomSheetState extends State<AnswerBottomSheet> {
+class AnswerBottomSheetState extends State<AnswerBottomSheet> {
   bool isCorrect = true;
   int isWrongAns = 0;
 

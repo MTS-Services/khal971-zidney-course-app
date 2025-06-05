@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/asset_path.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/quiz.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/three_time_answer_screen.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/show_bottom_sheet_widget.dart';
 
 class AdForFreeUser extends StatefulWidget {
   const AdForFreeUser({super.key});

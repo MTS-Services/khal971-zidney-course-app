@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
-import 'package:zidney/view/freePlanScreen/mainpages/home_screen.dart';
 import 'package:zidney/view/freePlanScreen/mainpages/main_bottom_nav_screen.dart';
 import 'package:zidney/view/screens/freePlanScreen/menusubpages/plans.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';

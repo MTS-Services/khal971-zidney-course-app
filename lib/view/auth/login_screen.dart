@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               SizedBox(height: AppStyles.heightXXL),
               CustomLogo(
-                titleText: 'Welcome to Zedney',
+                titleText: 'Welcome to Zidney',
                 subTitleText: 'We missed you',
               ),
               SizedBox(height: 20),

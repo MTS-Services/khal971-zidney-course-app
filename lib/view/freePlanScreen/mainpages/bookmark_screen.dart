@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/utils/common/custom_label.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_quiz.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
-import 'package:zidney/viewmodels/controller/bottom_nav_controller.dart';
 
 import '../../../utils/app_style.dart';
 

@@ -4,7 +4,6 @@ import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_container.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/right_answer.dart';
 
 import '../../../../utils/common/custom_app_bar.dart';
 

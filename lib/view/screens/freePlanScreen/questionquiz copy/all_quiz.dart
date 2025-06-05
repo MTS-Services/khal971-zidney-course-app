@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
-import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/question_container.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/quiz.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 import '../../../../utils/app_style.dart';
-import '../../../../utils/common/custom_label.dart';
 
 class AllQuiz extends StatefulWidget {
   const AllQuiz({super.key});

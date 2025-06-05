@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
@@ -10,8 +9,8 @@ import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_b
 class WrongAnswer extends StatelessWidget {
   final TextEditingController answerController;
   final Function(String) onSubmit;
-  bool iswrong;
-  WrongAnswer({
+  final bool iswrong;
+  const WrongAnswer({
     super.key,
     required this.iswrong,
     required this.answerController,

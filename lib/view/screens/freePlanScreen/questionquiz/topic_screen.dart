@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/custom_label.dart';
 import 'package:zidney/utils/common/question_container.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/prol_question.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/question.dart';
 

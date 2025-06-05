@@ -73,7 +73,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     print('selected $selectedLanguage');
                     Get.to(() => LoginScreen());
                   }
-                }, //nothing
+                },
                 buttonText: 'Select',
                 prefix: Image.asset(AssetPath.logInIcon, height: 25.h),
               ),
