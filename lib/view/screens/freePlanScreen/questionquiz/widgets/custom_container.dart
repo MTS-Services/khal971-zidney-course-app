@@ -25,7 +25,6 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: child,
       height: height,
 
       width: width,
@@ -44,6 +43,7 @@ class CustomContainer extends StatelessWidget {
           ),
         ],
       ),
+      child: child,
     );
   }
 }

@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 
-import '../../utils/app_colors.dart';
-import '../../utils/app_style.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../../utils/app_style.dart';
 
 class CalenderScreen extends StatelessWidget {
   final double? height;

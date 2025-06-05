@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/view/widgets/app_background.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../widgets/custom_button.dart';
-import '../../../widgets/custom_container.dart';
-import '../../../widgets/custom_dropdown.dart';
-import '../../../widgets/custom_text_form_field.dart';
+import '../questionquiz/widgets/custom_button.dart';
+import '../questionquiz/widgets/custom_container.dart';
+import '../questionquiz/widgets/custom_dropdown.dart';
+import '../questionquiz/widgets/custom_text_form_field.dart';
 
 // Customizable image box widget
 class CustomImageBox extends StatelessWidget {
@@ -71,7 +71,7 @@ class _PersonalInfoState extends State<PersonalInfo2> {
 
       // body //
       body: AppBackground(
-        showBottomImage: false,
+ 
         isScrollable: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

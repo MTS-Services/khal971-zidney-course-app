@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
 import 'package:zidney/utils/common/custom_label.dart';
 import 'package:zidney/utils/common/question_container.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/prol_question.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/question.dart';
 
 class TopicScreen extends StatelessWidget {
   const TopicScreen({super.key});
@@ -34,10 +37,16 @@ class TopicScreen extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: 30,
                     itemBuilder: (_, index) {
-                      return QuestionContainer(
-                        title: 'Biological Exploration',
-                        subTitle: 'You are on : 10th',
-                        trailIcon: AssetPath.finishIcon,
+                      return GestureDetector(
+                        onTap: () => Get.to(() => ProlQuestion()),
+                        child: QuestionContainer(
+                          title: 'Biological Exploration',
+                          subTitle: 'You are on : 10th',
+                          trailIcon: AssetPath.finishIcon,
+                          onTap: () {
+                            Get.to(() => Question());
+                          },
+                        ),
                       );
                     },
                   ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/utils/common/question_container.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_quiz.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 
 import '../../../utils/app_style.dart';
 
@@ -15,7 +16,7 @@ class BookmarkScreen extends StatefulWidget {
 }
 
 class _BookmarkScreenState extends State<BookmarkScreen> {
-  bool isSelected = true;
+  bool isSelected = true; // Track the current selection (Questions or Quiz)
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
       backgroundColor: AppColors.whiteColor,
       appBar: CustomAppBar(showTitle: true),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             Row(
@@ -44,9 +45,8 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                 Image.asset(AssetPath.filterImage, scale: 4),
               ],
             ),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.015),
-            ),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.01)),
+
             Row(
               children: [
                 Expanded(
@@ -60,9 +60,10 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         isSelected
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
-                    shadowColor:isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor ,
+                    shadowColor:
+                        isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     buttonText: 'Questions',
                     textColor:
                         isSelected
@@ -75,7 +76,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   child: CustomButton(
                     onTap: () {
                       setState(() {
-                        isSelected = false;
+                        isSelected = false; // Show Quiz screen
                       });
                     },
                     buttonText: 'Quiz',
@@ -84,9 +85,9 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                             ? AppColors.primaryColor
                             : AppColors.primaryLightColor,
                     shadowColor:
-                    !isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     textColor:
                         !isSelected
                             ? AppColors.whiteColor
@@ -96,21 +97,12 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                 ),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.65),
-              child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context,index){
-                    return QuestionContainer(title: 'What are the building block of life?',
-                        subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
-                  }),
-            )
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+
+            Expanded(child: isSelected ? AllQuestions() : AllQuiz()),
           ],
         ),
       ),
     );
   }
 }
-

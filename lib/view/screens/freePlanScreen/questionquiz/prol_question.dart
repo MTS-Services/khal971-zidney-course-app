@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
+import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
-import 'package:zidney/utils/common/question_container.dart';
-import 'package:zidney/view/widgets/custom_button.dart';
-import '../../../../utils/app_style.dart';
-import '../../../../utils/common/custom_label.dart';
+import 'package:zidney/utils/common/custom_label.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_quiz.dart';
+import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 
 class ProlQuestion extends StatefulWidget {
   const ProlQuestion({super.key});
@@ -21,27 +22,15 @@ class _ProlQuestionState extends State<ProlQuestion> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: CustomAppBar(
-        showTitle: true,
-        title: 'Jabed',
-        classTitle: 'Class',
-      ),
+      appBar: CustomAppBar(showTitle: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: AppStyles.heightXS),
-            Row(
-              children: [
-                CustomLabel(image: AssetPath.labelIcon, text: 'The world of Molecules'),
-                SizedBox(height: 20),
-              ],
-            ),
-            SizedBox(
-              height: AppStyles.screenHeightPercentage(context, 0.015),
-            ),
+            CustomLabel(image: AssetPath.labelIcon, text: 'Life Sciences'),
+            SizedBox(height: 20),
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.01)),
+
             Row(
               children: [
                 Expanded(
@@ -52,17 +41,18 @@ class _ProlQuestionState extends State<ProlQuestion> {
                       });
                     },
                     backgroundColor:
-                    isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
-                    shadowColor:isSelected
-                        ? AppColors.primaryShadow
-                        : AppColors.primaryLightColor ,
+                        isSelected
+                            ? AppColors.primaryColor
+                            : AppColors.primaryLightColor,
+                    shadowColor:
+                        isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     buttonText: 'Questions',
                     textColor:
-                    isSelected
-                        ? AppColors.whiteColor
-                        : AppColors.blackColor,
+                        isSelected
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.question, scale: 9),
                   ),
                 ),
@@ -75,45 +65,28 @@ class _ProlQuestionState extends State<ProlQuestion> {
                     },
                     buttonText: 'Quiz',
                     backgroundColor:
-                    !isSelected
-                        ? AppColors.primaryColor
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryColor
+                            : AppColors.primaryLightColor,
                     shadowColor:
-                    !isSelected
-                        ? AppColors.primaryShadow
-                        : AppColors.primaryLightColor,
+                        !isSelected
+                            ? AppColors.primaryShadow
+                            : AppColors.primaryLightColor,
                     textColor:
-                    !isSelected
-                        ? AppColors.whiteColor
-                        : AppColors.blackColor,
+                        !isSelected
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                     prefix: Image.asset(AssetPath.quizImage, scale: 3),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015),),
-            Expanded(
-              child: Scrollbar(
-                thumbVisibility: true,
-                thickness: 10,
-                radius: Radius.circular(10),
-                trackVisibility: true,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 25),
-                  child: ListView.builder(
-                      itemCount: 10,
-                      itemBuilder: (context,index){
-                        return QuestionContainer(title: 'How do Chemical Reactions shape',
-                            subTitle: 'attempts taken 3', trailIcon:AssetPath.circleCorrectImage
-                        );
-                      }),
-                ),
-              ),
-            )
+            SizedBox(height: AppStyles.screenHeightPercentage(context, 0.015)),
+
+            Expanded(child: isSelected ? AllQuestions() : AllQuiz()),
           ],
         ),
       ),
     );
   }
 }
-
