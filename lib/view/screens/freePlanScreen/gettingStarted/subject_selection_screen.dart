@@ -35,7 +35,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
       if (selectedSubjects.contains(subject)) {
         selectedSubjects.remove(subject);
       } else {
-        if (selectedSubjects.length <= 5) {
+        if (selectedSubjects.length < 5) {
           selectedSubjects.add(subject);
         }
       }
@@ -45,6 +45,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
   @override
   Widget build(BuildContext context) {
     bool isReadyToStart = selectedSubjects.length >= 5;
+    int remainingSubjects = 5 - selectedSubjects.length;
 
     return Scaffold(
       body: AppBackground(
@@ -106,7 +107,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                           }
                           : null,
                   buttonText:
-                      isReadyToStart ? 'Get Started' : '4 More to Start',
+                      isReadyToStart ? 'Get Started' : '$remainingSubjects More to Start',
                   backgroundColor:
                       isReadyToStart ? AppColors.primaryColor : AppColors.grey,
                   textColor: Colors.white,

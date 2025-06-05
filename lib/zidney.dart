@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zidney/utils/themdata.dart';
 import 'package:zidney/view/auth/language_screen.dart';
+import 'package:zidney/view/freePlanScreen/mainpages/dashboard_screen.dart';
 
 class Zidney extends StatelessWidget {
   const Zidney({super.key});

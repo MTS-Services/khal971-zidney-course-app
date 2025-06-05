@@ -7,7 +7,7 @@ import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/show_bot
 import '../../../../utils/common/custom_app_bar.dart';
 
 class Question extends StatelessWidget {
-  const Question({super.key});
+  const  Question({super.key});
 
   @override
   Widget build(BuildContext context) {

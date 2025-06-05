@@ -11,6 +11,7 @@ class CustomContainer extends StatelessWidget {
   final Color? shadowColor;
   final Color? backgroundColor;
   final Widget? child;
+  final BoxBorder? border;
 
   const CustomContainer({
     super.key,
@@ -19,7 +20,7 @@ class CustomContainer extends StatelessWidget {
     this.width,
     this.shadowColor = AppColors.primaryColor,
     this.backgroundColor = Colors.white,
-    this.child,
+    this.child, this.border,
   });
 
   @override
