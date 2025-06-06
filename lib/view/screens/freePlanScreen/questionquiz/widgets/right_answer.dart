@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/all_questions.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/question.dart';
-import 'package:zidney/view/screens/freePlanScreen/questionquiz/quiz.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/details_ans_check_progress_bar.dart';
 
@@ -18,7 +15,7 @@ class RightAnswer extends StatelessWidget {
   final bool isAnswer;
   final bool isPrograsBar;
 
-  RightAnswer({
+  const RightAnswer({
     super.key,
     required this.answerController,
     required this.onSubmit,
