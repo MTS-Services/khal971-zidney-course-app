@@ -19,5 +19,6 @@ class AppColors {
   static const Color navigationColor =  Color(0xFFFFF7E8);
   static const Color whiteColor =  Color(0xFFFFFFFF);
   static const Color navigationColorRed = Color(0xFFFCE9E9);
+  static const Color greenDark = Color(0xFFA5CD39);
 
 }

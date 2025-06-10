@@ -43,4 +43,9 @@ class AssetPath{
   static const String VectorRightAnswer = '$_basePath/vector_right_answer.svg';
   static const String cross = '$_basePath/cross.svg';
   static const String cross1 = '$_basePath/cross1.svg';
+  static const String fireIcon = '$_basePath/fire_icon.png';
+  static const String streksIcon = '$_basePath/streks_icon.png';
+  static const String premiumImage = '$_basePath/premium_image.png';
+  static const String premiumIcon = '$_basePath/premium_icon.png';
+
 }
