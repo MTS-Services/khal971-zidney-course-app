@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_style.dart';
-import 'package:zidney/view/auth/login_screen.dart';
+import 'package:zidney/view/auth/login_screen1.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import '../../utils/asset_path.dart';
 import '../screens/freePlanScreen/questionquiz/widgets/custom_Conditional_buton.dart';
@@ -29,7 +29,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        showBgImage: 2,
+        showBgImage: 1,
         isScrollable: false,
         child: SingleChildScrollView(
           child: Column(
@@ -70,8 +70,8 @@ class _LanguageScreenState extends State<LanguageScreen> {
                 onTap: () {
                   if (selectedIndex != null) {
                     String selectedLanguage = languages[selectedIndex!];
-                    print('selected $selectedLanguage');
-                    Get.to(() => LoginScreen());
+
+                    Get.to(() => LoginScreen1());
                   }
                 },
                 buttonText: 'Select',

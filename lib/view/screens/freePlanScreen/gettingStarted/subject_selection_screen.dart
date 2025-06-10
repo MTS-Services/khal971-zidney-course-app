@@ -97,8 +97,8 @@ class _SubjectSelectionState extends State<SubjectSelection> {
                   ),
                 ),
                 CustomButton(
-                  width: AppStyles.screenHeightPercentage(context, 0.20),
-                  prefix: Image.asset(AssetPath.logInIcon),
+                  width: AppStyles.screenHeightPercentage(context, 0.25),
+                  prefix: Image.asset(AssetPath.logInIcon, scale: 4),
                   onTap:
                       isReadyToStart
                           ? () {
