@@ -42,10 +42,14 @@ class AssetPath {
   static const String vectorRightAnswer = '$_basePath/vector_right_answer.svg';
   static const String cross = '$_basePath/cross.svg';
   static const String cross1 = '$_basePath/cross1.svg';
-  static const String ad = '$_basePath/ad.png';
-  static const String profileLogo = '$_basePath/profile_logo.svg';
-  static const String imageAddIcon = '$_basePath/image_add_icon.svg';
-  static const String calenderIcon = '$_basePath/calender_icon.svg';
-  static const String backgroundImage = '$_basePath/backgroundImage.png';
-  static const String bottomShape = '$_basePath/bottomShape.png';
+  static const String fireIcon = '$_basePath/fire_icon.png';
+  static const String streksIcon = '$_basePath/streks_icon.png';
+  static const String premiumImage = '$_basePath/premium_image.png';
+  static const String premiumIcon = '$_basePath/premium_icon.png';
+  static String ad = "$_basePath/ad.png";
+  static String bottomShape = "$_basePath/bottomShape.png";
+  static String backgroundImage = "$_basePath/backgroundImage.png";
+  static String calenderIcon = "$_basePath/calender_icon.svg";
+  static String profileLogo = "$_basePath/profile_logo.svg";
+  static String imageAddIcon = "$_basePath/image_add_icon.svg";
 }
