@@ -23,8 +23,7 @@ class AppBackground extends StatelessWidget {
         showBgImage ? AssetPath.appBackgroundSvg : AssetPath.appBackgroundtow,
         fit: BoxFit.cover,
       ),
-    );
-
+    );  
     return Stack(
       children: [
         backgroundImage,
