@@ -18,7 +18,7 @@ class TopicOverviewCard extends StatelessWidget {
     this.showImage = false,
   });
 
-  final String subject;
+  final String subject;//added subject
   final String chapter;
   final String classNum;
   final bool showButtonText;
