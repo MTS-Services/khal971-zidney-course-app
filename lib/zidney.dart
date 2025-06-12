@@ -18,7 +18,7 @@ class Zidney extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: themData(),
-          home: const LanguageScreen(),
+          home: const DashboardScreen(),
         );
       },
     );

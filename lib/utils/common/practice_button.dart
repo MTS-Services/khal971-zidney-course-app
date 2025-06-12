@@ -3,7 +3,7 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 
 class PracticeButton extends StatelessWidget {
-  const PracticeButton({
+  const  PracticeButton({
     super.key,
     this.showText = false,
     this.hasRadius = true,

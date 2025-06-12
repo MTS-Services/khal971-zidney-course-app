@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
+import 'package:zidney/utils/common/practice_button.dart';
 import 'package:zidney/utils/styles/app_text_styles.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/app_background.dart';
 import 'package:zidney/view/screens/freePlanScreen/questionquiz/widgets/custom_container.dart';
@@ -34,7 +35,8 @@ class DashboardScreen extends StatelessWidget {
                 backgroundColor: AppColors.primaryContainerColor,
                 child: Column(
                   children: [
-                    Text('You are on a',style: AppTextStyle.regular14,)
+                    Text('You are on a',style: AppTextStyle.regular14,),
+                    PracticeButton(onTap: (){},)
                   ],
                 ),
               ),
