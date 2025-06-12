@@ -8,7 +8,7 @@ class CustomProgressBar extends StatelessWidget {
     required this.progressColor,
     required this.percentage,
   });
-  final Color backgroundColor;
+  final Color backgroundColor;//background color
   final Color progressColor;
   final double percentage;
 
