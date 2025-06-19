@@ -104,7 +104,7 @@ class DashboardScreen extends StatelessWidget {
               'Your Plan',
               style: TextStyle(
                 fontWeight: AppStyles.weightBold,
-                fontSize: AppStyles.fontL,  
+                fontSize: AppStyles.fontL,
               ),
             ),
             const SizedBox(height: 10),

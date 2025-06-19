@@ -47,7 +47,7 @@ class _SubjectSelectionState extends State<SubjectSelection> {
     bool isReadyToStart = selectedSubjects.length >= 5;
 
     return Scaffold(
-      body: AppBackground(
+      body: AppBackground( 
         showBgImage: 1,
         child: Center(
           child: SingleChildScrollView(
