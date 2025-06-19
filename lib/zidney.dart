@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zidney/utils/themdata.dart';
 import 'package:zidney/view/auth/language_screen.dart';
+import 'package:zidney/view/screens/adminPanel/dashboard.dart';
 
 class Zidney extends StatelessWidget {
   const Zidney({super.key});
@@ -17,7 +18,7 @@ class Zidney extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: themData(),
-          home: const LanguageScreen(),
+          home: const Dashboard(),
         );
       },
     );

@@ -52,4 +52,6 @@ class AssetPath {
   static String calenderIcon = "$_basePath/calender_icon.svg";
   static String profileLogo = "$_basePath/profile_logo.svg";
   static String imageAddIcon = "$_basePath/image_add_icon.svg";
+  static String adminUser = "$_basePath/adminUser.png";
+  static String freeLogo = "$_basePath/freeLogo.png";
 }
