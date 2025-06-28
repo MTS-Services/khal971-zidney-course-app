@@ -37,32 +37,30 @@ class CustomConditionalButton extends StatelessWidget {
         child: Container(
           height: AppStyles.heightS,
           width: double.infinity,
-          decoration: isSelected
-              ? BoxDecoration(
-            color: backgroundColor,
-            borderRadius: borderRadius,
-            boxShadow: [
-              BoxShadow(
-                color: shadowColor,
-                offset: const Offset(0, 12),
-              ),
-            ],
-          )
-              : BoxDecoration(
-            color: Colors.white,
-            borderRadius: borderRadius,
-            border: Border.all(color: Colors.grey),
-          ),
+          decoration:
+              isSelected
+                  ? BoxDecoration(
+                    color: backgroundColor,
+                    borderRadius: borderRadius,
+                    boxShadow: [
+                      BoxShadow(
+                        color: shadowColor,
+                        offset: const Offset(0, 12),
+                      ),
+                    ],
+                  )
+                  : BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: borderRadius,
+                    border: Border.all(color: Colors.grey),
+                  ),
           child: Padding(
             padding: AppStyles.paddingHorizontalM,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                if (prefix != null) ...[
-                  prefix!,
-                  const SizedBox(width: 10),
-                ],
+                if (prefix != null) ...[prefix!, const SizedBox(width: 10)],
                 Text(
                   buttonText,
                   style: TextStyle(
@@ -71,10 +69,7 @@ class CustomConditionalButton extends StatelessWidget {
                     color: isSelected ? Colors.white : textColor,
                   ),
                 ),
-                if (suffix != null) ...[
-                  const SizedBox(width: 10),
-                  suffix!,
-                ],
+                if (suffix != null) ...[const SizedBox(width: 10), suffix!],
               ],
             ),
           ),
