@@ -54,7 +54,7 @@ class CustomConditionalButton extends StatelessWidget {
             border: Border.all(color: Colors.grey),
           ),
           child: Padding(
-            padding: AppStyles.paddingM,
+            padding: AppStyles.paddingHorizontalM,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,

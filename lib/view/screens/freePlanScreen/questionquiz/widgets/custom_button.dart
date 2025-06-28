@@ -53,6 +53,7 @@ class CustomButton extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(width: 5),
               if (prefix != null) ...[prefix!],
               Padding(
                 padding: AppStyles.paddingM,

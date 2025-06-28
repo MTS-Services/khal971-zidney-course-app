@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:zidney/utils/app_style.dart';
 import 'package:zidney/view/auth/login_screen1.dart';
@@ -54,7 +55,17 @@ class _LanguageScreenState extends State<LanguageScreen> {
                       child: CustomConditionalButton(
                         isSelected: selectedIndex == index,
                         buttonText: languages[index],
-                        prefix: Icon(Icons.language),
+                        prefix: Container(
+                          width: 34,
+                          child: Stack(
+                            children: [
+                              SvgPicture.asset(AssetPath.english2),
+                              Positioned(
+                                  left: 10,
+                                  child: SvgPicture.asset(AssetPath.english1)),
+                            ],
+                          ),
+                        ),
                         onTap: () {
                           setState(() {
                             selectedIndex = index;
