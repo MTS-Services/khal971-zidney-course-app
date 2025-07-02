@@ -48,4 +48,9 @@ class AssetPath {
   static const String calenderIcon = '$_basePath/calender_icon.svg';
   static const String backgroundImage = '$_basePath/backgroundImage.png';
   static const String bottomShape = '$_basePath/bottomShape.png';
+  static const String indiaFlag = '$_basePath/india.png';
+  static const String americaFlag = '$_basePath/america.png';
+  static const String saudiFlag = '$_basePath/saudi.png';
+  static const String spainFlag = '$_basePath/spain.png';
+  static const String italyFlag = '$_basePath/italy.png';
 }

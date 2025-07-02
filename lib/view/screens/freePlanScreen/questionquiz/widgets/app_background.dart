@@ -29,7 +29,7 @@ class AppBackground extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           final content = Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             child: ConstrainedBox(
               constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: child ?? const SizedBox.shrink(),
