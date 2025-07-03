@@ -6,6 +6,7 @@ import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_background_image.dart';
 import 'package:zidney/utils/common/custom_bottom_shape.dart';
+import 'package:zidney/view/auth/auth_api_services/auth_api_services.dart';
 import 'package:zidney/view/screens/freePlanScreen/gettingStarted/personal_info_screen.dart';
 
 import '../screens/freePlanScreen/questionquiz/widgets/custom_button.dart';
@@ -49,6 +50,19 @@ class _OtpScreenState extends State<OtpScreen> {
     super.dispose();
   }
 
+  //controller
+
+  final TextEditingController _firstDigitOtp=TextEditingController();
+  final TextEditingController _secondDigitOtp=TextEditingController();
+  final TextEditingController _thirdDigitOtp=TextEditingController();
+  final TextEditingController _fourDigitOtp=TextEditingController();
+
+
+
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,13 +83,13 @@ class _OtpScreenState extends State<OtpScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       children: [
-                        Expanded(child: CustomTextFormField()),
+                        Expanded(child: CustomTextFormField(controller: _firstDigitOtp,)),
                         SizedBox(width: 20),
-                        Expanded(child: CustomTextFormField()),
+                        Expanded(child: CustomTextFormField(controller: _secondDigitOtp,)),
                         SizedBox(width: 20),
-                        Expanded(child: CustomTextFormField()),
+                        Expanded(child: CustomTextFormField(controller: _thirdDigitOtp,)),
                         SizedBox(width: 20),
-                        Expanded(child: CustomTextFormField()),
+                        Expanded(child: CustomTextFormField(controller: _fourDigitOtp,)),
                       ],
                     ),
                   ),
@@ -88,6 +102,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         onTap: () {
                           if (enableResend) {
                             startTimer();
+                            AuthApiServices.resentOtp();
                           }
                         },
                         buttonText:
@@ -97,7 +112,13 @@ class _OtpScreenState extends State<OtpScreen> {
                       ),
                       SizedBox(width: 30),
                       CustomButton(
-                        onTap: () => Get.to(() => PersonalInfo()),
+
+                        onTap: (){
+                          String allOtpCode="${_firstDigitOtp.text}${_secondDigitOtp.text}${_thirdDigitOtp.text}${_fourDigitOtp.text}";
+                          AuthApiServices.otpVerification(otp: allOtpCode);
+
+                        },
+
                         buttonText: 'Verify',
                         suffix: Icon(
                           Icons.double_arrow_outlined,
