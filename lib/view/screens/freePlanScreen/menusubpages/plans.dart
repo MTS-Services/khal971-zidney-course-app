@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:zidney/stripe_services/stripe_services.dart';
 import 'package:zidney/utils/app_colors.dart';
 import 'package:zidney/utils/asset_path.dart';
 import 'package:zidney/utils/common/custom_app_bar.dart';
@@ -39,7 +40,10 @@ class Plans extends StatelessWidget {
               backgroundColor: Colors.white,
               width: 350,
               shadowColor: AppColors.secondaryShadow,
-              onTap: () {},
+              onTap: () {
+                print("tapped");
+                StripeService.instance.makePayment();
+              },
               buttonText: '3 months subscription only ${9.99}',
               height: 60,
               prefix: SvgPicture.asset(AssetPath.vector, height: 30, width: 30),
