@@ -12,7 +12,12 @@ import '../screens/freePlanScreen/questionquiz/widgets/custom_logo.dart';
 import '../screens/freePlanScreen/questionquiz/widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+   LoginScreen({super.key});
+
+  //controller
+  final TextEditingController _emailTEController=TextEditingController();
+  final TextEditingController _passwordTEController=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,13 +37,23 @@ class LoginScreen extends StatelessWidget {
               CustomTextFormField(
                 hintText: 'example@gmail.com',
                 labelText: 'Email',
+                controller: _emailTEController,
               ),
-              CustomTextFormField(hintText: '*******', labelText: 'Password'),
+              CustomTextFormField(
+                  hintText: '*******',
+                  labelText: 'Password',
+                  controller: _passwordTEController,
+              ),
               SizedBox(height: AppStyles.screenHeightPercentage(context, 0.02)),
               CustomButton(
                 width: AppStyles.screenHeightPercentage(context, 0.15),
                 onTap: () {
-                  Get.to(() => MainBottomNavScreen());
+
+                  print("tapped");
+                  print(_emailTEController.text);
+                  print(_passwordTEController.text);
+
+                  //Get.to(() => MainBottomNavScreen());
                 },
                 buttonText: 'Login',
                 prefix: Image.asset(AssetPath.logInIcon, height: 25),
