@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.2
+  sdk: ^3.6.2
 
 dependencies:
   flutter:
@@ -19,6 +19,9 @@ dependencies:
   image_picker: ^1.0.4
   intl: ^0.20.2
   flutter_screenutil: ^5.9.3
+  http: ^1.4.0
+  shared_preferences: ^2.5.3
+  flutter_stripe: ^11.5.0
 
 dev_dependencies:
   flutter_test:
